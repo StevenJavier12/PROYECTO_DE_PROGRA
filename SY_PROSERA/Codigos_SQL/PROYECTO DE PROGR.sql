@@ -241,3 +241,5 @@ CREATE TABLE Detalles_Recepcion (
 /*PRUBA DE INSERCION DE DATOS/*PRUBA DE INSERCION DE DATOS/*PRUBA DE INSERCION DE DATOS/*PRUBA DE INSERCION DE DATOS
 
 //Prueba de steven alonso javier
+
+//prueba 2 de subida de ricardo 
