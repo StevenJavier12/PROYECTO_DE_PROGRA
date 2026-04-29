@@ -243,3 +243,5 @@ CREATE TABLE Detalles_Recepcion (
 //Prueba de steven alonso javier
 
 //prueba 2 de subida de ricardo 
+
+//prueba de subida de steven 2
