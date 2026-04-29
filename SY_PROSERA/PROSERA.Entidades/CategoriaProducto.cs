@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PROSERA.Entidades
 {
-    internal class CategoriaProducto
+    public class CategoriaProducto
     {
         public int IdCategoria { get; set; }
         public string Nombre { get; set; }

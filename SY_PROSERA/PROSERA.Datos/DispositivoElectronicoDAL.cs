@@ -4,8 +4,7 @@ using System.Text;
 
 namespace PROSERA.Datos
 {
-    internal interface ICategoriaProductoDAL
+    internal class DispositivoElectronicoDAL
     {
-
     }
 }

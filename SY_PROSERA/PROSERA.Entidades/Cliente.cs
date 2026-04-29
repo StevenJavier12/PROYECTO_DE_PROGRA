@@ -18,5 +18,3 @@ namespace PROSERA.Entidades
         public List<RecepcionDispositivo> RecepcionDispositivos { get; set; }
     }
 }
-
-// hola alvarpp
