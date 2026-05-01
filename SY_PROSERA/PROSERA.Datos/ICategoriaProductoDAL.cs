@@ -1,11 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PROSERA.Entidades;
+using System.Data;
 
 namespace PROSERA.Datos
 {
     internal interface ICategoriaProductoDAL
     {
-
+        void Guardar(CategoriaProducto categoria);
+        void Editar(CategoriaProducto categoria);
+        void Eliminar(int id);
+        DataTable Listar();
+        CategoriaProducto? ObtenerPorId(int id);
+        bool ExistePorNombre(string nombre, int? excluirId = null);
+        bool TieneProductosRelacionados(int categoriaId);
     }
 }
