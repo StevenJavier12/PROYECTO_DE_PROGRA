@@ -4,7 +4,64 @@ using System.Text;
 
 namespace PROSERA.Datos
 {
-    internal interface IFacturaVentaDAL
+    public interface IFacturaVentaDAL
     {
+        void Guardar(FacturaVenta factura);
+        DataTable Listar();
+        void Eliminar(int id);
+    }
+
+    public class FacturaVentaDAL : IFacturaVentaDAL
+    {
+        public void Guardar(FacturaVenta factura)
+        {
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            string sql = @"INSERT INTO Factura_Ventas
+                          (fecha, id_cliente, id_usuario, total, descuento, metodo_pago, estado_factura)
+                          VALUES (@fecha, @cliente, @usuario, @total, @desc, @metodo, @estado);
+                          SELECT SCOPE_IDENTITY();";
+
+            using SqlCommand cmd = new(sql, cn);
+            cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = factura.Fecha;
+            cmd.Parameters.Add("@cliente", SqlDbType.Int).Value = factura.IdCliente;
+            cmd.Parameters.Add("@usuario", SqlDbType.Int).Value = factura.IdUsuario;
+            cmd.Parameters.Add("@total", SqlDbType.Decimal).Value = factura.Total;
+            cmd.Parameters.Add("@desc", SqlDbType.Decimal).Value = factura.Descuento;
+            cmd.Parameters.Add("@metodo", SqlDbType.VarChar, 50).Value = factura.MetodoPago;
+            cmd.Parameters.Add("@estado", SqlDbType.VarChar, 50).Value = factura.EstadoFactura;
+
+            factura.IdFactura = Convert.ToInt32(cmd.ExecuteScalar());
+        }
+
+        public DataTable Listar()
+        {
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            string sql = @"SELECT fv.id_factura, fv.fecha, c.nombre, fv.total
+                           FROM Factura_Ventas fv
+                           INNER JOIN Clientes c 
+                           ON fv.id_cliente = c.id_cliente";
+
+            using SqlDataAdapter da = new(sql, cn);
+            DataTable dt = new();
+            da.Fill(dt);
+            return dt;
+        }
+
+        public void Eliminar(int id)
+        {
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            string sql = "DELETE FROM Factura_Ventas WHERE id_factura = @id";
+
+            using SqlCommand cmd = new(sql, cn);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+            cmd.ExecuteNonQuery();
+        }
     }
 }
