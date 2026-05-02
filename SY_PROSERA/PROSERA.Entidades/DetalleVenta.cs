@@ -15,5 +15,6 @@ namespace PROSERA.Entidades
 
         public FacturaVenta FacturaVenta { get; set; }
         public Producto Producto { get; set; }
+        public object Precio { get; set; }
     }
 }
