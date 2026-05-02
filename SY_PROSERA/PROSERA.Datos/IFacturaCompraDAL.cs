@@ -4,14 +4,11 @@ using System.Text;
 
 namespace PROSERA.Datos
 {
-     public interface IFacturaCompraDAL
-    {
-        void Guardar(FacturaCompra factura);
-        DataTable Listar();
-        void Eliminar(int id);
-    }
-
-/*CREATE TABLE Factura_Compras (
+    /*
+    -- =========================================
+-- 11. FACTURA_COMPRA
+-- =========================================
+CREATE TABLE Factura_Compras (
     id_compra INT PRIMARY KEY IDENTITY (1,1),
     fecha DATETIME NOT NULL,
     id_proveedor INT NOT NULL,
@@ -20,9 +17,16 @@ namespace PROSERA.Datos
 
     CONSTRAINT FK_Compra_Proveedores
     FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor)
-); */
+);
+    */
+    public interface IFacturaCompraDAL
+    {
+        void Guardar(FacturaCompra factura);
+        DataTable Listar();
+        void Eliminar(int id);
+    }
 
-    // IMPLEMENTACIÓN
+    //  CLASE DAL
     public class FacturaCompraDAL : IFacturaCompraDAL
     {
         public void Guardar(FacturaCompra factura)
@@ -30,18 +34,62 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-            string sql = @"INSERT INTO Factura_Compras 
-                           (fecha, id_proveedor, total, tipo_comprobante)
-                           VALUES (@fecha, @proveedor, @total, @tipo);
-                           SELECT SCOPE_IDENTITY();";
+            using SqlTransaction tx = cn.BeginTransaction();
 
-            using SqlCommand cmd = new(sql, cn);
-            cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = factura.Fecha;
-            cmd.Parameters.Add("@proveedor", SqlDbType.Int).Value = factura.IdProveedor;
-            cmd.Parameters.Add("@total", SqlDbType.Decimal).Value = factura.Total;
-            cmd.Parameters.Add("@tipo", SqlDbType.VarChar, 50).Value = factura.TipoComprobante;
+            try
+            {
+                // GUARDAR FACTURA
+                string sqlFactura = @"INSERT INTO Factura_Compras 
+                                    (fecha, id_proveedor, total, tipo_comprobante)
+                                    VALUES (@fecha, @proveedor, @total, @tipo);
+                                    SELECT SCOPE_IDENTITY();";
 
-            factura.IdCompra = Convert.ToInt32(cmd.ExecuteScalar());
+                using SqlCommand cmdFactura = new(sqlFactura, cn, tx);
+                cmdFactura.Parameters.AddWithValue("@fecha", factura.Fecha);
+                cmdFactura.Parameters.AddWithValue("@proveedor", factura.IdProveedor);
+                cmdFactura.Parameters.AddWithValue("@total", factura.Total);
+                cmdFactura.Parameters.AddWithValue("@tipo", factura.TipoComprobante);
+
+                factura.IdCompra = Convert.ToInt32(cmdFactura.ExecuteScalar());
+
+                // GUARDAR DETALLES
+                foreach (var detalle in factura.DetalleCompras)
+                {
+                    string sqlDetalle = @"INSERT INTO Detalle_Compras
+                                        (id_compra, id_producto, cantidad, costo_unitario, subtotal)
+                                        VALUES (@compra, @producto, @cantidad, @costo, @subtotal)";
+
+                    using SqlCommand cmdDetalle = new(sqlDetalle, cn, tx);
+                    cmdDetalle.Parameters.AddWithValue("@compra", factura.IdCompra);
+                    cmdDetalle.Parameters.AddWithValue("@producto", detalle.IdProducto);
+                    cmdDetalle.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
+                    cmdDetalle.Parameters.AddWithValue("@costo", detalle.CostoUnitario);
+                    cmdDetalle.Parameters.AddWithValue("@subtotal", detalle.Subtotal);
+
+                    cmdDetalle.ExecuteNonQuery();
+
+                    //  ACTUALIZAR INVENTARIO (SUMA)
+                    string sqlInventario = @"UPDATE Inventario
+                                            SET stock = stock + @cantidad,
+                                                fecha_actualizacion = GETDATE()
+                                            WHERE id_producto = @producto";
+
+                    using SqlCommand cmdInv = new(sqlInventario, cn, tx);
+                    cmdInv.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
+                    cmdInv.Parameters.AddWithValue("@producto", detalle.IdProducto);
+
+                    cmdInv.ExecuteNonQuery();
+                }
+
+                //  CONFIRMAR TODO
+                tx.Commit();
+            }
+            catch
+            {
+                //  SI FALLA → DESHACE TODO
+                tx.Rollback();
+                throw;
+            }
         }
 
         public DataTable Listar()
@@ -49,7 +97,7 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-            string sql = @"SELECT fc.id_compra, fc.fecha, p.nombre_empresa, fc.total
+            string sql = @"SELECT fc.id_compra, fc.fecha, p.nombre_empresa, fc.total, fc.tipo_comprobante
                            FROM Factura_Compras fc
                            INNER JOIN Proveedores p 
                            ON fc.id_proveedor = p.id_proveedor";
