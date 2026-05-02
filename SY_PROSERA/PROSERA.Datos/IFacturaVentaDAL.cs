@@ -10,7 +10,25 @@ namespace PROSERA.Datos
         DataTable Listar();
         void Eliminar(int id);
     }
+/*
+CREATE TABLE Factura_Ventas (
+    id_factura INT PRIMARY KEY IDENTITY (1,1),
+    fecha DATETIME NOT NULL,
+    id_cliente INT NOT NULL,
+    id_usuario INT NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    descuento DECIMAL(10,2) NOT NULL DEFAULT 0,
+    metodo_pago VARCHAR(50) NOT NULL,
+    estado_factura VARCHAR(50) NOT NULL,
 
+
+    CONSTRAINT FK_Factura_Clientes
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
+
+    CONSTRAINT FK_Factura_Usuarios
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
+);
+*/
     public class FacturaVentaDAL : IFacturaVentaDAL
     {
         public void Guardar(FacturaVenta factura)
