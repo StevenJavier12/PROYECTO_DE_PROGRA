@@ -16,4 +16,5 @@ namespace PROSERA.Entidades
 
         public FacturaCompra FacturaCompra { get; set; }
     }
+
 }

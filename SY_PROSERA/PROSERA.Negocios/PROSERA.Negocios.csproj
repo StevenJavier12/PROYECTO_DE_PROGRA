@@ -11,4 +11,9 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PROSERA.Datos\PROSERA.Datos.csproj" />
+    <ProjectReference Include="..\PROSERA.Entidades\PROSERA.Entidades.csproj" />
+  </ItemGroup>
+
 </Project>

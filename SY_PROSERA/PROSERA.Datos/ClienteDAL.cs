@@ -151,17 +151,7 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-                             /*
-                              * CREATE TABLE Factura_Compras (
-                                    id_compra INT PRIMARY KEY IDENTITY (1,1),
-                                    fecha DATETIME NOT NULL,
-                                    id_proveedor INT NOT NULL,
-                                    total DECIMAL(10,2) NOT NULL,
-                                    tipo_comprobante VARCHAR(50) NOT NULL DEFAULT 'Consumidor final',
-
-                                    CONSTRAINT FK_Compra_Proveedores
-                                    FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor)
-                              */
+                             
             string sql = @"SELECT COUNT(*) FROM Factura_Compras WHERE id_cliente = @ClienteId";
 
             using SqlCommand cmd = new(sql, cn);

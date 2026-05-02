@@ -18,7 +18,7 @@ namespace PROSERA.Datos
     subtotal DECIMAL(10,2) NOT NULL,
 
      */
-    internal class DetalleCompraDAL : IDetalleCompraDAL
+    public class DetalleCompraDAL : IDetalleCompraDAL
     {
         public void Editar(DetalleCompra detalleCompra)
         {
@@ -101,10 +101,8 @@ namespace PROSERA.Datos
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
-
-            string sql = @"SELECT dc.id_detalle_compra, dc.id_compra, c.fecha_compra, dc.id_producto, p.nombre AS producto, dc.cantidad, dc.costo_unitario, dc.subtotal
+            string sql = @"SELECT dc.id_detalle_compra, dc.id_compra, dc.id_producto, p.nombre AS producto, dc.cantidad, dc.costo_unitario, dc.subtotal
                          FROM Detalle_Compras dc
-                         INNER JOIN Compras c ON dc.id_compra = c.id_compra
                          INNER JOIN Productos p ON dc.id_producto = p.id_producto";
 
             using SqlCommand cmd = new(sql, cn);
@@ -116,26 +114,53 @@ namespace PROSERA.Datos
         //DAL SIGNI
         public DataTable ListarPorCompra(int idCompra)
         {
+            DataTable tabla = new();
+
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-            string sql = @"SELECT dc.id_detalle_compra, dc.id_compra, c.fecha_compra, dc.id_producto, p.nombre AS producto, dc.cantidad, dc.costo_unitario, dc.subtotal
+            const string SQL = @"SELECT 
+                            dc.id_detalle_compra,
+                            dc.id_compra,
+                            dc.id_producto,
+                            p.nombre AS Producto,
+                            dc.cantidad,
+                            dc.costo_unitario,
+                            dc.subtotal
                          FROM Detalle_Compras dc
-                         INNER JOIN Compras c ON dc.id_compra = c.id_compra
+                         INNER JOIN Productos p 
+                            ON dc.id_producto = p.id_producto
+                         WHERE dc.id_compra = @IdCompra
+                         ORDER BY dc.id_detalle_compra";
+
+            using SqlDataAdapter da = new(SQL, cn);
+
+            da.SelectCommand.Parameters.Add("@IdCompra", SqlDbType.Int).Value = idCompra;
+
+            da.Fill(tabla);
+
+            return tabla;
+        }
+
+        public DetalleCompra? ObtenerPorId(int id)
+        {
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            string sql = @"SELECT dc.id_detalle_compra, dc.id_compra,, dc.id_producto, p.nombre AS producto, dc.cantidad, dc.costo_unitario, dc.subtotal
+                         FROM Detalle_Compras dc
                          INNER JOIN Productos p ON dc.id_producto = p.id_producto
-                         WHERE dc.id_compra = @IdCompra";
+                         WHERE dc.id_detalle_compra = @Id";
 
             using SqlCommand cmd = new(sql, cn);
-            cmd.Parameters.Add("@IdCompra", SqlDbType.Int).Value = idCompra;
-
             using SqlDataReader dr = cmd.ExecuteReader();
-            if (!dr.Read())return null;
+
+            if (!dr.Read()) return null;
 
             return new DetalleCompra
             {
                 IdDetalleCompra = Convert.ToInt32(dr["id_detalle_compra"]),
                 IdCompra = Convert.ToInt32(dr["id_compra"]),
-                FechaCompra = Convert.ToDateTime(dr["fecha_compra"]),
                 IdProducto = Convert.ToInt32(dr["id_producto"]),
                 Producto = dr["producto"].ToString() ?? string.Empty,
                 Cantidad = Convert.ToInt32(dr["cantidad"]),
@@ -144,40 +169,6 @@ namespace PROSERA.Datos
             };
         }
 
-        public DetalleCompra? ObtenerPorId(int id)
-        {
-            using SqlConnection cn = new(ConexionDB.Cadena);
-            cn.Open();
-
-            string sql = @"SELECT dc.id_detalle_compra, dc.id_compra, c.fecha_compra, dc.id_producto, p.nombre AS producto, dc.cantidad, dc.costo_unitario, dc.subtotal
-                         FROM Detalle_Compras dc
-                         INNER JOIN Compras c ON dc.id_compra = c.id_compra
-                         INNER JOIN Productos p ON dc.id_producto = p.id_producto
-                         WHERE dc.id_detalle_compra = @Id";
-
-            using SqlCommand cmd = new(sql, cn);
-            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
-            using SqlDataAdapter da = new(cmd);
-            DataTable dt = new();
-            da.Fill(dt);
-
-            if (dt.Rows.Count == 0)
-            {
-                return null;
-            }
-
-            DataRow row = dt.Rows[0];
-            return new DetalleCompra
-            {
-                IdDetalleCompra = (int)row["id_detalle_compra"],
-                IdCompra = (int)row["id_compra"],
-                FechaCompra = (DateTime)row["fecha_compra"],
-                IdProducto = (int)row["id_producto"],
-                Producto = (string)row["producto"],
-                Cantidad = (int)row["cantidad"],
-                CostoUnitario = (decimal)row["costo_unitario"],
-                Subtotal = (decimal)row["subtotal"]
-            };
-        }
+        
     }
 }

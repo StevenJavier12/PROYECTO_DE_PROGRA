@@ -3,7 +3,7 @@ using System.Data;
 
 namespace PROSERA.Datos
 {
-    internal interface IProductoDAL
+    public interface IProductoDAL
     {
         void Guardar(Producto producto);
         void Editar(Producto producto);
