@@ -105,13 +105,16 @@ namespace PROSERA.Datos
             }
 
             using SqlCommand cmd = new(sql, cn);
+
             cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 100).Value = nombre;
+
             if (excluirId.HasValue)
             {
-                cmd.Parameters.Add("@Id", SqlDbType.Int).Value = excluirId;
+                cmd.Parameters.Add("@ExcluirId", SqlDbType.Int).Value = excluirId.Value;
             }
 
             int total = Convert.ToInt32(cmd.ExecuteScalar());
+
             return total > 0;
         }
 

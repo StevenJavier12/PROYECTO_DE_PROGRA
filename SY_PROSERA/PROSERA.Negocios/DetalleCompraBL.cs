@@ -26,6 +26,9 @@ namespace PROSERA.Negocios
             if (existe)
                 throw new Exception("El producto ya existe en esta compra.");
 
+            detalleCompra.Subtotal =
+                detalleCompra.Cantidad * detalleCompra.CostoUnitario;
+
             _detalleDAL.Guardar(detalleCompra);
         }
 
@@ -45,6 +48,9 @@ namespace PROSERA.Negocios
 
             if (existe)
                 throw new Exception("El producto ya existe en esta compra.");
+
+            detalleCompra.Subtotal =
+                detalleCompra.Cantidad * detalleCompra.CostoUnitario;
 
             _detalleDAL.Editar(detalleCompra);
         }

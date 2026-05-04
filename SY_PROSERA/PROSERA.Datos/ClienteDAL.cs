@@ -1,7 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using PROSERA.Entidades;
 using System.Data;
-using System.Security.Cryptography;
 
 namespace PROSERA.Datos
 {
@@ -34,14 +33,14 @@ namespace PROSERA.Datos
                              direccion = @Direccion,
                              dui = @Dui,
                              correo = @Correo
-                       WHERE id_cliente = @IdCliente"; 
+                       WHERE id_cliente = @IdCliente";
             using SqlCommand cmd = new(SQL, cn);
             cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 100).Value = cliente.Nombre;
             cmd.Parameters.Add("@Apellido", SqlDbType.VarChar, 100).Value = cliente.Apellido;
             cmd.Parameters.Add("@Telefono", SqlDbType.VarChar, 10).Value = cliente.Telefono;
             cmd.Parameters.Add("@Direccion", SqlDbType.VarChar, 200).Value = cliente.Direccion;
             cmd.Parameters.Add("@Dui", SqlDbType.VarChar, 12).Value = cliente.Dui;
-            cmd.Parameters.Add("@Correo", SqlDbType.VarChar, 100).Value = cliente.Correo;
+            cmd.Parameters.Add("@Correo", SqlDbType.VarChar, 100).Value = (object?)cliente.Correo ?? DBNull.Value;
             cmd.Parameters.Add("@IdCliente", SqlDbType.Int).Value = cliente.IdCliente;
 
             cmd.ExecuteNonQuery();
@@ -67,22 +66,24 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-            string sql = "SELECT COUNT(*) FROM Clientes WHERE dui = @Dui AND nombre = @Nombre";
+            string sql = "SELECT COUNT(*) FROM Clientes WHERE dui = @Dui";
+
             if (excluirId.HasValue)
             {
                 sql += " AND id_cliente <> @ExcluirId";
             }
 
             using SqlCommand cmd = new(sql, cn);
+
             cmd.Parameters.Add("@Dui", SqlDbType.VarChar, 12).Value = dui;
-            cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 100).Value = dui;
 
             if (excluirId.HasValue)
             {
                 cmd.Parameters.Add("@ExcluirId", SqlDbType.Int).Value = excluirId.Value;
             }
 
-            int count = (int)cmd.ExecuteScalar();
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
             return count > 0;
 
 
@@ -103,7 +104,7 @@ namespace PROSERA.Datos
             cmd.Parameters.Add("@Telefono", SqlDbType.VarChar, 10).Value = cliente.Telefono;
             cmd.Parameters.Add("@Direccion", SqlDbType.VarChar, 200).Value = cliente.Direccion;
             cmd.Parameters.Add("@Dui", SqlDbType.VarChar, 12).Value = cliente.Dui;
-            cmd.Parameters.Add("@Correo", SqlDbType.VarChar, 100).Value = cliente.Correo;
+            cmd.Parameters.Add("@Correo", SqlDbType.VarChar, 100).Value = (object?)cliente.Correo ?? DBNull.Value;
 
             cliente.IdCliente = Convert.ToInt32(cmd.ExecuteScalar());
         }
@@ -119,6 +120,8 @@ namespace PROSERA.Datos
             using SqlDataAdapter da = new(SQL, cn);
             da.Fill(table);
             return table;
+
+
         }
         //-----------------------------------------------------------------------------
         //-----------------------------------------------------------------------------
@@ -127,11 +130,12 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
+
             const string SQL = "SELECT id_cliente, nombre, apellido, telefono, direccion, dui, correo FROM Clientes WHERE id_cliente = @IdCliente";
             using SqlCommand cmd = new(SQL, cn);
-            cmd.Parameters.Add("@IdCliente", SqlDbType.Int).Value = id; 
+            cmd.Parameters.Add("@IdCliente", SqlDbType.Int).Value = id;
             using SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read()) return null;
+            if (!dr.Read()) return null;
 
             return new Cliente
             {
@@ -141,9 +145,12 @@ namespace PROSERA.Datos
                 Telefono = dr["telefono"].ToString() ?? string.Empty,
                 Direccion = dr["direccion"].ToString() ?? string.Empty,
                 Dui = dr["dui"].ToString() ?? string.Empty,
-                Correo = dr["correo"].ToString() ?? string.Empty
+
+                Correo = dr["correo"] == DBNull.Value? null: dr["correo"].ToString()
             };
         }
+
+        //ME QUEDE ARREGLANDO ❌ ERROR 4 — Posible NULL en correo
         //-----------------------------------------------------------------------------
         //-----------------------------------------------------------------------------
         public bool TieneFacturasRelacionadas(int clienteId)
@@ -151,12 +158,17 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-                             
-            string sql = @"SELECT COUNT(*) FROM Factura_Compras WHERE id_cliente = @ClienteId";
+            const string SQL = @"
+                                SELECT COUNT(*)
+                                FROM Factura_Ventas
+                                WHERE id_cliente = @ClienteId";
 
-            using SqlCommand cmd = new(sql, cn);
+            using SqlCommand cmd = new(SQL, cn);
+
             cmd.Parameters.Add("@ClienteId", SqlDbType.Int).Value = clienteId;
+
             int count = Convert.ToInt32(cmd.ExecuteScalar());
+
             return count > 0;
         }
         //-----------------------------------------------------------------------------

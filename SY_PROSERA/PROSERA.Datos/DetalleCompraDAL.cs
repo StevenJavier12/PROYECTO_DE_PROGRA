@@ -1,9 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using PROSERA.Entidades;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace PROSERA.Datos
 {
@@ -65,7 +62,7 @@ namespace PROSERA.Datos
             {
                 sql += " AND id_detalle_compra <> @ExcluirId";
             }
-            
+
             using SqlCommand cmd = new(sql, cn);
             cmd.Parameters.Add("@IdCompra", SqlDbType.Int).Value = idCompra;
             cmd.Parameters.Add("@IdProducto", SqlDbType.Int).Value = idProducto;
@@ -78,6 +75,8 @@ namespace PROSERA.Datos
             return count > 0;
 
         }
+
+
 
         public void Guardar(DetalleCompra detalleCompra)
         {
@@ -147,15 +146,27 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-            string sql = @"SELECT dc.id_detalle_compra, dc.id_compra,, dc.id_producto, p.nombre AS producto, dc.cantidad, dc.costo_unitario, dc.subtotal
-                         FROM Detalle_Compras dc
-                         INNER JOIN Productos p ON dc.id_producto = p.id_producto
-                         WHERE dc.id_detalle_compra = @Id";
+            string sql = @"SELECT 
+                        dc.id_detalle_compra,
+                        dc.id_compra,
+                        dc.id_producto,
+                        p.nombre AS producto,
+                        dc.cantidad,
+                        dc.costo_unitario,
+                        dc.subtotal
+                   FROM Detalle_Compras dc
+                   INNER JOIN Productos p 
+                        ON dc.id_producto = p.id_producto
+                   WHERE dc.id_detalle_compra = @Id";
 
             using SqlCommand cmd = new(sql, cn);
+
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+
             using SqlDataReader dr = cmd.ExecuteReader();
 
-            if (!dr.Read()) return null;
+            if (!dr.Read())
+                return null;
 
             return new DetalleCompra
             {
@@ -169,6 +180,6 @@ namespace PROSERA.Datos
             };
         }
 
-        
+
     }
 }
