@@ -2,7 +2,9 @@
 using PROSERA.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
+
 
 namespace PROSERA.Datos
 {
@@ -64,7 +66,22 @@ namespace PROSERA.Datos
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
-            }
+            
+        }
+
+        public DataTable Listar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ListarPorCompra(int IdRecepcion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DetalleRecepcion  ObtenerPorId(int Id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

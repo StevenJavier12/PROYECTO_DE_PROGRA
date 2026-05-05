@@ -127,7 +127,7 @@ namespace PROSERA.Datos
                 cmd.Parameters.AddWithValue("@UnidadDeMedida", dispositivo.UnidadDeMedida);
                 cmd.Parameters.AddWithValue("@Descripcion", dispositivo.Descripcion);
 
-                conn.Open();
+                cn.Open();
                 cmd.ExecuteNonQuery();
             }
         }
