@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using PROSERA.Entidades;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace PROSERA.Datos
@@ -41,7 +44,7 @@ namespace PROSERA.Datos
 
                     using SqlCommand cmdDetalle = new(sqlDetalle, cn, tx);
                     cmdDetalle.Parameters.AddWithValue("@factura", factura.IdFactura);
-                    cmdDetalle.Parameters.AddWithValue("@producto", detalle.IdProducto);
+                    SqlParameter sqlParameter = cmdDetalle.Parameters.AddWithValue("@producto", detalle.IdProducto);
                     cmdDetalle.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
                     cmdDetalle.Parameters.AddWithValue("@precio", detalle.PrecioUnitario);
                     cmdDetalle.Parameters.AddWithValue("@subtotal", detalle.Subtotal);

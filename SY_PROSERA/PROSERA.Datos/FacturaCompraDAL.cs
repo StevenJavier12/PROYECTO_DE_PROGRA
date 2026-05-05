@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using PROSERA.Entidades;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace PROSERA.Datos
