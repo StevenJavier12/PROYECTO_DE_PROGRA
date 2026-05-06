@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using PROSERA.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -96,6 +98,16 @@ namespace PROSERA.Datos
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             cmd.ExecuteNonQuery();
+        }
+
+        public void Guardar(FacturaCompra factura)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Guardar(FacturaCompra factura)
+        {
+            throw new NotImplementedException();
         }
     }
 }

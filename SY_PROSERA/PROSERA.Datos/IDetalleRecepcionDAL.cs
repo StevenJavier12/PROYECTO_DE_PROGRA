@@ -14,6 +14,7 @@ namespace PROSERA.Datos
         void Eliminar(int Id);
         public DataTable Listar();
         void ListarPorCompra(int IdRecepcion);
+        DetalleRecepcion ListarPorCompra(object int32, int idRecepcion);
         DetalleRecepcion ObtenerPorId(int Id);
         DetalleCompra ObtenerPorId(object systemint32, int id);
     }

@@ -7,8 +7,8 @@ namespace PROSERA.Entidades
     public class Marca
     {
         public int IdMarca { get; set; }
-        public string MarcaNombre { get; set; }
+        public string? MarcaNombre { get; set; }
 
-        public List<Producto> Productos { get; set; }
+        public List<Producto>? Productos { get; set; }
     }
 }

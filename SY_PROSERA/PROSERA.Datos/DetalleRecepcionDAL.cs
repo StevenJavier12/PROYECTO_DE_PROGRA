@@ -79,7 +79,17 @@ namespace PROSERA.Datos
             throw new NotImplementedException();
         }
 
+        public DetalleRecepcion ListarPorCompra(object int32, int idRecepcion)
+        {
+            throw new NotImplementedException();
+        }
+
         public DetalleRecepcion  ObtenerPorId(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DetalleCompra ObtenerPorId(object systemint32, int id)
         {
             throw new NotImplementedException();
         }

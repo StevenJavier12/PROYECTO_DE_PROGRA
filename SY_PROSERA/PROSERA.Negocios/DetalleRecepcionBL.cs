@@ -20,7 +20,7 @@ namespace PROSERA.Negocios
 
         public void Guardar(DetalleRecepcion detalleRecepcion)
         {
-            // Validaciones de negocio
+
             if (detalleRecepcion == null)
                 throw new ArgumentNullException(nameof(detalleRecepcion), "El detalle de recepción no puede ser nulo");
 
@@ -35,7 +35,7 @@ namespace PROSERA.Negocios
 
             try
             {
-                // Llamar al DAL para insertar
+
                 _detalleRecepcionDAL.Agregar(detalleRecepcion);
             }
             catch (Exception ex)
@@ -46,7 +46,7 @@ namespace PROSERA.Negocios
 
         public void Editar(DetalleRecepcion detalleRecepcion)
         {
-            // Validaciones de negocio
+
             if (detalleRecepcion == null)
                 throw new ArgumentNullException(nameof(detalleRecepcion), "El detalle de recepción no puede ser nulo");
 
@@ -64,7 +64,7 @@ namespace PROSERA.Negocios
 
             try
             {
-                // Llamar al DAL para actualizar
+
                 _detalleRecepcionDAL.Editar(detalleRecepcion);
             }
             catch (Exception ex)
@@ -75,13 +75,13 @@ namespace PROSERA.Negocios
 
         public void Eliminar(int id)
         {
-            // Validación de negocio
+
             if (id <= 0)
                 throw new ArgumentException("El ID debe ser válido");
 
             try
             {
-                // Llamar al DAL para eliminar
+
                 _detalleRecepcionDAL.Eliminar(id);
             }
             catch (Exception ex)
@@ -117,14 +117,14 @@ namespace PROSERA.Negocios
             }
         }
 
-        public DetalleRecepcion ListarPorCompra(int idRecepcion)
+        public DetalleRecepcion ListarPorCompra(int idRecepcion, IDetalleRecepcionDAL detalleRecepcionDAL)
         {
             if (idRecepcion <= 0)
                 throw new ArgumentException("El ID de recepción debe ser válido");
 
             try
             {
-                return _detalleRecepcionDAL.ListarPorCompra(idRecepcion);
+                return ListarPorCompra(idRecepcion, _detalleRecepcionDAL);
             }
             catch (Exception ex)
             {
@@ -132,9 +132,16 @@ namespace PROSERA.Negocios
             }
         }
 
+        DetalleCompra? IDetalleRecepcionBL.ObtenerPorId(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-
+        public DataTable ListarPorCompra(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 
-
+}
 

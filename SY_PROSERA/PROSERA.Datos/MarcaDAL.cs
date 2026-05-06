@@ -1,9 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
 using PROSERA.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using PROSERA.Entidades;
 
 namespace PROSERA.Datos
 {
@@ -60,7 +56,7 @@ namespace PROSERA.Datos
 
         public Marca ObtenerPorId(int id)
         {
-            Marca marca = null;
+            Marca? marca = null;
 
             using SqlConnection cn = new(ConexionDB.Cadena);
             {

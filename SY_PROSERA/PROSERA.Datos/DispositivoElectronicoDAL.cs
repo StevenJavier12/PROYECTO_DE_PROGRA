@@ -183,7 +183,7 @@ namespace PROSERA.Datos
 
         public DispositivoElectronico ObtenerPorId(int id)
         {
-            DispositivoElectronico dispositivo = null;
+            DispositivoElectronico? dispositivo = null;
 
             using SqlConnection cn = new(ConexionDB.Cadena);
             {
