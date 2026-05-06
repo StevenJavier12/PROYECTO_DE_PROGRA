@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace PROSERA.Datos
+namespace PROSERA.Negocios
 {
-   
-    public interface IFacturaCompraDAL
+    internal interface IFacturaCompraBL
     {
         void Guardar(FacturaCompra factura);
         DataTable Listar();
         void Eliminar(int id);
     }
-
 }

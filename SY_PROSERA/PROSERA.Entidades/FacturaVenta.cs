@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PROSERA.Entidades
 {
@@ -14,10 +13,14 @@ namespace PROSERA.Entidades
         public decimal Descuento { get; set; }
         public string MetodoPago { get; set; }
         public string EstadoFactura { get; set; }
+        public List<DetalleVenta> DetalleVentas { get; set; } = new();
+    }
 
-        public Cliente Cliente { get; set; }
-        public Usuario Usuario { get; set; }
-
-        public List<DetalleVenta> DetalleVentas { get; set; }
+    public class DetalleVenta
+    {
+        public int IdProducto { get; set; }
+        public int Cantidad { get; set; }
+        public decimal PrecioUnitario { get; set; }
+        public decimal Subtotal { get; set; }
     }
 }

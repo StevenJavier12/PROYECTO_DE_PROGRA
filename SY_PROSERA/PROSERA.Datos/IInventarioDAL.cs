@@ -8,7 +8,7 @@ namespace PROSERA.Datos
     public interface IInventarioDAL
     {
         DataTable Listar();
-        void ActualizarStock(int idProducto, int cantidad, string tipo);
+        void ActualizarStock(int idProducto, int cantidad, string tipo, string descripcion);
     }
     
 }
