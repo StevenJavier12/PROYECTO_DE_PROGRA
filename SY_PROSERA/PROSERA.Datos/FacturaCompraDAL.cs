@@ -10,21 +10,22 @@ namespace PROSERA.Datos
     public class FacturaCompraDAL : IFacturaCompraDAL
     {
 
-        /*
-         * -- =========================================
--- 11. FACTURA_COMPRA
--- =========================================
-CREATE TABLE Factura_Compras (
-    id_compra INT PRIMARY KEY IDENTITY (1,1),
-    fecha DATETIME NOT NULL,
-    id_proveedor INT NOT NULL,
-    total DECIMAL(10,2) NOT NULL,
-    tipo_comprobante VARCHAR(50) NOT NULL DEFAULT 'Consumidor final',
+            /*            
+            -- =========================================
+            -- 11. FACTURA_COMPRA
+            -- =========================================
+            CREATE TABLE Factura_Compras (
+                id_compra INT PRIMARY KEY IDENTITY (1,1),
+                fecha DATETIME NOT NULL,
+                id_proveedor INT NOT NULL,
+                total DECIMAL(10,2) NOT NULL,
+                tipo_comprobante VARCHAR(50) NOT NULL DEFAULT 'Consumidor final',
 
-    CONSTRAINT FK_Compra_Proveedores
-    FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor)
-);
-         */
+                CONSTRAINT FK_Compra_Proveedores
+                FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor)
+            );
+            */
+
         public void Eliminar(int id)
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
@@ -38,7 +39,6 @@ CREATE TABLE Factura_Compras (
 
         public void Guardar(FacturaCompra factura)
         {
-<<<<<<< HEAD
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
@@ -65,14 +65,6 @@ CREATE TABLE Factura_Compras (
             using SqlDataAdapter da = new(SQL, cn);
             da.Fill(table);
             return table;
-=======
-            throw new NotImplementedException();
-        }
-
-        public void Guardar(FacturaCompra factura)
-        {
-            throw new NotImplementedException();
->>>>>>> 3b7990587225094801f1cbf15aa4fb63d6d8315c
         }
     }
 }

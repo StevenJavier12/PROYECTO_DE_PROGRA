@@ -10,7 +10,7 @@ namespace PROSERA.Datos
         void Agregar(Marca marca);
         void Editar(Marca marca);
         void Eliminar(int id);
-        Marca ObtenerPorId(int id);
+        Marca? ObtenerPorId(int id);
         List<Marca> Listar();
         List<Marca> BuscarMarcas(string marca);
     }

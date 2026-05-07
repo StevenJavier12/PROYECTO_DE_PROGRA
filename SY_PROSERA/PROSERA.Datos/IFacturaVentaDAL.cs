@@ -1,11 +1,6 @@
 ﻿using PROSERA.Entidades;
 using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-=======
-using System.Data;
-using System.Text;
->>>>>>> 3b7990587225094801f1cbf15aa4fb63d6d8315c
 using System.Data;
 using System.Text;
 
@@ -27,8 +22,8 @@ namespace PROSERA.Datos
         DataTable ListarPorFecha(DateTime fechaInicio, DateTime fechaFin);
     }
 
-   
-    
+
+
 }
 
 
