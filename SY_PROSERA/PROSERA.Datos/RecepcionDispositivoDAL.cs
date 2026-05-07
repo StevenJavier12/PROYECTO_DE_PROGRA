@@ -4,7 +4,7 @@ using System.Data;
 
 namespace PROSERA.Datos
 {
-    internal class RecepcionDispositivoDAL : IRecepcionDispositivoDAL
+    public class RecepcionDispositivoDAL : IRecepcionDispositivoDAL
     {
         public void Guardar(RecepcionDispositivo recepcion)
         {

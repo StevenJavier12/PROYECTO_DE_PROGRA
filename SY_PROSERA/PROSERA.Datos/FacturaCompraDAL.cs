@@ -9,96 +9,61 @@ namespace PROSERA.Datos
 {
     public class FacturaCompraDAL : IFacturaCompraDAL
     {
-        public void Guardar(FacturaCompra factura)
-        {
-            using SqlConnection cn = new(ConexionDB.Cadena);
-            cn.Open();
 
-            using SqlTransaction tx = cn.BeginTransaction();
+        /*
+         * -- =========================================
+-- 11. FACTURA_COMPRA
+-- =========================================
+CREATE TABLE Factura_Compras (
+    id_compra INT PRIMARY KEY IDENTITY (1,1),
+    fecha DATETIME NOT NULL,
+    id_proveedor INT NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    tipo_comprobante VARCHAR(50) NOT NULL DEFAULT 'Consumidor final',
 
-            try
-            {
-                // GUARDAR FACTURA
-                string sqlFactura = @"INSERT INTO Factura_Compras 
-                                    (fecha, id_proveedor, total, tipo_comprobante)
-                                    VALUES (@fecha, @proveedor, @total, @tipo);
-                                    SELECT SCOPE_IDENTITY();";
-
-                using SqlCommand cmdFactura = new(sqlFactura, cn, tx);
-                cmdFactura.Parameters.AddWithValue("@fecha", factura.Fecha);
-                cmdFactura.Parameters.AddWithValue("@proveedor", factura.IdProveedor);
-                cmdFactura.Parameters.AddWithValue("@total", factura.Total);
-                cmdFactura.Parameters.AddWithValue("@tipo", factura.TipoComprobante);
-
-                factura.IdCompra = Convert.ToInt32(cmdFactura.ExecuteScalar());
-
-                // GUARDAR DETALLES
-                foreach (var detalle in factura.DetalleCompras)
-                {
-                    string sqlDetalle = @"INSERT INTO Detalle_Compras
-                                        (id_compra, id_producto, cantidad, costo_unitario, subtotal)
-                                        VALUES (@compra, @producto, @cantidad, @costo, @subtotal)";
-
-                    using SqlCommand cmdDetalle = new(sqlDetalle, cn, tx);
-                    cmdDetalle.Parameters.AddWithValue("@compra", factura.IdCompra);
-                    cmdDetalle.Parameters.AddWithValue("@producto", detalle.IdProducto);
-                    cmdDetalle.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
-                    cmdDetalle.Parameters.AddWithValue("@costo", detalle.CostoUnitario);
-                    cmdDetalle.Parameters.AddWithValue("@subtotal", detalle.Subtotal);
-
-                    cmdDetalle.ExecuteNonQuery();
-
-                    //  ACTUALIZAR INVENTARIO (SUMA)
-                    string sqlInventario = @"UPDATE Inventario
-                                            SET stock = stock + @cantidad,
-                                                fecha_actualizacion = GETDATE()
-                                            WHERE id_producto = @producto";
-
-                    using SqlCommand cmdInv = new(sqlInventario, cn, tx);
-                    cmdInv.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
-                    cmdInv.Parameters.AddWithValue("@producto", detalle.IdProducto);
-
-                    cmdInv.ExecuteNonQuery();
-                }
-
-                //  CONFIRMAR TODO
-                tx.Commit();
-            }
-            catch
-            {
-                //  SI FALLA → DESHACE TODO
-                tx.Rollback();
-                throw;
-            }
-        }
-
-        public DataTable Listar()
-        {
-            using SqlConnection cn = new(ConexionDB.Cadena);
-            cn.Open();
-
-            string sql = @"SELECT fc.id_compra, fc.fecha, p.nombre_empresa, fc.total, fc.tipo_comprobante
-                           FROM Factura_Compras fc
-                           INNER JOIN Proveedores p 
-                           ON fc.id_proveedor = p.id_proveedor";
-
-            using SqlDataAdapter da = new(sql, cn);
-            DataTable dt = new();
-            da.Fill(dt);
-            return dt;
-        }
-
+    CONSTRAINT FK_Compra_Proveedores
+    FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor)
+);
+         */
         public void Eliminar(int id)
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-            string sql = "DELETE FROM Factura_Compras WHERE id_compra = @id";
-
-            using SqlCommand cmd = new(sql, cn);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
+            const string SQL = "DELETE FROM Factura_Compras WHERE id_compra = @Id";
+            using SqlCommand cmd = new(SQL, cn);
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
             cmd.ExecuteNonQuery();
+        }
+
+        public void Guardar(FacturaCompra factura)
+        {
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            const string SQL = @"INSERT INTO Factura_Compras (fecha, id_proveedor, total, tipo_comprobante)
+                            VALUES (@fecha, @id_proveedor, @total, @tipo_comprobante)";
+
+            using SqlCommand cmd = new(SQL, cn);
+            cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = factura.Fecha;
+            cmd.Parameters.Add("@id_proveedor", SqlDbType.Int).Value = factura.IdProveedor;
+            cmd.Parameters.Add("@total", SqlDbType.Decimal).Value = factura.Total;
+            cmd.Parameters.Add("@tipo_comprobante", SqlDbType.VarChar, 50).Value = factura.TipoComprobante;
+            cmd.ExecuteNonQuery();
+        }
+
+        public DataTable Listar()
+        {
+
+            DataTable table = new();
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            const string SQL = "SELECT id_compra, fecha, id_proveedor, total, tipo_comprobante FROM Factura_Compras";
+
+            using SqlDataAdapter da = new(SQL, cn);
+            da.Fill(table);
+            return table;
         }
     }
 }

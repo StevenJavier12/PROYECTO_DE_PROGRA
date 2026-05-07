@@ -7,55 +7,43 @@ using System.Text;
 
 namespace PROSERA.Negocios
 {
-    internal class FacturaCompraBL : IFacturaCompraBL
+    public class FacturaCompraBL : IFacturaCompraBL
     {
-        private readonly IFacturaCompraDAL _facturaDAL;
+        private readonly IFacturaCompraDAL _facturaCompraDAL;
 
-        public FacturaCompraBL(IFacturaCompraDAL facturaDAL)
+        public FacturaCompraBL(IFacturaCompraDAL facturaCompraDAL)
         {
-            _facturaDAL = facturaDAL;
+            _facturaCompraDAL = facturaCompraDAL;
         }
 
         public void Guardar(FacturaCompra factura)
         {
-            if (factura == null)
-                throw new Exception("La factura no puede ser nula.");
+            if (factura.Fecha == DateTime.MinValue)
+                throw new Exception("La fecha de la compra es obligatoria.");
 
             if (factura.IdProveedor <= 0)
-                throw new Exception("Debe seleccionar un proveedor.");
-
-            if (factura.DetalleCompras == null || factura.DetalleCompras.Count == 0)
-                throw new Exception("Debe agregar al menos un producto.");
+                throw new Exception("El proveedor no es válido.");
 
             if (factura.Total <= 0)
-                throw new Exception("El total debe ser mayor a 0.");
+                throw new Exception("El total debe ser mayor a cero.");
 
-            foreach (var item in factura.DetalleCompras)
-            {
-                if (item.IdProducto <= 0)
-                    throw new Exception("Producto inválido.");
+            if (string.IsNullOrWhiteSpace(factura.TipoComprobante))
+                throw new Exception("El tipo de comprobante es obligatorio.");
 
-                if (item.Cantidad <= 0)
-                    throw new Exception("Cantidad inválida.");
-
-                if (item.CostoUnitario <= 0)
-                    throw new Exception("Costo inválido.");
-            }
-
-            _facturaDAL.Guardar(factura);
+            _facturaCompraDAL.Guardar(factura);
         }
 
         public void Eliminar(int id)
         {
             if (id <= 0)
-                throw new Exception("ID inválido.");
+                throw new Exception("La compra no es válida.");
 
-            _facturaDAL.Eliminar(id);
+            _facturaCompraDAL.Eliminar(id);
         }
 
         public DataTable Listar()
         {
-            return _facturaDAL.Listar();
+            return _facturaCompraDAL.Listar();
         }
     }
 }

@@ -6,10 +6,11 @@ using System.Text;
 
 namespace PROSERA.Negocios
 {
-    internal interface IFacturaCompraBL
+    public interface IFacturaCompraBL
     {
         void Guardar(FacturaCompra factura);
-        DataTable Listar();
         void Eliminar(int id);
+        DataTable Listar();
+
     }
 }

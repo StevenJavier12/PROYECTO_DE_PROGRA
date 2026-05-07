@@ -4,7 +4,7 @@ using System.Data;
 
 namespace PROSERA.Datos
 {
-    internal class CategoriaProductoDAL : ICategoriaProductoDAL
+    public class CategoriaProductoDAL : ICategoriaProductoDAL
     {
 
 

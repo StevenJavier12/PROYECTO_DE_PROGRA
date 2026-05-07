@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PROSERA.Datos
 {
-    internal class DispositivoElectronicoDAL : IDispositivoElectronicoDAL
+    public class DispositivoElectronicoDAL : IDispositivoElectronicoDAL
     {
 
        

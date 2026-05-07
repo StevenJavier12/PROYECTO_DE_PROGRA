@@ -2,6 +2,7 @@
 using PROSERA.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace PROSERA.Datos
@@ -126,6 +127,23 @@ namespace PROSERA.Datos
             }
 
             return detalle;
+        }
+
+        DataTable IDetalleVentaDAL.Listar()
+        {
+            DataTable dt = new();
+
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            const string SQL = "SELECT * FROM Detalle_Ventas";
+
+            using SqlCommand cmd = new(SQL, cn);
+            using SqlDataAdapter da = new(cmd);
+
+            da.Fill(dt);
+
+            return dt;
         }
     }
 }

@@ -15,12 +15,4 @@ namespace PROSERA.Entidades
         public string EstadoFactura { get; set; }
         public List<DetalleVenta> DetalleVentas { get; set; } = new();
     }
-
-    public class DetalleVenta
-    {
-        public int IdProducto { get; set; }
-        public int Cantidad { get; set; }
-        public decimal PrecioUnitario { get; set; }
-        public decimal Subtotal { get; set; }
-    }
 }

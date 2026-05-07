@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PROSERA.Datos
 {
-   
+
     public interface IFacturaCompraDAL
     {
         void Guardar(FacturaCompra factura);

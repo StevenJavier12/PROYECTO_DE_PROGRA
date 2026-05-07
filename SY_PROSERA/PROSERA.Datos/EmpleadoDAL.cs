@@ -4,7 +4,7 @@ using System.Data;
 
 namespace PROSERA.Datos
 {
-    internal class EmpleadoDAL : IEmpleadoDAL
+    public class EmpleadoDAL : IEmpleadoDAL
     {
         public void Guardar(Empleado empleado)
         {

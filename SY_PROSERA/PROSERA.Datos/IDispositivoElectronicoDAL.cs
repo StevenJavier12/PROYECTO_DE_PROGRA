@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PROSERA.Datos
 {
-    internal interface IDispositivoElectronicoDAL
+    public interface IDispositivoElectronicoDAL
     {
         void Agregar(DispositivoElectronico dispositivo);
         void Editar(DispositivoElectronico dispositivo);

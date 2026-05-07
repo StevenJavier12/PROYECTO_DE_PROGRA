@@ -1,15 +1,20 @@
 ﻿using PROSERA.Entidades;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace PROSERA.Negocios
 {
-    internal interface IFacturaVentaBL
+    public interface IFacturaVentaBL
     {
+        // CRUD básico
         void Guardar(FacturaVenta factura);
-        DataTable Listar();
+        void Editar(FacturaVenta factura);
         void Eliminar(int id);
-        void Guardar(Datos.FacturaVenta factura);
+        DataTable Listar();
+
+        // Métodos adicionales
+        FacturaVenta? ObtenerPorId(int id);
+        bool ExisteFactura(int idFactura);
+        DataTable ListarPorCliente(int idCliente);
+        DataTable ListarPorFecha(DateTime fechaInicio, DateTime fechaFin);
     }
 }

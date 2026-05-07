@@ -4,7 +4,8 @@ using System.Text;
 
 namespace PROSERA.Negocios
 {
-    internal interface Interface1
+    internal interface IMarcaBL
     {
+
     }
 }

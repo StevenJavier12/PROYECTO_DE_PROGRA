@@ -4,7 +4,7 @@ using System.Data;
 
 namespace PROSERA.Datos
 {
-    internal class UsuarioDAL : IUsuarioDAL
+    public class UsuarioDAL : IUsuarioDAL
     {
         public void Guardar(Usuario usuario)
         {

@@ -4,7 +4,7 @@ using System.Data;
 
 namespace PROSERA.Datos
 {
-    internal class ClienteDAL : IClienteDAL
+    public class ClienteDAL : IClienteDAL
     {
 
 
@@ -150,7 +150,7 @@ namespace PROSERA.Datos
             };
         }
 
-        //ME QUEDE ARREGLANDO ❌ ERROR 4 — Posible NULL en correo
+    
         //-----------------------------------------------------------------------------
         //-----------------------------------------------------------------------------
         public bool TieneFacturasRelacionadas(int clienteId)

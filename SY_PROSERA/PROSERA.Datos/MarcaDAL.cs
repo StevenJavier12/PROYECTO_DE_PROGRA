@@ -7,7 +7,7 @@ using PROSERA.Entidades;
 
 namespace PROSERA.Datos
 {
-    internal class MarcaDAL : IMarcaDAL
+    public class MarcaDAL : IMarcaDAL
     {
        
         public void Agregar(Marca marca)

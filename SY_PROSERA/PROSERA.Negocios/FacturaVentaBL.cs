@@ -1,13 +1,13 @@
 ﻿using PROSERA.Datos;
+using PROSERA.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
 
 namespace PROSERA.Negocios
 {
-    internal class FacturaVentaBL : IFacturaVentaBL
+    public class FacturaVentaBL : IFacturaVentaBL
     {
         private readonly IFacturaVentaDAL _facturaDAL;
 
@@ -18,44 +18,57 @@ namespace PROSERA.Negocios
 
         public void Guardar(FacturaVenta factura)
         {
-            // 🔴 VALIDACIONES
-
-            if (factura == null)
-                throw new Exception("La factura no puede ser nula.");
+            if (factura.Fecha == DateTime.MinValue)
+                throw new Exception("La fecha de la factura es obligatoria.");
 
             if (factura.IdCliente <= 0)
-                throw new Exception("Debe seleccionar un cliente.");
+                throw new Exception("El cliente no es válido.");
 
             if (factura.IdUsuario <= 0)
-                throw new Exception("Debe seleccionar un usuario.");
-
-            if (factura.DetalleVentas == null || !factura.DetalleVentas.Any())
-                throw new Exception("Debe agregar al menos un producto.");
+                throw new Exception("El usuario no es válido.");
 
             if (factura.Total <= 0)
-                throw new Exception("El total debe ser mayor a 0.");
+                throw new Exception("El total debe ser mayor a cero.");
 
-            
-            foreach (dynamic item in factura.DetalleVentas)
-            {
-                if (item.IdProducto <= 0)
-                    throw new Exception("Producto inválido.");
+            if (string.IsNullOrWhiteSpace(factura.MetodoPago))
+                throw new Exception("El método de pago es obligatorio.");
 
-                if (item.Cantidad <= 0)
-                    throw new Exception("Cantidad inválida.");
+            if (string.IsNullOrWhiteSpace(factura.EstadoFactura))
+                throw new Exception("El estado de la factura es obligatorio.");
 
-                if (item.PrecioUnitario <= 0)
-                    throw new Exception("Precio inválido.");
-            }
-
-            // ✅ GUARDAR
             _facturaDAL.Guardar(factura);
+        }
+
+        public void Editar(FacturaVenta factura)
+        {
+            if (factura.IdFactura <= 0)
+                throw new Exception("La factura no es válida.");
+
+            if (factura.Fecha == DateTime.MinValue)
+                throw new Exception("La fecha de la factura es obligatoria.");
+
+            if (factura.IdCliente <= 0)
+                throw new Exception("El cliente no es válido.");
+
+            if (factura.IdUsuario <= 0)
+                throw new Exception("El usuario no es válido.");
+
+            if (factura.Total <= 0)
+                throw new Exception("El total debe ser mayor a cero.");
+
+            if (string.IsNullOrWhiteSpace(factura.MetodoPago))
+                throw new Exception("El método de pago es obligatorio.");
+
+            if (string.IsNullOrWhiteSpace(factura.EstadoFactura))
+                throw new Exception("El estado de la factura es obligatorio.");
+
+            _facturaDAL.Editar(factura);
         }
 
         public void Eliminar(int id)
         {
             if (id <= 0)
-                throw new Exception("ID inválido.");
+                throw new Exception("La factura no es válida.");
 
             _facturaDAL.Eliminar(id);
         }
@@ -64,14 +77,29 @@ namespace PROSERA.Negocios
         {
             return _facturaDAL.Listar();
         }
+        
 
-        // Implementación explícita de la interfaz para asegurar coincidencia exacta de firma
-        void IFacturaVentaBL.Guardar(FacturaVenta factura)
+
+
+
+
+
+        public DataTable ListarPorCliente(int idCliente)
         {
-            Guardar(factura);
+            throw new NotImplementedException();
         }
 
-        public void Guardar(Entidades.FacturaVenta factura)
+        public DataTable ListarPorFecha(DateTime fechaInicio, DateTime fechaFin)
+        {
+            throw new NotImplementedException();
+        }
+
+        public FacturaVenta? ObtenerPorId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ExisteFactura(int idFactura)
         {
             throw new NotImplementedException();
         }

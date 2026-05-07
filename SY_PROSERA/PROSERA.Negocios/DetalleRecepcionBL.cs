@@ -119,22 +119,20 @@ namespace PROSERA.Negocios
 
         public DetalleRecepcion ListarPorCompra(int idRecepcion)
         {
-            if (idRecepcion <= 0)
-                throw new ArgumentException("El ID de recepción debe ser válido");
-
-            try
-            {
-                return _detalleRecepcionDAL.ListarPorCompra(idRecepcion);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al listar detalles por recepción: " + ex.Message);
-            }
+            throw new NotImplementedException();
         }
 
+        DetalleCompra? IDetalleRecepcionBL.ObtenerPorId(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-
+        DataTable IDetalleRecepcionBL.ListarPorCompra(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
+}
 
 
 

@@ -4,7 +4,7 @@ using System.Data;
 
 namespace PROSERA.Datos
 {
-    internal class ProveedorDAL : IProveedorDAL
+    public class ProveedorDAL : IProveedorDAL
     {
         public void Guardar(Proveedor proveedor)
         {

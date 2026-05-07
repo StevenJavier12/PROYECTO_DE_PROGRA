@@ -3,7 +3,7 @@ using System.Data;
 
 namespace PROSERA.Datos
 {
-    internal interface IRecepcionDispositivoDAL
+    public interface IRecepcionDispositivoDAL
     {
         void Guardar(RecepcionDispositivo recepcion);
         void Editar(RecepcionDispositivo recepcion);

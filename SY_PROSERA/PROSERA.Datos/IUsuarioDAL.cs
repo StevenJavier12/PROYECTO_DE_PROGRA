@@ -3,7 +3,7 @@ using System.Data;
 
 namespace PROSERA.Datos
 {
-    internal interface IUsuarioDAL
+    public interface IUsuarioDAL
     {
         void Guardar(Usuario usuario);
         void Editar(Usuario usuario);

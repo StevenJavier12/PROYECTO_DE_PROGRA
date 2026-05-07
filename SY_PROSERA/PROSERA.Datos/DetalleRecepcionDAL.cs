@@ -1,16 +1,13 @@
 ﻿using Microsoft.Data.SqlClient;
 using PROSERA.Entidades;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 
 namespace PROSERA.Datos
 {
     public class DetalleRecepcionDAL : IDetalleRecepcionDAL
     {
-        
+
 
         public void Agregar(DetalleRecepcion detalle)
         {
@@ -23,12 +20,12 @@ namespace PROSERA.Datos
 
             using SqlCommand cmd = new(sql, cn);
             cmd.Parameters.AddWithValue("@Recepcion", detalle.IdRecepcion);
-                cmd.Parameters.AddWithValue("@Dispositivo", detalle.IdDispositivo);
-                cmd.Parameters.AddWithValue("@Cantidad", detalle.Cantidad);
+            cmd.Parameters.AddWithValue("@Dispositivo", detalle.IdDispositivo);
+            cmd.Parameters.AddWithValue("@Cantidad", detalle.Cantidad);
 
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            
+            cn.Open();
+            cmd.ExecuteNonQuery();
+
         }
 
         public void Editar(DetalleRecepcion detalle)
@@ -36,22 +33,22 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-            string sql  = @"UPDATE DetalleRecepcion SET 
+            string sql = @"UPDATE DetalleRecepcion SET 
                         IdRecepcion = @Recepcion,
                         IdDispositivo = @Dispositivo,
                         Cantidad = @Cantidad
                         WHERE IdDetalle = @Id";
 
-                using SqlCommand cmd = new(sql, cn);
+            using SqlCommand cmd = new(sql, cn);
 
-                cmd.Parameters.AddWithValue("@Id", detalle.IdDetalle);
-                cmd.Parameters.AddWithValue("@Recepcion", detalle.IdRecepcion);
-                cmd.Parameters.AddWithValue("@Dispositivo", detalle.IdDispositivo);
-                cmd.Parameters.AddWithValue("@Cantidad", detalle.Cantidad);
+            cmd.Parameters.AddWithValue("@Id", detalle.IdDetalle);
+            cmd.Parameters.AddWithValue("@Recepcion", detalle.IdRecepcion);
+            cmd.Parameters.AddWithValue("@Dispositivo", detalle.IdDispositivo);
+            cmd.Parameters.AddWithValue("@Cantidad", detalle.Cantidad);
 
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            
+            cn.Open();
+            cmd.ExecuteNonQuery();
+
         }
 
         public void Eliminar(int Id)
@@ -62,24 +59,47 @@ namespace PROSERA.Datos
             string sql = "DELETE FROM DetalleRecepcion WHERE IdDetalle = @Id";
             using SqlCommand cmd = new(sql, cn);
 
-                cmd.Parameters.AddWithValue("@Id", Id);
+            cmd.Parameters.AddWithValue("@Id", Id);
 
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            
+            cn.Open();
+            cmd.ExecuteNonQuery();
+
         }
+
+
+
 
         public DataTable Listar()
         {
-            throw new NotImplementedException();
-        }
+            DataTable table = new();
 
-        public void ListarPorCompra(int IdRecepcion)
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            string sql = @"SELECT 
+                        dr.id_detalle,
+                        dr.id_recepcion,
+                        dr.id_dispositivo,
+                        de.nombre_dispositivo,
+                        dr.cantidad
+                   FROM Detalles_Recepcion dr
+                   INNER JOIN Dispositivos_Electronicos de
+                        ON dr.id_dispositivo = de.id_dispositivo";
+
+            using SqlDataAdapter da = new(sql, cn);
+
+            da.Fill(table);
+
+            return table;
+        }
+              
+
+        public DetalleRecepcion ObtenerPorId(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public DetalleRecepcion  ObtenerPorId(int Id)
+        public DetalleCompra ObtenerPorId(object systemint32, int id)
         {
             throw new NotImplementedException();
         }

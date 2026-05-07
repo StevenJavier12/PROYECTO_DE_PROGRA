@@ -1,13 +1,23 @@
-﻿using System;
+﻿using PROSERA.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
 namespace PROSERA.Negocios
 {
-    internal interface IInventarioBL
+    public interface IInventarioBL
     {
+        // CRUD básico
+        void Guardar(Inventario inventario);
+        void Editar(Inventario inventario);
+        void Eliminar(int id);
         DataTable Listar();
-        void ActualizarStock(int idProducto, int cantidad, string tipo);
+
+        // Métodos adicionales
+        Inventario? ObtenerPorId(int id);
+        bool ExisteProductoEnInventario(int idProducto);
+        DataTable ListarStockBajo();
+        DataTable ListarPorTipoMovimiento(string tipoMovimiento);
     }
 }

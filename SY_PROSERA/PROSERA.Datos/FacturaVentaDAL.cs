@@ -1,103 +1,60 @@
 ﻿using Microsoft.Data.SqlClient;
 using PROSERA.Entidades;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace PROSERA.Datos
 {
-   public class FacturaVentaDAL : IFacturaVentaDAL
+    public class FacturaVentaDAL : IFacturaVentaDAL
     {
-        public void Guardar(FacturaVenta factura)
+        /*
+         * -- =========================================
+-- 8. FACTURA_VENTA
+-- =========================================
+CREATE TABLE Factura_Ventas (
+    id_factura INT PRIMARY KEY IDENTITY (1,1),
+    fecha DATETIME NOT NULL,
+    id_cliente INT NOT NULL,
+    id_usuario INT NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    descuento DECIMAL(10,2) NOT NULL DEFAULT 0,
+    metodo_pago VARCHAR(50) NOT NULL,
+    estado_factura VARCHAR(50) NOT NULL,
+
+
+    CONSTRAINT FK_Factura_Clientes
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
+
+    CONSTRAINT FK_Factura_Usuarios
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario)
+);
+         */
+        public void Editar(FacturaVenta factura)
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-            using SqlTransaction tx = cn.BeginTransaction();
+            const string SQL = @"UPDATE Factura_Ventas
+                                SET fecha = @Fecha,
+                                    id_cliente = @IdCliente,
+                                    id_usuario = @IdUsuario,
+                                    total = @Total,
+                                    descuento = @Descuento,
+                                    metodo_pago = @MetodoPago,
+                                    estado_factura = @EstadoFactura
+                                WHERE id_factura = @Id";
 
-            try
-            {
-                // GUARDAR FACTURA
-                string sqlFactura = @"INSERT INTO Factura_Ventas
-                                    (fecha, id_cliente, id_usuario, total, descuento, metodo_pago, estado_factura)
-                                    VALUES (@fecha, @cliente, @usuario, @total, @descuento, @metodo, @estado);
-                                    SELECT SCOPE_IDENTITY();";
+            using SqlCommand cmd = new(SQL, cn);
 
-                using SqlCommand cmdFactura = new(sqlFactura, cn, tx);
-                cmdFactura.Parameters.AddWithValue("@fecha", factura.Fecha);
-                cmdFactura.Parameters.AddWithValue("@cliente", factura.IdCliente);
-                cmdFactura.Parameters.AddWithValue("@usuario", factura.IdUsuario);
-                cmdFactura.Parameters.AddWithValue("@total", factura.Total);
-                cmdFactura.Parameters.AddWithValue("@descuento", factura.Descuento);
-                cmdFactura.Parameters.AddWithValue("@metodo", factura.MetodoPago);
-                cmdFactura.Parameters.AddWithValue("@estado", factura.EstadoFactura);
+            cmd.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = factura.Fecha;
+            cmd.Parameters.Add("@IdCliente", SqlDbType.Int).Value = factura.IdCliente;
+            cmd.Parameters.Add("@IdUsuario", SqlDbType.Int).Value = factura.IdUsuario;
+            cmd.Parameters.Add("@Total", SqlDbType.Decimal).Value = factura.Total;
+            cmd.Parameters.Add("@Descuento", SqlDbType.Decimal).Value = factura.Descuento;
+            cmd.Parameters.Add("@MetodoPago", SqlDbType.VarChar, 50).Value = factura.MetodoPago;
+            cmd.Parameters.Add("@EstadoFactura", SqlDbType.VarChar, 50).Value = factura.EstadoFactura;
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = factura.IdFactura;
 
-                factura.IdFactura = Convert.ToInt32(cmdFactura.ExecuteScalar());
-
-                //  GUARDAR DETALLES
-                foreach (var detalle in factura.DetalleVentas)
-                {
-                    string sqlDetalle = @"INSERT INTO Detalle_Ventas
-                                        (id_factura, id_producto, cantidad, precio_unitario, subtotal)
-                                        VALUES (@factura, @producto, @cantidad, @precio, @subtotal)";
-
-                    using SqlCommand cmdDetalle = new(sqlDetalle, cn, tx);
-                    cmdDetalle.Parameters.AddWithValue("@factura", factura.IdFactura);
-                    SqlParameter sqlParameter = cmdDetalle.Parameters.AddWithValue("@producto", detalle.IdProducto);
-                    cmdDetalle.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
-                    cmdDetalle.Parameters.AddWithValue("@precio", detalle.PrecioUnitario);
-                    cmdDetalle.Parameters.AddWithValue("@subtotal", detalle.Subtotal);
-
-                    cmdDetalle.ExecuteNonQuery();
-
-                    // VALIDAR STOCK
-                    string sqlCheck = @"SELECT stock FROM Inventario WHERE id_producto = @producto";
-
-                    using SqlCommand cmdCheck = new(sqlCheck, cn, tx);
-                    cmdCheck.Parameters.AddWithValue("@producto", detalle.IdProducto);
-
-                    int stockActual = Convert.ToInt32(cmdCheck.ExecuteScalar());
-
-                    if (stockActual < detalle.Cantidad)
-                        throw new Exception("Stock insuficiente para el producto ID: " + detalle.IdProducto);
-
-                    // RESTAR INVENTARIO
-                    string sqlInventario = @"UPDATE Inventario
-                                            SET stock = stock - @cantidad,
-                                                fecha_actualizacion = GETDATE()
-                                            WHERE id_producto = @producto";
-
-                    using SqlCommand cmdInv = new(sqlInventario, cn, tx);
-                    cmdInv.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
-                    cmdInv.Parameters.AddWithValue("@producto", detalle.IdProducto);
-
-                    cmdInv.ExecuteNonQuery();
-                }
-
-                // 
-                tx.Commit();
-            }
-            catch
-            {
-                tx.Rollback();
-                throw;
-            }
-        }
-
-        public DataTable Listar()
-        {
-            using SqlConnection cn = new(ConexionDB.Cadena);
-            cn.Open();
-
-            string sql = @"SELECT fv.id_factura, fv.fecha, c.nombre, fv.total, fv.metodo_pago, fv.estado_factura
-                           FROM Factura_Ventas fv
-                           INNER JOIN Clientes c ON fv.id_cliente = c.id_cliente";
-
-            using SqlDataAdapter da = new(sql, cn);
-            DataTable dt = new();
-            da.Fill(dt);
-            return dt;
+            cmd.ExecuteNonQuery();
         }
 
         public void Eliminar(int id)
@@ -105,12 +62,85 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-            string sql = "DELETE FROM Factura_Ventas WHERE id_factura = @id";
+            const string SQL = "DELETE FROM Factura_Ventas WHERE id_factura = @Id";
 
-            using SqlCommand cmd = new(sql, cn);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            using SqlCommand cmd = new(SQL, cn);
+
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
 
             cmd.ExecuteNonQuery();
+        }
+
+
+
+        public void Guardar(FacturaVenta factura)
+        {
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            const string SQL = @"INSERT INTO Factura_Ventas
+                                (fecha, id_cliente, id_usuario, total, descuento, metodo_pago, estado_factura)
+                                VALUES
+                                (@Fecha, @IdCliente, @IdUsuario, @Total, @Descuento, @MetodoPago, @EstadoFactura)";
+
+            using SqlCommand cmd = new(SQL, cn);
+
+            cmd.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = factura.Fecha;
+            cmd.Parameters.Add("@IdCliente", SqlDbType.Int).Value = factura.IdCliente;
+            cmd.Parameters.Add("@IdUsuario", SqlDbType.Int).Value = factura.IdUsuario;
+            cmd.Parameters.Add("@Total", SqlDbType.Decimal).Value = factura.Total;
+            cmd.Parameters.Add("@Descuento", SqlDbType.Decimal).Value = factura.Descuento;
+            cmd.Parameters.Add("@MetodoPago", SqlDbType.VarChar, 50).Value = factura.MetodoPago;
+            cmd.Parameters.Add("@EstadoFactura", SqlDbType.VarChar, 50).Value = factura.EstadoFactura;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public DataTable Listar()
+        {
+            DataTable table = new();
+
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            const string SQL = @"SELECT
+                                    id_factura,
+                                    fecha,
+                                    id_cliente,
+                                    id_usuario,
+                                    total,
+                                    descuento,
+                                    metodo_pago,
+                                    estado_factura
+                                 FROM Factura_Ventas";
+
+            using SqlDataAdapter da = new(SQL, cn);
+
+            da.Fill(table);
+
+            return table;
+
+
+        }
+
+        public DataTable ListarPorCliente(int idCliente)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataTable ListarPorFecha(DateTime fechaInicio, DateTime fechaFin)
+        {
+            throw new NotImplementedException();
+        }
+
+        public FacturaVenta? ObtenerPorId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ExisteFactura(int idFactura)
+        {
+            throw new NotImplementedException();
         }
     }
 }
