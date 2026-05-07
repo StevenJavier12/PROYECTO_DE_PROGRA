@@ -102,7 +102,7 @@ namespace PROSERA.Datos
         public DetalleVenta ObtenerPorId(int id)
         {
 
-            DetalleVenta detalle = null;
+            DetalleVenta? detalle = null;
 
             using SqlConnection cn = new(ConexionDB.Cadena);
             {

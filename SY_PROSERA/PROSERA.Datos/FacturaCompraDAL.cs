@@ -38,6 +38,7 @@ CREATE TABLE Factura_Compras (
 
         public void Guardar(FacturaCompra factura)
         {
+<<<<<<< HEAD
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
@@ -64,6 +65,14 @@ CREATE TABLE Factura_Compras (
             using SqlDataAdapter da = new(SQL, cn);
             da.Fill(table);
             return table;
+=======
+            throw new NotImplementedException();
+        }
+
+        public void Guardar(FacturaCompra factura)
+        {
+            throw new NotImplementedException();
+>>>>>>> 3b7990587225094801f1cbf15aa4fb63d6d8315c
         }
     }
 }
