@@ -1,12 +1,8 @@
-﻿using Microsoft.Data.SqlClient;
-<<<<<<< HEAD
+﻿
+
 using PROSERA.Entidades;
-=======
->>>>>>> 3b7990587225094801f1cbf15aa4fb63d6d8315c
-using System;
-using System.Collections.Generic;
+using Microsoft.Data.SqlClient;
 using System.Data;
-using System.Text;
 
 namespace PROSERA.Datos
 {

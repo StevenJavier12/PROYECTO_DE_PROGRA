@@ -99,19 +99,6 @@ namespace PROSERA.Datos
             throw new NotImplementedException();
         }
 
-<<<<<<< HEAD
-        public DetalleCompra ObtenerPorId(object systemint32, int id)
-=======
-        public DetalleRecepcion ListarPorCompra(object int32, int idRecepcion)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DetalleRecepcion  ObtenerPorId(int Id)
->>>>>>> 3b7990587225094801f1cbf15aa4fb63d6d8315c
-        {
-            throw new NotImplementedException();
-        }
 
         public DetalleCompra ObtenerPorId(object systemint32, int id)
         {

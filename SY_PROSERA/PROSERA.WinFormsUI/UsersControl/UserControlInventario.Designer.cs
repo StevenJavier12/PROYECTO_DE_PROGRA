@@ -1,6 +1,6 @@
-﻿namespace PROSERA.WinFormsUI
+﻿namespace PROSERA.WinFormsUI.UsersControl
 {
-    partial class UserControl1
+    partial class UserControlInventario
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,10 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(380, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(139, 32);
+            label1.TabIndex = 5;
+            label1.Text = "Inventario";
+            // 
+            // UserControlInventario
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label1);
+            Name = "UserControlInventario";
+            Size = new Size(898, 653);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
     }
 }

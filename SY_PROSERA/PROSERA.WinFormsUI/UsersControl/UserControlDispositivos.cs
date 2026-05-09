@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PROSERA.WinFormsUI
+namespace PROSERA.WinFormsUI.UsersControl
 {
-    public partial class InicioDeSesion : Form
+    public partial class UserControlDispositivos : UserControl
     {
-        public InicioDeSesion()
+        public UserControlDispositivos()
         {
             InitializeComponent();
         }
