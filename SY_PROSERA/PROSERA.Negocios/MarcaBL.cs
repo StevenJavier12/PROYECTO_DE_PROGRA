@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PROSERA.Negocios
 {
-     class MarcaBL : IMarcaBL
+    public class MarcaBL : IMarcaBL
     {
         private readonly IMarcaDAL _marcaDAL;
 

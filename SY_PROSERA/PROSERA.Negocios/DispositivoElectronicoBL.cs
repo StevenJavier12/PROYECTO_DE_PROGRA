@@ -8,10 +8,9 @@ namespace PROSERA.Negocios
 {
     public class DispositivoElectronicoBL : IDispositivoElectronicoBL
     {
+        private readonly IDispositivoElectronicoDAL _dispositivoDAL;
 
-        private readonly IDispositivoElectronicoBL _dispositivoDAL;
-
-        public DispositivoElectronicoBL(IDispositivoElectronicoBL dispositivoDAL) => _dispositivoDAL = dispositivoDAL;
+        public DispositivoElectronicoBL(IDispositivoElectronicoDAL dispositivoDAL) => _dispositivoDAL = dispositivoDAL;
 
         public void Agregar(DispositivoElectronico dispositivo)
         {

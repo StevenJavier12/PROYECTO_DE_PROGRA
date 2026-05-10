@@ -4,7 +4,7 @@ using System.Data;
 
 namespace PROSERA.Negocios
 {
-    internal class RecepcionDispositivoBL : IRecepcionDispositivoBL
+    public  class RecepcionDispositivoBL : IRecepcionDispositivoBL
     {
         private readonly IRecepcionDispositivoDAL _recepcionDAL;
 

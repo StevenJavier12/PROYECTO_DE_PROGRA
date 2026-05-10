@@ -4,7 +4,7 @@ using System.Data;
 
 namespace PROSERA.Negocios
 {
-    internal class ClienteBL : IClienteBL
+    public class ClienteBL : IClienteBL
     {
         private readonly IClienteDAL _clienteDAL;
 
