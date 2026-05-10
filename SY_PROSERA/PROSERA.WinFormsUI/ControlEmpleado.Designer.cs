@@ -76,7 +76,7 @@
             panel1.ForeColor = SystemColors.Control;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(915, 51);
+            panel1.Size = new Size(931, 51);
             panel1.TabIndex = 5;
             // 
             // btnInicioProcera
@@ -160,8 +160,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Dock = DockStyle.Bottom;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(57, 468);
+            label2.Location = new Point(0, 475);
             label2.Name = "label2";
             label2.Size = new Size(60, 15);
             label2.TabIndex = 17;
@@ -355,18 +356,20 @@
             panelContainer.Controls.Add(label5);
             panelContainer.Controls.Add(pictureBox5);
             panelContainer.Controls.Add(label4);
+            panelContainer.Dock = DockStyle.Fill;
             panelContainer.ForeColor = SystemColors.ActiveCaptionText;
-            panelContainer.Location = new Point(130, 51);
+            panelContainer.Location = new Point(138, 51);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(786, 490);
+            panelContainer.Size = new Size(793, 490);
             panelContainer.TabIndex = 7;
+            panelContainer.Paint += panelContainer_Paint;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tahoma", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(150, 278);
+            label5.Location = new Point(148, 266);
             label5.Name = "label5";
             label5.Size = new Size(444, 22);
             label5.TabIndex = 58;
@@ -377,7 +380,7 @@
             // 
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(298, 94);
+            pictureBox5.Location = new Point(296, 82);
             pictureBox5.Margin = new Padding(3, 2, 3, 2);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(197, 172);
@@ -390,7 +393,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Tahoma", 17F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(98, 40);
+            label4.Location = new Point(96, 28);
             label4.Name = "label4";
             label4.Size = new Size(544, 28);
             label4.TabIndex = 57;
@@ -401,11 +404,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(915, 541);
+            ClientSize = new Size(931, 541);
             Controls.Add(panelContainer);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ControlEmpleado";
             Text = "Form2";
             panel1.ResumeLayout(false);
@@ -448,8 +451,8 @@
         private PictureBox pictureBox3;
         private Label label4;
         private PictureBox pictureBox5;
-        private Label label5;
         private Button btnInicioProcera;
+        private Label label5;
 
         public FormBorderStyle FormBorderStyle { get; private set; }
     }

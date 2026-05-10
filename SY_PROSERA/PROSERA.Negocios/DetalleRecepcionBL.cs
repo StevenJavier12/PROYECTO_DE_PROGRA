@@ -119,9 +119,6 @@ namespace PROSERA.Negocios
 
         public DetalleRecepcion ListarPorCompra(int idRecepcion, IDetalleRecepcionDAL detalleRecepcionDAL)
         {
-<<<<<<< HEAD
-            throw new NotImplementedException();
-=======
             if (idRecepcion <= 0)
                 throw new ArgumentException("El ID de recepción debe ser válido");
 
@@ -133,7 +130,6 @@ namespace PROSERA.Negocios
             {
                 throw new Exception("Error al listar detalles por recepción: " + ex.Message);
             }
->>>>>>> 3b7990587225094801f1cbf15aa4fb63d6d8315c
         }
 
         DetalleCompra? IDetalleRecepcionBL.ObtenerPorId(int id)
@@ -141,16 +137,12 @@ namespace PROSERA.Negocios
             throw new NotImplementedException();
         }
 
-<<<<<<< HEAD
-        DataTable IDetalleRecepcionBL.ListarPorCompra(int id)
-=======
         public DataTable ListarPorCompra(int id)
->>>>>>> 3b7990587225094801f1cbf15aa4fb63d6d8315c
         {
             throw new NotImplementedException();
         }
     }
 }
 
-}
+
 

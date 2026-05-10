@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioDeSesion));
             button1 = new Button();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
+            cbUsuario = new ComboBox();
+            txbContraseña = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -51,21 +51,23 @@
             button1.TabIndex = 0;
             button1.Text = "Iniciar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // comboBox1
+            // cbUsuario
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(95, 209);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 1;
+            cbUsuario.FormattingEnabled = true;
+            cbUsuario.Location = new Point(95, 209);
+            cbUsuario.Name = "cbUsuario";
+            cbUsuario.Size = new Size(121, 23);
+            cbUsuario.TabIndex = 1;
+            cbUsuario.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // textBox1
+            // txbContraseña
             // 
-            textBox1.Location = new Point(105, 272);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 2;
+            txbContraseña.Location = new Point(105, 272);
+            txbContraseña.Name = "txbContraseña";
+            txbContraseña.Size = new Size(100, 23);
+            txbContraseña.TabIndex = 2;
             // 
             // label1
             // 
@@ -115,12 +117,13 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(txbContraseña);
+            Controls.Add(cbUsuario);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "InicioDeSesion";
             Text = "Inicio De Sesion";
+            Load += InicioDeSesion_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -129,8 +132,8 @@
         #endregion
 
         private Button button1;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
+        private ComboBox cbUsuario;
+        private TextBox txbContraseña;
         private Label label1;
         private Label label2;
         private Label label3;

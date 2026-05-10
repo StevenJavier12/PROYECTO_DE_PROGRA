@@ -18,8 +18,10 @@ namespace PROSERA.WinFormsUI
 
         public void addUserControl(UserControl userControl)
         {
-            userControl.Dock = DockStyle.Fill;
             panelContainer.Controls.Clear();
+            userControl.Dock = DockStyle.None;
+            userControl.Location = new Point(0, 0);
+            panelContainer.AutoScroll = true;
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
         }
@@ -90,6 +92,16 @@ namespace PROSERA.WinFormsUI
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelContainer_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

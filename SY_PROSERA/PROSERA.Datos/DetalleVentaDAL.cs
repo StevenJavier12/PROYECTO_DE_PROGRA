@@ -26,7 +26,7 @@ namespace PROSERA.Datos
                 cmd.Parameters.AddWithValue("@Factura", detalle.IdFactura);
                 cmd.Parameters.AddWithValue("@Producto", detalle.IdProducto);
                 cmd.Parameters.AddWithValue("@Cantidad", detalle.Cantidad);
-                cmd.Parameters.AddWithValue("@Precio", detalle.Precio);
+                cmd.Parameters.AddWithValue("@Precio", detalle.PrecioUnitario);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -50,7 +50,7 @@ namespace PROSERA.Datos
                 cmd.Parameters.AddWithValue("@Factura", detalle.IdFactura);
                 cmd.Parameters.AddWithValue("@Producto", detalle.IdProducto);
                 cmd.Parameters.AddWithValue("@Cantidad", detalle.Cantidad);
-                cmd.Parameters.AddWithValue("@Precio", detalle.Precio);
+                cmd.Parameters.AddWithValue("@Precio", detalle.PrecioUnitario);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -91,7 +91,7 @@ namespace PROSERA.Datos
                         IdFactura = (int)dr["IdFactura"],
                         IdProducto = (int)dr["IdProducto"],
                         Cantidad = (int)dr["Cantidad"],
-                        Precio = Convert.ToDecimal(dr["Precio"])
+                        PrecioUnitario = Convert.ToDecimal(dr["Precio"])
                     });
                 }
             
@@ -121,7 +121,7 @@ namespace PROSERA.Datos
                         IdFactura = (int)dr["IdFactura"],
                         IdProducto = (int)dr["IdProducto"],
                         Cantidad = (int)dr["Cantidad"],
-                        Precio = Convert.ToDecimal(dr["Precio"])
+                        PrecioUnitario = Convert.ToDecimal(dr["Precio"])
                     };
                 }
             }
