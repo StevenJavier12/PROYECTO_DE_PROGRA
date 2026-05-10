@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace PROSERA.WinFormsUI.UsersControl
+{
+    public partial class UserControlDispositivos : UserControl
+    {
+        public UserControlDispositivos()
+        {
+            InitializeComponent();
+        }
+
+        private void UserControlDispositivos_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

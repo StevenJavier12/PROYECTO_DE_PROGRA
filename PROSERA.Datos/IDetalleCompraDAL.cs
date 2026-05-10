@@ -1,0 +1,20 @@
+﻿using PROSERA.Entidades;
+using System.Data;
+
+namespace PROSERA.Datos
+{
+    public interface IDetalleCompraDAL
+    {
+        void Guardar(DetalleCompra detalleCompra);
+        void Editar(DetalleCompra detalleCompra);
+        void Eliminar(int id);
+        DataTable Listar();
+
+        // Consultas
+        DetalleCompra? ObtenerPorId(int id);
+
+        // Métodos específicos 
+        DataTable ListarPorCompra(int idCompra);
+        bool ExisteProductoEnCompra(int idCompra, int idProducto, int? excluirId = null);
+    }
+}
