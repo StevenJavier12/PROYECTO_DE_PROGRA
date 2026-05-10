@@ -33,7 +33,7 @@ namespace PROSERA.Negocios
             if (detalle.PrecioUnitario <= 0)
                 throw new ArgumentException("El precio unitario debe ser mayor a 0");
 
-           
+
             detalle.Subtotal = detalle.Cantidad * detalle.PrecioUnitario;
 
             try
@@ -66,7 +66,7 @@ namespace PROSERA.Negocios
             if (detalle.PrecioUnitario <= 0)
                 throw new ArgumentException("El precio unitario debe ser mayor a 0");
 
-           
+
             detalle.Subtotal = detalle.Cantidad * detalle.PrecioUnitario;
 
             try

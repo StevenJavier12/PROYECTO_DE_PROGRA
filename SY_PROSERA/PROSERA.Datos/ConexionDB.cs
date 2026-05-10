@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PROSERA.Datos
 {
-    internal class ConexionDB
+    public class ConexionDB
     {
         public static string Cadena =>
             ConfigurationManager.ConnectionStrings["PROSERADB"].ConnectionString
