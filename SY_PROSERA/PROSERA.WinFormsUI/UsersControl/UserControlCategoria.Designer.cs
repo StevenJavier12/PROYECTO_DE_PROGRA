@@ -35,19 +35,20 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(384, 14);
+            label1.Location = new Point(336, 10);
             label1.Name = "label1";
-            label1.Size = new Size(131, 32);
+            label1.Size = new Size(104, 25);
             label1.TabIndex = 3;
             label1.Text = "Categoria";
             // 
             // UserControlCategoria
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlCategoria";
-            Size = new Size(898, 653);
+            Size = new Size(786, 490);
             ResumeLayout(false);
             PerformLayout();
         }
