@@ -64,7 +64,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             dgvProducto.DataSource = _productoBL.ListarConCategoria();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -95,7 +95,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEditar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -127,7 +127,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -153,7 +153,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             }
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             Limpiar();
         }
@@ -169,7 +169,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             cbEstadoProducto.SelectedIndex = -1;
         }
 
-        private void dgvProducto_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
@@ -183,5 +183,50 @@ namespace PROSERA.WinFormsUI.UsersControl
             cbMarca.SelectedValue = Convert.ToInt32(fila.Cells["IdMarca"].Value);
             cbCategoria.SelectedValue = Convert.ToInt32(fila.Cells["IdCategoria"].Value);
         }
+
+        private void cbEstadoProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrecioUnitario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        
+
+       
+
+      
+
+        private void txtIdProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
