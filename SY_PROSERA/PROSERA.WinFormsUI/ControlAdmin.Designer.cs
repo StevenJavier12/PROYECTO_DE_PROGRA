@@ -51,7 +51,6 @@
             pictureBox10 = new PictureBox();
             pictureBox9 = new PictureBox();
             pictureBox8 = new PictureBox();
-            pictureBox7 = new PictureBox();
             pictureBox6 = new PictureBox();
             pictureBox5 = new PictureBox();
             pictureBox4 = new PictureBox();
@@ -69,10 +68,11 @@
             btnComprasA = new Button();
             btnCategoriasA = new Button();
             btnProvedoresA = new Button();
+            pictureBox7 = new PictureBox();
             panelContainer = new Panel();
             label5 = new Label();
-            pictureBox3 = new PictureBox();
             label4 = new Label();
+            pictureBox14 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
@@ -82,13 +82,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panelContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             SuspendLayout();
             // 
             // btnEmpleados
@@ -335,7 +335,6 @@
             panel2.Controls.Add(pictureBox10);
             panel2.Controls.Add(pictureBox9);
             panel2.Controls.Add(pictureBox8);
-            panel2.Controls.Add(pictureBox7);
             panel2.Controls.Add(pictureBox6);
             panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(pictureBox4);
@@ -420,18 +419,6 @@
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 42;
             pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.BackColor = Color.Transparent;
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(16, 361);
-            pictureBox7.Margin = new Padding(4);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(31, 41);
-            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox7.TabIndex = 41;
-            pictureBox7.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -685,10 +672,21 @@
             btnProvedoresA.UseVisualStyleBackColor = false;
             btnProvedoresA.Click += btnProvedoresA_Click;
             // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.Location = new Point(16, 361);
+            pictureBox7.Margin = new Padding(4);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(31, 41);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 41;
+            pictureBox7.TabStop = false;
+            // 
             // panelContainer
             // 
+            panelContainer.Controls.Add(pictureBox14);
             panelContainer.Controls.Add(label5);
-            panelContainer.Controls.Add(pictureBox3);
             panelContainer.Controls.Add(label4);
             panelContainer.Location = new Point(196, 85);
             panelContainer.Name = "panelContainer";
@@ -708,18 +706,6 @@
             label5.Text = "Soluciones para el agro, herramientas para el progreso.";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(448, 166);
-            pictureBox3.Margin = new Padding(4, 3, 4, 3);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(281, 287);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 59;
-            pictureBox3.TabStop = false;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -732,6 +718,18 @@
             label4.TabIndex = 60;
             label4.Text = "Bienvenidos al sistema de PROSERA Servicios";
             label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.BackColor = Color.Transparent;
+            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
+            pictureBox14.Location = new Point(407, 155);
+            pictureBox14.Margin = new Padding(4, 3, 4, 3);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(281, 287);
+            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox14.TabIndex = 62;
+            pictureBox14.TabStop = false;
             // 
             // ControlAdmin
             // 
@@ -767,14 +765,14 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panelContainer.ResumeLayout(false);
             panelContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -823,7 +821,7 @@
         private PictureBox pictureBox13;
         private Panel panelContainer;
         private Label label5;
-        private PictureBox pictureBox3;
         private Label label4;
+        private PictureBox pictureBox14;
     }
 }

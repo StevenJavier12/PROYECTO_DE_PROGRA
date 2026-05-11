@@ -35,19 +35,20 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(389, 14);
+            label1.Location = new Point(340, 10);
             label1.Name = "label1";
-            label1.Size = new Size(120, 32);
+            label1.Size = new Size(95, 25);
             label1.TabIndex = 5;
             label1.Text = "Usuarios";
             // 
             // UserControlUsuarios
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlUsuarios";
-            Size = new Size(898, 653);
+            Size = new Size(786, 490);
             ResumeLayout(false);
             PerformLayout();
         }

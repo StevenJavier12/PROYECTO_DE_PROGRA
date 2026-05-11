@@ -104,6 +104,7 @@
             cbProducto.Name = "cbProducto";
             cbProducto.Size = new Size(182, 33);
             cbProducto.TabIndex = 10;
+            cbProducto.SelectedIndexChanged += cbProducto_SelectedIndexChanged;
             // 
             // txtStock
             // 
@@ -111,6 +112,7 @@
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(150, 31);
             txtStock.TabIndex = 11;
+            txtStock.TextChanged += txtStock_TextChanged;
             // 
             // txtStockMinimo
             // 
@@ -118,6 +120,7 @@
             txtStockMinimo.Name = "txtStockMinimo";
             txtStockMinimo.Size = new Size(150, 31);
             txtStockMinimo.TabIndex = 12;
+            txtStockMinimo.TextChanged += txtStockMinimo_TextChanged;
             // 
             // dtimeFechaActualizacion
             // 
@@ -125,6 +128,7 @@
             dtimeFechaActualizacion.Name = "dtimeFechaActualizacion";
             dtimeFechaActualizacion.Size = new Size(300, 31);
             dtimeFechaActualizacion.TabIndex = 13;
+            dtimeFechaActualizacion.ValueChanged += dtimeFechaActualizacion_ValueChanged;
             // 
             // label6
             // 
@@ -142,6 +146,7 @@
             cbTipoMovimiento.Name = "cbTipoMovimiento";
             cbTipoMovimiento.Size = new Size(182, 33);
             cbTipoMovimiento.TabIndex = 15;
+            cbTipoMovimiento.SelectedIndexChanged += cbTipoMovimiento_SelectedIndexChanged;
             // 
             // label7
             // 
@@ -158,6 +163,7 @@
             txtDescripcionMovimiento.Name = "txtDescripcionMovimiento";
             txtDescripcionMovimiento.Size = new Size(205, 31);
             txtDescripcionMovimiento.TabIndex = 17;
+            txtDescripcionMovimiento.TextChanged += txtDescripcionMovimiento_TextChanged;
             // 
             // txtInventario
             // 
@@ -166,6 +172,7 @@
             txtInventario.Size = new Size(150, 31);
             txtInventario.TabIndex = 18;
             txtInventario.Visible = false;
+            txtInventario.TextChanged += txtInventario_TextChanged;
             // 
             // btnGuardar
             // 
@@ -175,6 +182,7 @@
             btnGuardar.TabIndex = 19;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click_1;
             // 
             // btnEditar
             // 
@@ -184,6 +192,7 @@
             btnEditar.TabIndex = 20;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click_1;
             // 
             // btnEliminar
             // 
@@ -193,6 +202,7 @@
             btnEliminar.TabIndex = 21;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click_1;
             // 
             // btnLimpiar
             // 
@@ -202,6 +212,7 @@
             btnLimpiar.TabIndex = 22;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click_1;
             // 
             // dgvInventario
             // 
@@ -211,6 +222,7 @@
             dgvInventario.RowHeadersWidth = 62;
             dgvInventario.Size = new Size(653, 330);
             dgvInventario.TabIndex = 23;
+            dgvInventario.CellContentClick += dgvInventario_CellContentClick;
             // 
             // UserControlInventario
             // 

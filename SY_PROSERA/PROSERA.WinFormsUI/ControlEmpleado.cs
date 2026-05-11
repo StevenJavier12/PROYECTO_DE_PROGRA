@@ -11,9 +11,16 @@ namespace PROSERA.WinFormsUI
 
         public void addUserControl(UserControl userControl)
         {
-            userControl.Dock = DockStyle.Fill;
             panelContainer.Controls.Clear();
+
+            userControl.Dock = DockStyle.None;
+
+            userControl.Location = new Point(0, 0);
+
+            panelContainer.AutoScroll = true;
+
             panelContainer.Controls.Add(userControl);
+
             userControl.BringToFront();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -73,6 +80,16 @@ namespace PROSERA.WinFormsUI
 
         private void btnInicioProcera_Click(object sender, EventArgs e)
         {
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioDeSesion));
             button1 = new Button();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
+            cbUsuario = new ComboBox();
+            txbContraseña = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -51,28 +51,30 @@
             button1.TabIndex = 0;
             button1.Text = "Iniciar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // comboBox1
+            // cbUsuario
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(95, 209);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 1;
+            cbUsuario.FormattingEnabled = true;
+            cbUsuario.Location = new Point(95, 209);
+            cbUsuario.Name = "cbUsuario";
+            cbUsuario.Size = new Size(121, 33);
+            cbUsuario.TabIndex = 1;
+            cbUsuario.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // textBox1
+            // txbContraseña
             // 
-            textBox1.Location = new Point(105, 272);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 2;
+            txbContraseña.Location = new Point(105, 272);
+            txbContraseña.Name = "txbContraseña";
+            txbContraseña.Size = new Size(100, 31);
+            txbContraseña.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(132, 189);
             label1.Name = "label1";
-            label1.Size = new Size(47, 15);
+            label1.Size = new Size(72, 25);
             label1.TabIndex = 3;
             label1.Text = "Usuario";
             // 
@@ -81,7 +83,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(137, 254);
             label2.Name = "label2";
-            label2.Size = new Size(36, 15);
+            label2.Size = new Size(54, 25);
             label2.TabIndex = 4;
             label2.Text = "Clave";
             // 
@@ -91,7 +93,7 @@
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(73, 95);
             label3.Name = "label3";
-            label3.Size = new Size(164, 25);
+            label3.Size = new Size(252, 40);
             label3.TabIndex = 5;
             label3.Text = "System PROSERA";
             // 
@@ -110,17 +112,18 @@
             // InicioDeSesion
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(312, 450);
+            ClientSize = new Size(341, 450);
             Controls.Add(pictureBox3);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(txbContraseña);
+            Controls.Add(cbUsuario);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "InicioDeSesion";
             Text = "Inicio De Sesion";
+            Load += InicioDeSesion_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -129,8 +132,8 @@
         #endregion
 
         private Button button1;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
+        private ComboBox cbUsuario;
+        private TextBox txbContraseña;
         private Label label1;
         private Label label2;
         private Label label3;

@@ -1,6 +1,6 @@
 ﻿namespace PROSERA.WinFormsUI.UsersControl
 {
-    partial class UserControlCategoria
+    partial class UserControl1
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,33 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            button1 = new Button();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
-            // label1
+            // button1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(336, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(104, 25);
-            label1.TabIndex = 3;
-            label1.Text = "Categoria";
+            button1.Location = new Point(195, 173);
+            button1.Name = "button1";
+            button1.Size = new Size(285, 134);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
-            // UserControlCategoria
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(107, 87);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(83, 19);
+            checkBox1.TabIndex = 1;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // UserControl1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "UserControlCategoria";
-            Size = new Size(786, 490);
+            Controls.Add(checkBox1);
+            Controls.Add(button1);
+            Name = "UserControl1";
+            Size = new Size(579, 444);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Button button1;
+        private CheckBox checkBox1;
     }
 }
