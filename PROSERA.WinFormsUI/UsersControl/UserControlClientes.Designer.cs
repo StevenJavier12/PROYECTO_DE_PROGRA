@@ -67,6 +67,7 @@
             btnRegresar.TabIndex = 13;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // btnGuardar
             // 
@@ -76,6 +77,7 @@
             btnGuardar.TabIndex = 14;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnModificar
             // 
@@ -85,6 +87,7 @@
             btnModificar.TabIndex = 15;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
@@ -94,6 +97,7 @@
             btnEliminar.TabIndex = 16;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // label2
             // 
@@ -103,6 +107,7 @@
             label2.Size = new Size(51, 15);
             label2.TabIndex = 12;
             label2.Text = "Nombre";
+            label2.Click += label2_Click;
             // 
             // txtNombre
             // 
@@ -110,13 +115,14 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(161, 23);
             txtNombre.TabIndex = 10;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // dgvClientes
             // 
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Location = new Point(59, 194);
             dgvClientes.Name = "dgvClientes";
-            dgvClientes.Size = new Size(669, 125);
+            dgvClientes.Size = new Size(645, 125);
             dgvClientes.TabIndex = 8;
             // 
             // label4
@@ -127,6 +133,7 @@
             label4.Size = new Size(51, 15);
             label4.TabIndex = 12;
             label4.Text = "Apellido";
+            label4.Click += label4_Click;
             // 
             // txtApeliido
             // 
@@ -134,6 +141,7 @@
             txtApeliido.Name = "txtApeliido";
             txtApeliido.Size = new Size(161, 23);
             txtApeliido.TabIndex = 10;
+            txtApeliido.TextChanged += txtApeliido_TextChanged;
             // 
             // txtTelefono
             // 
@@ -151,6 +159,7 @@
             label3.Size = new Size(53, 15);
             label3.TabIndex = 12;
             label3.Text = "Telefono";
+            label3.Click += label3_Click;
             // 
             // txtDireccion
             // 

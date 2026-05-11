@@ -3,7 +3,7 @@ using System.Data;
 
 namespace PROSERA.Negocios
 {
-    internal interface IEmpleadoBL
+    public interface IEmpleadoBL
     {
         void Guardar(Empleado empleado);
         void Editar(Empleado empleado);

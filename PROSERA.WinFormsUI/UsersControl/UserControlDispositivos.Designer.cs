@@ -67,6 +67,7 @@
             btnRegresar.TabIndex = 31;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // btnGuardar
             // 
@@ -76,6 +77,7 @@
             btnGuardar.TabIndex = 32;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnModificar
             // 
@@ -85,6 +87,7 @@
             btnModificar.TabIndex = 33;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
@@ -94,6 +97,7 @@
             btnEliminar.TabIndex = 34;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // label5
             // 

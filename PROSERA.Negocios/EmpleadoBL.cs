@@ -4,7 +4,7 @@ using System.Data;
 
 namespace PROSERA.Negocios
 {
-    internal class EmpleadoBL : IEmpleadoBL
+    public class EmpleadoBL : IEmpleadoBL
     {
         private readonly IEmpleadoDAL _empleadoDAL;
 

@@ -17,7 +17,7 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
             {
-                string query = @"INSERT INTO [Dispositivos electrónicos]
+                string query = @"INSERT INTO [Dispositivos_Electronicos]
                         (Tipo, Marca, Modelo, Estado, UnidadDeMedida, Descripcion) 
                         VALUES (@Tipo, @Marca, @Modelo, @Estado, @UnidadDeMedida, @Descripcion)";
 
@@ -30,7 +30,7 @@ namespace PROSERA.Datos
                 cmd.Parameters.AddWithValue("@UnidadDeMedida", dispositivo.UnidadDeMedida);
                 cmd.Parameters.AddWithValue("@Descripcion", dispositivo.Descripcion);
 
-                cn.Open();
+              
                 cmd.ExecuteNonQuery();
             }
         }
@@ -42,8 +42,8 @@ namespace PROSERA.Datos
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
             {
-                string query = @"SELECT IdDispositivo, Tipo, Marca, Modelo, Estado, UnidadDeMedida, Descripcion 
-                        FROM [Dispositivos electrónicos] 
+                string query = @"SELECT Id_dispositivo, Tipo, Marca, Modelo, Estado, UnidadDeMedida, Descripcion 
+                        FROM [Dispositivos_Electronicos] 
                         WHERE Marca = @Marca";
 
                 using SqlCommand cmd = new(query, cn);
@@ -56,7 +56,7 @@ namespace PROSERA.Datos
                 {
                     DispositivoElectronico dispositivo = new DispositivoElectronico
                     {
-                        IdDispositivo = (int)reader["IdDispositivo"],
+                        IdDispositivo = (int)reader["Id_dispositivo"],
                         Tipo = (string)reader["Tipo"],
                         Marca = (string)reader["Marca"],
                         Modelo = (string)reader["Modelo"],
@@ -78,8 +78,8 @@ namespace PROSERA.Datos
 
             using SqlConnection cn = new(ConexionDB.Cadena);
             {
-                string query = @"SELECT IdDispositivo, Tipo, Marca, Modelo, Estado, UnidadDeMedida, Descripcion 
-                        FROM [Dispositivos electrónicos] 
+                string query = @"SELECT Id_dispositivo, Tipo, Marca, Modelo, Estado, UnidadDeMedida, Descripcion 
+                        FROM [Dispositivos_Electronicos] 
                         WHERE Tipo = @Tipo";
 
                 using SqlCommand cmd = new(query, cn);
@@ -92,7 +92,7 @@ namespace PROSERA.Datos
                 {
                     DispositivoElectronico dispositivo = new DispositivoElectronico
                     {
-                        IdDispositivo = (int)reader["IdDispositivo"],
+                        IdDispositivo = (int)reader["Id_dispositivo"],
                         Tipo = (string)reader["Tipo"],
                         Marca = (string)reader["Marca"],
                         Modelo = (string)reader["Modelo"],
@@ -112,14 +112,14 @@ namespace PROSERA.Datos
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
             {
-                string query = @"UPDATE [Dispositivos electrónicos] 
+                string query = @"UPDATE [Dispositivos_Electronicos] 
                         SET Tipo = @Tipo, Marca = @Marca, Modelo = @Modelo, 
                             Estado = @Estado, UnidadDeMedida = @UnidadDeMedida, Descripcion = @Descripcion 
-                        WHERE IdDispositivo = @IdDispositivo";
+                        WHERE Id_dispositivo = @Id_dispositivo";
 
                 SqlCommand cmd = new SqlCommand(query, cn);
 
-                cmd.Parameters.AddWithValue("@IdDispositivo", dispositivo.IdDispositivo);
+                cmd.Parameters.AddWithValue("@Id_dispositivo", dispositivo.IdDispositivo);
                 cmd.Parameters.AddWithValue("@Tipo", dispositivo.Tipo);
                 cmd.Parameters.AddWithValue("@Marca", dispositivo.Marca);
                 cmd.Parameters.AddWithValue("@Modelo", dispositivo.Modelo);
@@ -136,11 +136,11 @@ namespace PROSERA.Datos
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
             {
-                string query = @"DELETE FROM [Dispositivos electrónicos] 
-                        WHERE IdDispositivo = @IdDispositivo";
+                string query = @"DELETE FROM [Dispositivos_Electronicos] 
+                        WHERE Id_dispositivo = @Id_dispositivo";
 
                 using SqlCommand cmd = new(query, cn);
-                cmd.Parameters.AddWithValue("@IdDispositivo", id);
+                cmd.Parameters.AddWithValue("@Id_dispositivo", id);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -153,8 +153,8 @@ namespace PROSERA.Datos
 
             using SqlConnection cn = new(ConexionDB.Cadena);
             {
-                string query = @"SELECT IdDispositivo, Tipo, Marca, Modelo, Estado, UnidadDeMedida, Descripcion 
-                        FROM [Dispositivos electrónicos]";
+                string query = @"SELECT Id_dispositivo, Tipo, Marca, Modelo, Estado, UnidadDeMedida, Descripcion 
+                        FROM [Dispositivos_Electronicos]";
 
                 using SqlCommand cmd = new(query, cn);
 
@@ -165,7 +165,7 @@ namespace PROSERA.Datos
                 {
                     DispositivoElectronico dispositivo = new DispositivoElectronico
                     {
-                        IdDispositivo = (int)reader["IdDispositivo"],
+                        IdDispositivo = (int)reader["Id_dispositivo"],
                         Tipo = (string)reader["Tipo"],
                         Marca = (string)reader["Marca"],
                         Modelo = (string)reader["Modelo"],
@@ -187,12 +187,12 @@ namespace PROSERA.Datos
 
             using SqlConnection cn = new(ConexionDB.Cadena);
             {
-                string query = @"SELECT IdDispositivo, Tipo, Marca, Modelo, Estado, UnidadDeMedida, Descripcion 
-                        FROM [Dispositivos electrónicos] 
-                        WHERE IdDispositivo = @IdDispositivo";
+                string query = @"SELECT Id_dispositivo, Tipo, Marca, Modelo, Estado, UnidadDeMedida, Descripcion 
+                        FROM [Dispositivos_Electronicos] 
+                        WHERE Id_dispositivo = @Id_dispositivo";
 
                 using SqlCommand cmd = new(query, cn);
-                cmd.Parameters.AddWithValue("@IdDispositivo", id);
+                cmd.Parameters.AddWithValue("@Id_dispositivo", id);
 
                 cn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -201,7 +201,7 @@ namespace PROSERA.Datos
                 {
                     dispositivo = new DispositivoElectronico
                     {
-                        IdDispositivo = (int)reader["IdDispositivo"],
+                        IdDispositivo = (int)reader["Id_dispositivo"],
                         Tipo = (string)reader["Tipo"],
                         Marca = (string)reader["Marca"],
                         Modelo = (string)reader["Modelo"],

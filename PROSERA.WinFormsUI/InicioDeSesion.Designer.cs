@@ -122,7 +122,7 @@
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "InicioDeSesion";
-            Text = "Inicio De Sesion";
+            Text = "Ñ";
             Load += InicioDeSesion_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);

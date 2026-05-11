@@ -99,7 +99,7 @@
             btnEliminar.TabIndex = 7;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += button1_Click;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnModificar
             // 
@@ -109,7 +109,7 @@
             btnModificar.TabIndex = 7;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += button1_Click;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnGuardar
             // 
@@ -119,7 +119,7 @@
             btnGuardar.TabIndex = 7;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += button1_Click;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnRegresar
             // 
@@ -129,7 +129,7 @@
             btnRegresar.TabIndex = 7;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = true;
-            btnRegresar.Click += button1_Click;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // UserControlCategoria
             // 
@@ -148,6 +148,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlCategoria";
             Size = new Size(786, 490);
+            Load += UserControlCategoria_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCategorias).EndInit();
             ResumeLayout(false);
             PerformLayout();

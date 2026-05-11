@@ -73,10 +73,9 @@ namespace PROSERA.Datos
             cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
 
             using SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read()) return null;
+            if (!dr.Read()) return null;  
 
-            
-            return new CategoriaProducto
+            return new CategoriaProducto  
             {
                 IdCategoria = Convert.ToInt32(dr["id_categoria"]),
                 Nombre = dr["nombre"]?.ToString() ?? string.Empty,

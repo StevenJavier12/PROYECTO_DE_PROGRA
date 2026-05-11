@@ -40,15 +40,15 @@
             label4 = new Label();
             label2 = new Label();
             txtDireccion = new TextBox();
-            txtDui = new TextBox();
+            txtDUI = new TextBox();
             txtCorreo = new TextBox();
             txtCargo = new TextBox();
             txtApeliido = new TextBox();
             txtNombre = new TextBox();
-            dgvClientes = new DataGridView();
+            dgvEmpleados = new DataGridView();
             txtTelefono = new TextBox();
             label7 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -69,6 +69,7 @@
             btnRegresar.TabIndex = 30;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // btnGuardar
             // 
@@ -78,6 +79,7 @@
             btnGuardar.TabIndex = 31;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnModificar
             // 
@@ -87,6 +89,7 @@
             btnModificar.TabIndex = 32;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnEliminar
             // 
@@ -96,6 +99,7 @@
             btnEliminar.TabIndex = 33;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // label5
             // 
@@ -159,12 +163,12 @@
             txtDireccion.Size = new Size(336, 23);
             txtDireccion.TabIndex = 22;
             // 
-            // txtDui
+            // txtDUI
             // 
-            txtDui.Location = new Point(399, 173);
-            txtDui.Name = "txtDui";
-            txtDui.Size = new Size(161, 23);
-            txtDui.TabIndex = 21;
+            txtDUI.Location = new Point(399, 173);
+            txtDUI.Name = "txtDUI";
+            txtDUI.Size = new Size(161, 23);
+            txtDUI.TabIndex = 21;
             // 
             // txtCorreo
             // 
@@ -194,13 +198,13 @@
             txtNombre.Size = new Size(161, 23);
             txtNombre.TabIndex = 23;
             // 
-            // dgvClientes
+            // dgvEmpleados
             // 
-            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvClientes.Location = new Point(71, 220);
-            dgvClientes.Name = "dgvClientes";
-            dgvClientes.Size = new Size(669, 125);
-            dgvClientes.TabIndex = 17;
+            dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEmpleados.Location = new Point(71, 220);
+            dgvEmpleados.Name = "dgvEmpleados";
+            dgvEmpleados.Size = new Size(669, 125);
+            dgvEmpleados.TabIndex = 17;
             // 
             // txtTelefono
             // 
@@ -234,18 +238,18 @@
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(txtDireccion);
-            Controls.Add(txtDui);
+            Controls.Add(txtDUI);
             Controls.Add(txtCorreo);
             Controls.Add(txtTelefono);
             Controls.Add(txtCargo);
             Controls.Add(txtApeliido);
             Controls.Add(txtNombre);
-            Controls.Add(dgvClientes);
+            Controls.Add(dgvEmpleados);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlEmpleados";
             Size = new Size(786, 490);
-            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -264,12 +268,12 @@
         private Label label4;
         private Label label2;
         private TextBox txtDireccion;
-        private TextBox txtDui;
+        private TextBox txtDUI;
         private TextBox txtCorreo;
         private TextBox txtCargo;
         private TextBox txtApeliido;
         private TextBox txtNombre;
-        private DataGridView dgvClientes;
+        private DataGridView dgvEmpleados;
         private TextBox txtTelefono;
         private Label label7;
     }
