@@ -183,7 +183,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             dgvDetalle.DataSource = null;
         }
 
-        private void dgvRecepcion_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvRecepcion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
@@ -198,7 +198,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             CargarDetalles(int.Parse(txtIdRecepcion.Text));
         }
 
-        private void dgvDetalle_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
@@ -208,6 +208,8 @@ namespace PROSERA.WinFormsUI.UsersControl
             txtCantidad.Text = fila.Cells["Cantidad"].Value.ToString();
             cbDispositivo.SelectedValue = Convert.ToInt32(fila.Cells["IdDispositivo"].Value);
         }
+
+       
     }
 }
 

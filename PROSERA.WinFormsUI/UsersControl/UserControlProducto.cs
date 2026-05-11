@@ -169,7 +169,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             cbEstadoProducto.SelectedIndex = -1;
         }
 
-        private void dgvProducto_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
@@ -183,5 +183,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             cbMarca.SelectedValue = Convert.ToInt32(fila.Cells["IdMarca"].Value);
             cbCategoria.SelectedValue = Convert.ToInt32(fila.Cells["IdCategoria"].Value);
         }
+
+        
     }
 }
