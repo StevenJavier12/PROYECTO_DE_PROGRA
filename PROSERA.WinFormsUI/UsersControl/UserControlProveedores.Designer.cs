@@ -228,19 +228,15 @@
         private Label label5;
         private Label label6;
         private Button btnEliminar;
-        private Button button1;
-        private Button button2;
-        private DataGridView dataGridProveedores;
-        private TextBox txtNombreEmpresa;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox txtDireccion;
         private Button btnModificar;
         private Button btnGuardar;
+        private DataGridView dataGridProveedores;
+        private TextBox txtNombreEmpresa;
         private TextBox txtTelefono;
         private TextBox txtRespaldo;
         private TextBox txtCorreo;
+        private TextBox txtDireccion;
+       
         private Button btnLimpiar;
     }
 }
