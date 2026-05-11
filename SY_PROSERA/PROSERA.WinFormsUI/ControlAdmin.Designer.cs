@@ -41,12 +41,13 @@
             btnCompras = new Button();
             btnCategorias = new Button();
             btnProveedores = new Button();
-            panelContainer = new Panel();
             label5 = new Label();
             pictureBox3 = new PictureBox();
             label4 = new Label();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            btnInicioProcera = new Button();
+            pictureBox13 = new PictureBox();
             panel2 = new Panel();
             pictureBox12 = new PictureBox();
             pictureBox11 = new PictureBox();
@@ -71,12 +72,11 @@
             btnComprasA = new Button();
             btnCategoriasA = new Button();
             btnProvedoresA = new Button();
-            btnInicioProcera = new Button();
-            pictureBox13 = new PictureBox();
-            panelContainer.SuspendLayout();
+            panelContainer = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
@@ -88,7 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            panelContainer.SuspendLayout();
             SuspendLayout();
             // 
             // btnEmpleados
@@ -272,35 +272,24 @@
             btnProveedores.TextAlign = ContentAlignment.MiddleLeft;
             btnProveedores.UseVisualStyleBackColor = false;
             // 
-            // panelContainer
-            // 
-            panelContainer.Controls.Add(label5);
-            panelContainer.Controls.Add(pictureBox3);
-            panelContainer.Controls.Add(label4);
-            panelContainer.ForeColor = Color.Transparent;
-            panelContainer.Location = new Point(157, 68);
-            panelContainer.Margin = new Padding(3, 4, 3, 4);
-            panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(889, 653);
-            panelContainer.TabIndex = 24;
-            // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tahoma", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(161, 369);
+            label5.Location = new Point(119, 423);
             label5.Name = "label5";
             label5.Size = new Size(570, 28);
             label5.TabIndex = 61;
             label5.Text = "Soluciones para el agro, herramientas para el progreso.";
             label5.TextAlign = ContentAlignment.MiddleCenter;
+            label5.Click += label5_Click;
             // 
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(331, 124);
+            pictureBox3.Location = new Point(307, 161);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(225, 230);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -312,7 +301,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Tahoma", 17F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(102, 52);
+            label4.Location = new Point(73, 107);
             label4.Name = "label4";
             label4.Size = new Size(691, 35);
             label4.TabIndex = 60;
@@ -342,6 +331,33 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1046, 68);
             panel1.TabIndex = 23;
+            // 
+            // btnInicioProcera
+            // 
+            btnInicioProcera.FlatAppearance.BorderColor = SystemColors.ButtonShadow;
+            btnInicioProcera.FlatAppearance.BorderSize = 0;
+            btnInicioProcera.FlatStyle = FlatStyle.Flat;
+            btnInicioProcera.Font = new Font("Tahoma", 17F, FontStyle.Bold);
+            btnInicioProcera.ForeColor = SystemColors.ActiveCaptionText;
+            btnInicioProcera.Location = new Point(92, 14);
+            btnInicioProcera.Margin = new Padding(3, 4, 3, 3);
+            btnInicioProcera.Name = "btnInicioProcera";
+            btnInicioProcera.Size = new Size(163, 55);
+            btnInicioProcera.TabIndex = 62;
+            btnInicioProcera.Text = "PROSERA";
+            btnInicioProcera.TextAlign = ContentAlignment.MiddleLeft;
+            btnInicioProcera.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.BackColor = Color.Transparent;
+            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
+            pictureBox13.Location = new Point(7, 4);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(79, 62);
+            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox13.TabIndex = 63;
+            pictureBox13.TabStop = false;
             // 
             // panel2
             // 
@@ -690,32 +706,15 @@
             btnProvedoresA.UseVisualStyleBackColor = false;
             btnProvedoresA.Click += btnProvedoresA_Click;
             // 
-            // btnInicioProcera
+            // panelContainer
             // 
-            btnInicioProcera.FlatAppearance.BorderColor = SystemColors.ButtonShadow;
-            btnInicioProcera.FlatAppearance.BorderSize = 0;
-            btnInicioProcera.FlatStyle = FlatStyle.Flat;
-            btnInicioProcera.Font = new Font("Tahoma", 17F, FontStyle.Bold);
-            btnInicioProcera.ForeColor = SystemColors.ActiveCaptionText;
-            btnInicioProcera.Location = new Point(92, 14);
-            btnInicioProcera.Margin = new Padding(3, 4, 3, 3);
-            btnInicioProcera.Name = "btnInicioProcera";
-            btnInicioProcera.Size = new Size(163, 55);
-            btnInicioProcera.TabIndex = 62;
-            btnInicioProcera.Text = "PROSERA";
-            btnInicioProcera.TextAlign = ContentAlignment.MiddleLeft;
-            btnInicioProcera.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox13
-            // 
-            pictureBox13.BackColor = Color.Transparent;
-            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
-            pictureBox13.Location = new Point(7, 4);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(79, 62);
-            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox13.TabIndex = 63;
-            pictureBox13.TabStop = false;
+            panelContainer.Controls.Add(pictureBox3);
+            panelContainer.Controls.Add(label5);
+            panelContainer.Controls.Add(label4);
+            panelContainer.Location = new Point(156, 68);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(890, 653);
+            panelContainer.TabIndex = 62;
             // 
             // ControlAdmin
             // 
@@ -740,11 +739,10 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "ControlAdmin";
             Text = "UserControlAdmin";
-            panelContainer.ResumeLayout(false);
-            panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
@@ -757,7 +755,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            panelContainer.ResumeLayout(false);
+            panelContainer.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -776,7 +775,6 @@
         private Button btnCompras;
         private Button btnCategorias;
         private Button btnProveedores;
-        private Panel panelContainer;
         private Panel panel1;
         private Panel panel2;
         private Button btnEmpleadosA;
@@ -808,5 +806,6 @@
         private Label label4;
         private Button btnInicioProcera;
         private PictureBox pictureBox13;
+        private Panel panelContainer;
     }
 }
