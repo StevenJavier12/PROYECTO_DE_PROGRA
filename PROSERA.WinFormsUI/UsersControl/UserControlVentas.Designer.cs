@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
+            dgvDetalleVenta = new DataGridView();
+            btnGuardar = new Button();
             button2 = new Button();
             cbCliente = new ComboBox();
             label2 = new Label();
             dtimeFecha = new DateTimePicker();
             label3 = new Label();
             label4 = new Label();
-            comboBox2 = new ComboBox();
+            cbUsuario = new ComboBox();
             label6 = new Label();
             cbDescuento = new ComboBox();
             label7 = new Label();
@@ -54,12 +54,14 @@
             txbSubTotal = new TextBox();
             numCantidad = new NumericUpDown();
             txbPrecio = new TextBox();
-            dgvVenta = new DataGridView();
+            dgvFacturaVenta = new DataGridView();
             btnAgregar = new Button();
             btnEliminar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            label5 = new Label();
+            txtTotal = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvDetalleVenta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numCantidad).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvVenta).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvFacturaVenta).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -72,22 +74,24 @@
             label1.TabIndex = 5;
             label1.Text = "Ventas";
             // 
-            // dataGridView1
+            // dgvDetalleVenta
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(19, 533);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(727, 151);
-            dataGridView1.TabIndex = 6;
+            dgvDetalleVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDetalleVenta.Location = new Point(19, 533);
+            dgvDetalleVenta.Name = "dgvDetalleVenta";
+            dgvDetalleVenta.Size = new Size(727, 151);
+            dgvDetalleVenta.TabIndex = 6;
+            dgvDetalleVenta.CellContentClick += dgvDetalleVenta_CellContentClick;
             // 
-            // button1
+            // btnGuardar
             // 
-            button1.Location = new Point(656, 104);
-            button1.Name = "button1";
-            button1.Size = new Size(90, 39);
-            button1.TabIndex = 7;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            btnGuardar.Location = new Point(656, 104);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(90, 39);
+            btnGuardar.TabIndex = 7;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // button2
             // 
@@ -105,7 +109,6 @@
             cbCliente.Name = "cbCliente";
             cbCliente.Size = new Size(242, 23);
             cbCliente.TabIndex = 12;
-            cbCliente.SelectedIndexChanged += cbCliente_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -135,19 +138,19 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(606, 10);
+            label4.Location = new Point(316, 191);
             label4.Name = "label4";
             label4.Size = new Size(47, 15);
             label4.TabIndex = 17;
             label4.Text = "Usuario";
             // 
-            // comboBox2
+            // cbUsuario
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(606, 30);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(140, 23);
-            comboBox2.TabIndex = 16;
+            cbUsuario.FormattingEnabled = true;
+            cbUsuario.Location = new Point(316, 211);
+            cbUsuario.Name = "cbUsuario";
+            cbUsuario.Size = new Size(140, 23);
+            cbUsuario.TabIndex = 16;
             // 
             // label6
             // 
@@ -264,6 +267,7 @@
             cbProducto.Name = "cbProducto";
             cbProducto.Size = new Size(240, 23);
             cbProducto.TabIndex = 32;
+            cbProducto.SelectedIndexChanged += cbProducto_SelectedIndexChanged;
             // 
             // txbSubTotal
             // 
@@ -278,6 +282,7 @@
             numCantidad.Name = "numCantidad";
             numCantidad.Size = new Size(55, 23);
             numCantidad.TabIndex = 47;
+            numCantidad.ValueChanged += numCantidad_ValueChanged;
             // 
             // txbPrecio
             // 
@@ -286,13 +291,13 @@
             txbPrecio.Size = new Size(62, 23);
             txbPrecio.TabIndex = 48;
             // 
-            // dgvVenta
+            // dgvFacturaVenta
             // 
-            dgvVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVenta.Location = new Point(19, 253);
-            dgvVenta.Name = "dgvVenta";
-            dgvVenta.Size = new Size(727, 151);
-            dgvVenta.TabIndex = 49;
+            dgvFacturaVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvFacturaVenta.Location = new Point(19, 253);
+            dgvFacturaVenta.Name = "dgvFacturaVenta";
+            dgvFacturaVenta.Size = new Size(727, 151);
+            dgvFacturaVenta.TabIndex = 49;
             // 
             // btnAgregar
             // 
@@ -312,13 +317,31 @@
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(487, 191);
+            label5.Name = "label5";
+            label5.Size = new Size(32, 15);
+            label5.TabIndex = 53;
+            label5.Text = "Total";
+            // 
+            // txtTotal
+            // 
+            txtTotal.Location = new Point(490, 211);
+            txtTotal.Name = "txtTotal";
+            txtTotal.Size = new Size(62, 23);
+            txtTotal.TabIndex = 54;
+            // 
             // UserControlVentas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(txtTotal);
+            Controls.Add(label5);
             Controls.Add(btnEliminar);
             Controls.Add(btnAgregar);
-            Controls.Add(dgvVenta);
+            Controls.Add(dgvFacturaVenta);
             Controls.Add(txbPrecio);
             Controls.Add(numCantidad);
             Controls.Add(label10);
@@ -336,22 +359,22 @@
             Controls.Add(cbDescuento);
             Controls.Add(label6);
             Controls.Add(label4);
-            Controls.Add(comboBox2);
+            Controls.Add(cbUsuario);
             Controls.Add(label3);
             Controls.Add(dtimeFecha);
             Controls.Add(label2);
             Controls.Add(cbCliente);
             Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(btnGuardar);
+            Controls.Add(dgvDetalleVenta);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlVentas";
             Size = new Size(767, 728);
             Load += UserControlVentas_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDetalleVenta).EndInit();
             ((System.ComponentModel.ISupportInitialize)numCantidad).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvVenta).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvFacturaVenta).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -359,15 +382,15 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
-        private Button button1;
+        private DataGridView dgvDetalleVenta;
+        private Button btnGuardar;
         private Button button2;
         private ComboBox cbCliente;
         private Label label2;
         private DateTimePicker dtimeFecha;
         private Label label3;
         private Label label4;
-        private ComboBox comboBox2;
+        private ComboBox cbUsuario;
         private Label label6;
         private ComboBox cbDescuento;
         private Label label7;
@@ -384,8 +407,10 @@
         private TextBox txbSubTotal;
         private NumericUpDown numCantidad;
         private TextBox txbPrecio;
-        private DataGridView dgvVenta;
+        private DataGridView dgvFacturaVenta;
         private Button btnAgregar;
         private Button btnEliminar;
+        private Label label5;
+        private TextBox txtTotal;
     }
 }

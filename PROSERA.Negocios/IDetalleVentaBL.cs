@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PROSERA.Negocios
 {
-    internal interface IDetalleVentaBL
+    public interface IDetalleVentaBL
     {
 
         void Agregar(DetalleVenta detalle);

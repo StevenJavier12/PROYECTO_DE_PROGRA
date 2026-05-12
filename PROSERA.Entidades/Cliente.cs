@@ -14,6 +14,7 @@ namespace PROSERA.Entidades
         public string Dui { get; set; }
         public string? Correo { get; set; }
 
+
         public List<FacturaVenta> FacturaVentas { get; set; }
         public List<RecepcionDispositivo> RecepcionDispositivos { get; set; }
     }

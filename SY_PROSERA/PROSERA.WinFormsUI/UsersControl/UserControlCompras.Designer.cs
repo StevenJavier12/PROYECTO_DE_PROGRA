@@ -40,7 +40,7 @@
             label15 = new Label();
             label16 = new Label();
             cbProducto = new ComboBox();
-            txbSubTotal = new TextBox();
+            txbSubtotal = new TextBox();
             label9 = new Label();
             cbTipoComprobante = new ComboBox();
             label7 = new Label();
@@ -54,12 +54,12 @@
             cbProveedor = new ComboBox();
             button2 = new Button();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
+            dgvDetalleProducto = new DataGridView();
             label5 = new Label();
             txtTotal = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvVenta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numCantidad).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDetalleProducto).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -80,6 +80,7 @@
             btnEliminar.TabIndex = 80;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click_1;
             // 
             // btnAgregar
             // 
@@ -89,6 +90,7 @@
             btnAgregar.TabIndex = 79;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click_1;
             // 
             // dgvVenta
             // 
@@ -97,6 +99,7 @@
             dgvVenta.Name = "dgvVenta";
             dgvVenta.Size = new Size(727, 151);
             dgvVenta.TabIndex = 78;
+            dgvVenta.CellContentClick += dgvVenta_CellContentClick;
             // 
             // txbPrecio
             // 
@@ -104,6 +107,7 @@
             txbPrecio.Name = "txbPrecio";
             txbPrecio.Size = new Size(62, 23);
             txbPrecio.TabIndex = 77;
+            txbPrecio.TextChanged += txbPrecio_TextChanged;
             // 
             // numCantidad
             // 
@@ -111,6 +115,7 @@
             numCantidad.Name = "numCantidad";
             numCantidad.Size = new Size(55, 23);
             numCantidad.TabIndex = 76;
+            numCantidad.ValueChanged += numCantidad_ValueChanged;
             // 
             // label10
             // 
@@ -166,12 +171,13 @@
             cbProducto.Size = new Size(240, 23);
             cbProducto.TabIndex = 70;
             // 
-            // txbSubTotal
+            // txbSubtotal
             // 
-            txbSubTotal.Location = new Point(483, 480);
-            txbSubTotal.Name = "txbSubTotal";
-            txbSubTotal.Size = new Size(70, 23);
-            txbSubTotal.TabIndex = 69;
+            txbSubtotal.Location = new Point(483, 480);
+            txbSubtotal.Name = "txbSubtotal";
+            txbSubtotal.Size = new Size(70, 23);
+            txbSubtotal.TabIndex = 69;
+            txbSubtotal.TextChanged += txbSubtotal_TextChanged;
             // 
             // label9
             // 
@@ -204,10 +210,12 @@
             // cbDescuento
             // 
             cbDescuento.FormattingEnabled = true;
+            cbDescuento.Items.AddRange(new object[] { "10", "20", "30" });
             cbDescuento.Location = new Point(20, 159);
             cbDescuento.Name = "cbDescuento";
             cbDescuento.Size = new Size(242, 23);
             cbDescuento.TabIndex = 63;
+            cbDescuento.SelectedIndexChanged += cbDescuento_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -287,13 +295,13 @@
             button1.Text = "Guardar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvDetalleProducto
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(20, 534);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(727, 151);
-            dataGridView1.TabIndex = 53;
+            dgvDetalleProducto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDetalleProducto.Location = new Point(20, 534);
+            dgvDetalleProducto.Name = "dgvDetalleProducto";
+            dgvDetalleProducto.Size = new Size(727, 151);
+            dgvDetalleProducto.TabIndex = 53;
             // 
             // label5
             // 
@@ -328,7 +336,7 @@
             Controls.Add(label15);
             Controls.Add(label16);
             Controls.Add(cbProducto);
-            Controls.Add(txbSubTotal);
+            Controls.Add(txbSubtotal);
             Controls.Add(label9);
             Controls.Add(cbTipoComprobante);
             Controls.Add(label7);
@@ -342,7 +350,7 @@
             Controls.Add(cbProveedor);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvDetalleProducto);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlCompras";
@@ -350,7 +358,7 @@
             Load += UserControlCompras_Load;
             ((System.ComponentModel.ISupportInitialize)dgvVenta).EndInit();
             ((System.ComponentModel.ISupportInitialize)numCantidad).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDetalleProducto).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -369,7 +377,7 @@
         private Label label15;
         private Label label16;
         private ComboBox cbProducto;
-        private TextBox txbSubTotal;
+        private TextBox txbSubtotal;
         private Label label9;
         private ComboBox cbTipoComprobante;
         private Label label7;
@@ -383,7 +391,7 @@
         private ComboBox cbProveedor;
         private Button button2;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvDetalleProducto;
         private Label label5;
         private TextBox txtTotal;
     }

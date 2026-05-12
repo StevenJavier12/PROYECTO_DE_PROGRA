@@ -13,12 +13,12 @@ namespace PROSERA.WinFormsUI.UsersControl
 {
     public partial class UserControlInventario : UserControl
     {
-        private readonly InventarioBL _inventarioBL;
-        private readonly ProductoBL _productoBL;
+        private readonly IInventarioBL _inventarioBL;
+        private readonly IProductoBL _productoBL;
 
         public UserControlInventario()
         {
-            
+
 
 
             InitializeComponent();
@@ -27,24 +27,22 @@ namespace PROSERA.WinFormsUI.UsersControl
             _productoBL = new ProductoBL(new ProductoDAL());
         }
 
-        private void UserControlInventario_Load(object sender, EventArgs e)
+        private void UserControlInventario_Load_1(object sender, EventArgs e)
         {
-            
-
-
             CargarProductos();
             CargarTiposMovimiento();
             CargarGrid();
 
             txtInventario.Visible = false;
+
+
         }
 
         private void CargarProductos()
         {
-            DataTable tabla = _productoBL.ListarConCategoria();
-            cbProducto.DataSource = tabla;
-            cbProducto.DisplayMember = "Nombre";
-            cbProducto.ValueMember = "IdProducto";
+            cbProducto.DataSource = _productoBL.ListarConCategoria();
+            cbProducto.DisplayMember = "nombre";
+            cbProducto.ValueMember = "id_producto";
             cbProducto.SelectedIndex = -1;
         }
 
@@ -166,21 +164,23 @@ namespace PROSERA.WinFormsUI.UsersControl
             txtDescripcionMovimiento.Text = string.Empty;
         }
 
-        private void dgvInventario_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvInventario_SelectionChanged(object? sender, EventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (dgvInventario.CurrentRow == null || dgvInventario.SelectedRows.Count == 0)
+            {
+                Limpiar();
+                return;
+            }
 
-            DataGridViewRow fila = dgvInventario.Rows[e.RowIndex];
+            DataGridViewRow row = dgvInventario.SelectedRows[0];
 
-            txtInventario.Text = fila.Cells["id_inventario"].Value.ToString();
-            txtStock.Text = fila.Cells["stock"].Value.ToString();
-            txtStockMinimo.Text = fila.Cells["stock_minimo"].Value.ToString();
-            dtimeFechaActualizacion.Value = Convert.ToDateTime(fila.Cells["fecha_actualizacion"].Value);
-            cbTipoMovimiento.SelectedItem = fila.Cells["tipo_movimiento"].Value.ToString();
-            txtDescripcionMovimiento.Text = fila.Cells["DescripcionMovimiento"].Value.ToString();
-
-            int idProducto = Convert.ToInt32(fila.Cells["id_producto"].Value);
-            cbProducto.SelectedValue = idProducto;
+            txtInventario.Text = row.Cells["id_inventario"].Value?.ToString() ?? "";
+            txtStock.Text = row.Cells["stock"].Value?.ToString() ?? "";
+            txtStockMinimo.Text = row.Cells["stock_minimo"].Value?.ToString() ?? "";
+            dtimeFechaActualizacion.Value = Convert.ToDateTime(row.Cells["fecha_actualizacion"].Value);
+            cbTipoMovimiento.SelectedItem = row.Cells["tipo_movimiento"].Value?.ToString() ?? "";
+            txtDescripcionMovimiento.Text = row.Cells["DescripcionMovimiento"].Value?.ToString() ?? "";
+            cbProducto.SelectedValue = Convert.ToInt32(row.Cells["id_producto"].Value);
         }
     }
 }
