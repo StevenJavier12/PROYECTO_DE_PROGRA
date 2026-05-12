@@ -10,22 +10,6 @@ namespace PROSERA.Datos
     public class FacturaCompraDAL : IFacturaCompraDAL
     {
 
-            /*            
-            -- =========================================
-            -- 11. FACTURA_COMPRA
-            -- =========================================
-            CREATE TABLE Factura_Compras (
-                id_compra INT PRIMARY KEY IDENTITY (1,1),
-                fecha DATETIME NOT NULL,
-                id_proveedor INT NOT NULL,
-                total DECIMAL(10,2) NOT NULL,
-                tipo_comprobante VARCHAR(50) NOT NULL DEFAULT 'Consumidor final',
-
-                CONSTRAINT FK_Compra_Proveedores
-                FOREIGN KEY (id_proveedor) REFERENCES Proveedores(id_proveedor)
-            );
-            */
-
         public void Eliminar(int id)
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
@@ -37,20 +21,22 @@ namespace PROSERA.Datos
             cmd.ExecuteNonQuery();
         }
 
-        public void Guardar(FacturaCompra factura)
+        public int Guardar(FacturaCompra factura)
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
             const string SQL = @"INSERT INTO Factura_Compras (fecha, id_proveedor, total, tipo_comprobante)
-                            VALUES (@fecha, @id_proveedor, @total, @tipo_comprobante)";
+                         OUTPUT INSERTED.id_compra
+                         VALUES (@fecha, @id_proveedor, @total, @tipo_comprobante)";
 
             using SqlCommand cmd = new(SQL, cn);
             cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = factura.Fecha;
             cmd.Parameters.Add("@id_proveedor", SqlDbType.Int).Value = factura.IdProveedor;
             cmd.Parameters.Add("@total", SqlDbType.Decimal).Value = factura.Total;
             cmd.Parameters.Add("@tipo_comprobante", SqlDbType.VarChar, 50).Value = factura.TipoComprobante;
-            cmd.ExecuteNonQuery();
+
+            return (int)cmd.ExecuteScalar();
         }
 
         public DataTable Listar()
@@ -66,5 +52,48 @@ namespace PROSERA.Datos
             da.Fill(table);
             return table;
         }
+        public FacturaCompra? ObtenerPorId(int id)
+        {
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            const string SQL = @"SELECT id_compra, fecha, id_proveedor, total, tipo_comprobante 
+                         FROM Factura_Compras WHERE id_compra = @Id";
+            using SqlCommand cmd = new(SQL, cn);
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+
+            using SqlDataReader dr = cmd.ExecuteReader();
+            if (!dr.Read()) return null;
+
+            return new FacturaCompra
+            {
+                IdCompra = Convert.ToInt32(dr["id_compra"]),
+                Fecha = Convert.ToDateTime(dr["fecha"]),
+                IdProveedor = Convert.ToInt32(dr["id_proveedor"]),
+                Total = Convert.ToDecimal(dr["total"]),
+                TipoComprobante = dr["tipo_comprobante"].ToString()
+            };
+        }
+        public void Editar(FacturaCompra factura)
+        {
+            using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            const string SQL = @"UPDATE Factura_Compras 
+                         SET fecha = @fecha, 
+                             id_proveedor = @id_proveedor, 
+                             total = @total, 
+                             tipo_comprobante = @tipo_comprobante
+                         WHERE id_compra = @id_compra";
+
+            using SqlCommand cmd = new(SQL, cn);
+            cmd.Parameters.Add("@id_compra", SqlDbType.Int).Value = factura.IdCompra;
+            cmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = factura.Fecha;
+            cmd.Parameters.Add("@id_proveedor", SqlDbType.Int).Value = factura.IdProveedor;
+            cmd.Parameters.Add("@total", SqlDbType.Decimal).Value = factura.Total;
+            cmd.Parameters.Add("@tipo_comprobante", SqlDbType.VarChar, 50).Value = factura.TipoComprobante;
+            cmd.ExecuteNonQuery();
+        }
+
     }
 }

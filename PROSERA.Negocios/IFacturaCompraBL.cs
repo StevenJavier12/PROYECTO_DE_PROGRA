@@ -8,9 +8,15 @@ namespace PROSERA.Negocios
 {
     public interface IFacturaCompraBL
     {
-        void Guardar(FacturaCompra factura);
+        int Guardar(FacturaCompra factura);
+        void Editar(FacturaCompra factura);
         void Eliminar(int id);
         DataTable Listar();
+
+        FacturaCompra? ObtenerPorId(int id);
+
+
+       
 
     }
 }
