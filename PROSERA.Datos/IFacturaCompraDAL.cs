@@ -9,9 +9,14 @@ namespace PROSERA.Datos
 
     public interface IFacturaCompraDAL
     {
-        void Guardar(FacturaCompra factura);
+        int Guardar(FacturaCompra factura);
+
         DataTable Listar();
         void Eliminar(int id);
+        FacturaCompra? ObtenerPorId(int id);
+
+        void Editar(FacturaCompra factura);
+
     }
 
 }

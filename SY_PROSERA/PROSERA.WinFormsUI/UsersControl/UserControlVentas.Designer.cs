@@ -75,14 +75,37 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
+<<<<<<< HEAD
+            dataGridView1.Location = new Point(22, 433);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(851, 201);
+=======
             dataGridView1.Location = new Point(19, 533);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(727, 151);
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+            dataGridView1.Location = new Point(19, 533);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(727, 151);
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             dataGridView1.TabIndex = 6;
             // 
             // button1
             // 
+<<<<<<< HEAD
+<<<<<<< HEAD
+            button1.Location = new Point(770, 139);
+            button1.Margin = new Padding(3, 4, 3, 4);
+=======
             button1.Location = new Point(656, 104);
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+            button1.Location = new Point(656, 104);
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             button1.Name = "button1";
             button1.Size = new Size(90, 39);
             button1.TabIndex = 7;
@@ -91,7 +114,16 @@
             // 
             // button2
             // 
+<<<<<<< HEAD
+<<<<<<< HEAD
+            button2.Location = new Point(770, 188);
+            button2.Margin = new Padding(3, 4, 3, 4);
+=======
             button2.Location = new Point(656, 158);
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+            button2.Location = new Point(656, 158);
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             button2.Name = "button2";
             button2.Size = new Size(90, 39);
             button2.TabIndex = 8;
@@ -100,17 +132,69 @@
             // 
             // cbCliente
             // 
+<<<<<<< HEAD
+<<<<<<< HEAD
+            button3.Location = new Point(770, 237);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(103, 52);
+            button3.TabIndex = 9;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(770, 287);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(103, 52);
+            button4.TabIndex = 10;
+            button4.Text = "button4";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(384, 281);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(114, 27);
+            textBox1.TabIndex = 11;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(22, 139);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(138, 28);
+            comboBox1.TabIndex = 12;
+            
+=======
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             cbCliente.FormattingEnabled = true;
             cbCliente.Location = new Point(19, 104);
             cbCliente.Name = "cbCliente";
             cbCliente.Size = new Size(242, 23);
             cbCliente.TabIndex = 12;
             cbCliente.SelectedIndexChanged += cbCliente_SelectedIndexChanged;
+<<<<<<< HEAD
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             // 
             // label2
             // 
             label2.AutoSize = true;
+<<<<<<< HEAD
+<<<<<<< HEAD
+            label2.Location = new Point(579, 76);
+=======
             label2.Location = new Point(21, 193);
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+            label2.Location = new Point(21, 193);
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             label2.Name = "label2";
             label2.Size = new Size(38, 15);
             label2.TabIndex = 13;
@@ -118,10 +202,24 @@
             // 
             // dtimeFecha
             // 
+<<<<<<< HEAD
+<<<<<<< HEAD
+            dateTimePicker1.Location = new Point(579, 100);
+            dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(228, 27);
+            dateTimePicker1.TabIndex = 14;
+=======
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             dtimeFecha.Location = new Point(21, 211);
             dtimeFecha.Name = "dtimeFecha";
             dtimeFecha.Size = new Size(240, 23);
             dtimeFecha.TabIndex = 14;
+<<<<<<< HEAD
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             // 
             // label3
             // 
@@ -135,7 +233,15 @@
             // label4
             // 
             label4.AutoSize = true;
+<<<<<<< HEAD
+<<<<<<< HEAD
+            label4.Location = new Point(22, 257);
+=======
             label4.Location = new Point(606, 10);
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+            label4.Location = new Point(606, 10);
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             label4.Name = "label4";
             label4.Size = new Size(47, 15);
             label4.TabIndex = 17;
@@ -144,11 +250,35 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
+<<<<<<< HEAD
+<<<<<<< HEAD
+            comboBox2.Location = new Point(22, 281);
+            comboBox2.Margin = new Padding(3, 4, 3, 4);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(138, 28);
+            comboBox2.TabIndex = 16;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(384, 257);
+            label5.Name = "label5";
+            label5.Size = new Size(42, 20);
+            label5.TabIndex = 18;
+            label5.Text = "Total";
+            // 
+=======
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             comboBox2.Location = new Point(606, 30);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(140, 23);
             comboBox2.TabIndex = 16;
             // 
+<<<<<<< HEAD
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             // label6
             // 
             label6.AutoSize = true;
@@ -160,16 +290,39 @@
             // 
             // cbDescuento
             // 
+<<<<<<< HEAD
+<<<<<<< HEAD
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(22, 211);
+            comboBox3.Margin = new Padding(3, 4, 3, 4);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(138, 28);
+            comboBox3.TabIndex = 21;
+=======
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             cbDescuento.FormattingEnabled = true;
             cbDescuento.Location = new Point(19, 158);
             cbDescuento.Name = "cbDescuento";
             cbDescuento.Size = new Size(242, 23);
             cbDescuento.TabIndex = 21;
+<<<<<<< HEAD
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             // 
             // label7
             // 
             label7.AutoSize = true;
+<<<<<<< HEAD
+<<<<<<< HEAD
+            label7.Location = new Point(384, 115);
+=======
             label7.Location = new Point(316, 86);
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+            label7.Location = new Point(316, 86);
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             label7.Name = "label7";
             label7.Size = new Size(95, 15);
             label7.TabIndex = 22;
@@ -177,25 +330,63 @@
             // 
             // cbMetodoPago
             // 
+<<<<<<< HEAD
+<<<<<<< HEAD
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(384, 139);
+            comboBox4.Margin = new Padding(3, 4, 3, 4);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(138, 28);
+            comboBox4.TabIndex = 23;
+=======
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             cbMetodoPago.FormattingEnabled = true;
             cbMetodoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta", "Tranferencia" });
             cbMetodoPago.Location = new Point(316, 104);
             cbMetodoPago.Name = "cbMetodoPago";
             cbMetodoPago.Size = new Size(121, 23);
             cbMetodoPago.TabIndex = 23;
+<<<<<<< HEAD
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
             // 
             // cbEstadoFac
             // 
+<<<<<<< HEAD
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Location = new Point(384, 211);
+            comboBox5.Margin = new Padding(3, 4, 3, 4);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(138, 28);
+            comboBox5.TabIndex = 25;
+=======
+=======
+            // 
+            // cbEstadoFac
+            // 
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             cbEstadoFac.FormattingEnabled = true;
             cbEstadoFac.Location = new Point(316, 158);
             cbEstadoFac.Name = "cbEstadoFac";
             cbEstadoFac.Size = new Size(121, 23);
             cbEstadoFac.TabIndex = 25;
+<<<<<<< HEAD
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             // 
             // label8
             // 
             label8.AutoSize = true;
+<<<<<<< HEAD
+<<<<<<< HEAD
+            label8.Location = new Point(384, 187);
+=======
             label8.Location = new Point(316, 140);
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+            label8.Location = new Point(316, 140);
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             label8.Name = "label8";
             label8.Size = new Size(100, 15);
             label8.TabIndex = 24;
@@ -207,7 +398,15 @@
             label9.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
             label9.Location = new Point(19, 61);
             label9.Name = "label9";
+<<<<<<< HEAD
+<<<<<<< HEAD
+            label9.Size = new Size(125, 23);
+=======
             label9.Size = new Size(121, 19);
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+            label9.Size = new Size(121, 19);
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             label9.TabIndex = 26;
             label9.Text = "Detalle de Venta";
             // 
@@ -347,8 +546,17 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlVentas";
+<<<<<<< HEAD
+<<<<<<< HEAD
+            Size = new Size(898, 653);
+=======
             Size = new Size(767, 728);
             Load += UserControlVentas_Load;
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+            Size = new Size(767, 728);
+            Load += UserControlVentas_Load;
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numCantidad).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvVenta).EndInit();

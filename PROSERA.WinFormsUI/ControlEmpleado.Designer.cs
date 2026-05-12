@@ -398,7 +398,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1064, 721);
+            AutoScroll = true;
+            ClientSize = new Size(931, 541);
             Controls.Add(panelContainer);
             Controls.Add(panel2);
             Controls.Add(panel1);

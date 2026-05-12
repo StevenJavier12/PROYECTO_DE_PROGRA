@@ -156,7 +156,6 @@
             txtNombreEmpresa.Name = "txtNombreEmpresa";
             txtNombreEmpresa.Size = new Size(211, 27);
             txtNombreEmpresa.TabIndex = 22;
-            txtNombreEmpresa.TextChanged += txtNombreEmpresa_TextChanged_1;
             // 
             // txtTelefono
             // 
@@ -228,15 +227,20 @@
         private Label label5;
         private Label label6;
         private Button btnEliminar;
-        private Button btnModificar;
-        private Button btnGuardar;
+
+        private Button button1;
+        private Button button2;
         private DataGridView dataGridProveedores;
         private TextBox txtNombreEmpresa;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private TextBox txtDireccion;
+        private Button btnModificar;
+        private Button btnGuardar;
         private TextBox txtTelefono;
         private TextBox txtRespaldo;
         private TextBox txtCorreo;
-        private TextBox txtDireccion;
-       
         private Button btnLimpiar;
     }
 }

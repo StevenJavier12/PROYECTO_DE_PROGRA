@@ -41,6 +41,12 @@
             btnCompras = new Button();
             btnCategorias = new Button();
             btnProveedores = new Button();
+<<<<<<< HEAD
+            label5 = new Label();
+            pictureBox3 = new PictureBox();
+            label4 = new Label();
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             btnInicioProcera = new Button();
@@ -68,11 +74,16 @@
             btnComprasA = new Button();
             btnCategoriasA = new Button();
             btnProvedoresA = new Button();
+<<<<<<< HEAD
+            panelContainer = new Panel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+=======
             pictureBox7 = new PictureBox();
             panelContainer = new Panel();
             label5 = new Label();
             label4 = new Label();
             pictureBox14 = new PictureBox();
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
@@ -86,9 +97,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+<<<<<<< HEAD
+            panelContainer.SuspendLayout();
+=======
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             SuspendLayout();
             // 
             // btnEmpleados
@@ -273,6 +288,45 @@
             btnProveedores.TextAlign = ContentAlignment.MiddleLeft;
             btnProveedores.UseVisualStyleBackColor = false;
             // 
+<<<<<<< HEAD
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Tahoma", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ActiveCaptionText;
+            label5.Location = new Point(119, 423);
+            label5.Name = "label5";
+            label5.Size = new Size(570, 28);
+            label5.TabIndex = 61;
+            label5.Text = "Soluciones para el agro, herramientas para el progreso.";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            label5.Click += label5_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(307, 161);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(225, 230);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 59;
+            pictureBox3.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Tahoma", 17F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(73, 107);
+            label4.Name = "label4";
+            label4.Size = new Size(691, 35);
+            label4.TabIndex = 60;
+            label4.Text = "Bien venidos al sistema de PROSERA Servicios";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
@@ -305,10 +359,17 @@
             btnInicioProcera.FlatStyle = FlatStyle.Flat;
             btnInicioProcera.Font = new Font("Tahoma", 17F, FontStyle.Bold);
             btnInicioProcera.ForeColor = SystemColors.ActiveCaptionText;
+<<<<<<< HEAD
+            btnInicioProcera.Location = new Point(92, 14);
+            btnInicioProcera.Margin = new Padding(3, 4, 3, 3);
+            btnInicioProcera.Name = "btnInicioProcera";
+            btnInicioProcera.Size = new Size(163, 55);
+=======
             btnInicioProcera.Location = new Point(115, 18);
             btnInicioProcera.Margin = new Padding(4, 5, 4, 4);
             btnInicioProcera.Name = "btnInicioProcera";
             btnInicioProcera.Size = new Size(204, 69);
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             btnInicioProcera.TabIndex = 62;
             btnInicioProcera.Text = "PROSERA";
             btnInicioProcera.TextAlign = ContentAlignment.MiddleLeft;
@@ -318,10 +379,16 @@
             // 
             pictureBox13.BackColor = Color.Transparent;
             pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
+<<<<<<< HEAD
+            pictureBox13.Location = new Point(7, 4);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(79, 62);
+=======
             pictureBox13.Location = new Point(9, 5);
             pictureBox13.Margin = new Padding(4);
             pictureBox13.Name = "pictureBox13";
             pictureBox13.Size = new Size(99, 78);
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox13.TabIndex = 63;
             pictureBox13.TabStop = false;
@@ -672,6 +739,17 @@
             btnProvedoresA.UseVisualStyleBackColor = false;
             btnProvedoresA.Click += btnProvedoresA_Click;
             // 
+<<<<<<< HEAD
+            // panelContainer
+            // 
+            panelContainer.Controls.Add(pictureBox3);
+            panelContainer.Controls.Add(label5);
+            panelContainer.Controls.Add(label4);
+            panelContainer.Location = new Point(156, 68);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(890, 653);
+            panelContainer.TabIndex = 62;
+=======
             // pictureBox7
             // 
             pictureBox7.BackColor = Color.Transparent;
@@ -730,6 +808,7 @@
             pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox14.TabIndex = 62;
             pictureBox14.TabStop = false;
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             // 
             // ControlAdmin
             // 
@@ -755,6 +834,10 @@
             Margin = new Padding(4);
             Name = "ControlAdmin";
             Text = "UserControlAdmin";
+<<<<<<< HEAD
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
@@ -769,10 +852,15 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+<<<<<<< HEAD
+            panelContainer.ResumeLayout(false);
+            panelContainer.PerformLayout();
+=======
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panelContainer.ResumeLayout(false);
             panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             ResumeLayout(false);
             PerformLayout();
         }
@@ -820,8 +908,11 @@
         private Button btnInicioProcera;
         private PictureBox pictureBox13;
         private Panel panelContainer;
+<<<<<<< HEAD
+=======
         private Label label5;
         private Label label4;
         private PictureBox pictureBox14;
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
     }
 }

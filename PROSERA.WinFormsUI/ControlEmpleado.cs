@@ -1,6 +1,4 @@
-﻿using PROSERA.Datos;
-using PROSERA.Negocios;
-using PROSERA.WinFormsUI.UsersControl;
+﻿using PROSERA.WinFormsUI.UsersControl;
 
 namespace PROSERA.WinFormsUI
 {
@@ -46,7 +44,7 @@ namespace PROSERA.WinFormsUI
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            UserControlVentas uc = new UserControlVentas(new DetalleVentaBL(new DetalleVentaDAL()));
+            UserControlVentas uc = new UserControlVentas();
             addUserControl(uc);
         }
 

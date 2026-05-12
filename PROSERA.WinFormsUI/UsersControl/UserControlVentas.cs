@@ -33,6 +33,11 @@ namespace PROSERA.WinFormsUI.UsersControl
             _ClienteBL = new ClienteBL(new ClienteDAL());
             _UsuarioBL = new UsuarioBL(new UsuarioDAL());
         }
+
+        public UserControlVentas()
+        {
+        }
+
         private void UserControlVentas_Load(object sender, EventArgs e)
         {
             ConfigurarDataGridView();

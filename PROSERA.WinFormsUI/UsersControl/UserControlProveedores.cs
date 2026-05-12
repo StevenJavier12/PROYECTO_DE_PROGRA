@@ -21,7 +21,18 @@ namespace PROSERA.WinFormsUI.UsersControl
 
         }
 
-       
+        private void txtNombreEmpresa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        private void txtCorreo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void txtDireccion_TextChanged(object sender, EventArgs e)
         {
@@ -117,15 +128,10 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
             // Limpiar los campos después de agregar el proveedor
             txtNombreEmpresa.Clear();
-            txtTelefono.Clear();
-            txtRespaldo.Clear();
-            txtCorreo.Clear();
-            txtDireccion.Clear();
-
-        }
-
-        private void txtNombreEmpresa_TextChanged_1(object sender, EventArgs e)
-        {
+                        txtTelefono.Clear();
+                        txtRespaldo.Clear();
+                                    txtCorreo.Clear();
+                                                txtDireccion.Clear();
 
         }
     }

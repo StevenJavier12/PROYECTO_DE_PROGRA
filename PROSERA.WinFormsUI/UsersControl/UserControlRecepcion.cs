@@ -112,15 +112,17 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtIdRecepcion.Text))
+                if (dgvRecepcion.CurrentRow == null)
                 {
-                    MessageBox.Show("Seleccione una recepción del grid para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Seleccione una recepción del grid para editar.");
                     return;
                 }
 
+                int id = Convert.ToInt32(dgvRecepcion.CurrentRow.Cells["id_recepcion"].Value);
+
                 RecepcionDispositivo recepcion = new RecepcionDispositivo
                 {
-                    IdRecepcion = int.Parse(txtIdRecepcion.Text),
+                    IdRecepcion = id,
                     Fecha = dtimeFecha.Value,
                     IdCliente = (int)cbCliente.SelectedValue,
                     IdUsuario = (int)cbUsuario.SelectedValue,
@@ -128,13 +130,13 @@ namespace PROSERA.WinFormsUI.UsersControl
                 };
 
                 _recepcionBL.Editar(recepcion);
-                MessageBox.Show("Recepción actualizada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Recepción actualizada correctamente.");
                 Limpiar();
                 CargarGrid();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -142,28 +144,34 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtIdRecepcion.Text))
+                if (dgvRecepcion.CurrentRow == null)
                 {
-                    MessageBox.Show("Seleccione una recepción del grid para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Seleccione una recepción del grid para eliminar.");
                     return;
                 }
 
-                DialogResult respuesta = MessageBox.Show("¿Está seguro de eliminar esta recepción?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                int id = Convert.ToInt32(dgvRecepcion.CurrentRow.Cells["id_recepcion"].Value);
+
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Está seguro de eliminar esta recepción?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
                 if (respuesta == DialogResult.Yes)
                 {
-                    _recepcionBL.Eliminar(int.Parse(txtIdRecepcion.Text));
-                    MessageBox.Show("Recepción eliminada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _recepcionBL.Eliminar(id);
+                    MessageBox.Show("Recepción eliminada correctamente.");
                     Limpiar();
                     CargarGrid();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();

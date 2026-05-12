@@ -139,7 +139,7 @@
             label6.Location = new Point(30, 142);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(98, 15);
+            label6.Size = new Size(99, 15);
             label6.TabIndex = 14;
             label6.Text = "Tipo Movimiento";
             // 
@@ -188,7 +188,7 @@
             btnGuardar.TabIndex = 19;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
+            btnGuardar.Click += btnGuardar_Click_1;
             // 
             // btnEditar
             // 
@@ -230,7 +230,7 @@
             dgvInventario.Margin = new Padding(2);
             dgvInventario.Name = "dgvInventario";
             dgvInventario.RowHeadersWidth = 62;
-            dgvInventario.Size = new Size(710, 198);
+            dgvInventario.Size = new Size(457, 198);
             dgvInventario.TabIndex = 23;
             dgvInventario.CellContentClick += dgvInventario_CellContentClick;
             // 

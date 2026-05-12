@@ -36,9 +36,11 @@ namespace PROSERA.WinFormsUI.UsersControl
 
         private void CargarMarcas()
         {
+          
+           
             List<Marca> marcas = _marcaBL.Listar();
             cbMarca.DataSource = marcas;
-            cbMarca.DisplayMember = "Nombre";
+            cbMarca.DisplayMember = "MarcaNombre";
             cbMarca.ValueMember = "IdMarca";
             cbMarca.SelectedIndex = -1;
         }

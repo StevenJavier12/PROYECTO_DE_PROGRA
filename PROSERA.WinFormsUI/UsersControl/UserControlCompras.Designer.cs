@@ -2,15 +2,8 @@
 {
     partial class UserControlCompras
     {
-        /// <summary> 
-        /// Variable del diseñador necesaria.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Limpiar los recursos que se estén usando.
-        /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,44 +15,34 @@
 
         #region Código generado por el Diseñador de componentes
 
-        /// <summary> 
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
-        /// </summary>
         private void InitializeComponent()
         {
             label1 = new Label();
-            btnEliminar = new Button();
-            btnAgregar = new Button();
-            dgvVenta = new DataGridView();
-            txbPrecio = new TextBox();
-            numCantidad = new NumericUpDown();
-            label10 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            cbProducto = new ComboBox();
-            txbSubTotal = new TextBox();
-            label9 = new Label();
-            cbTipoComprobante = new ComboBox();
-            label7 = new Label();
-            cbDescuento = new ComboBox();
-            label6 = new Label();
-            label4 = new Label();
-            comboBox2 = new ComboBox();
-            label3 = new Label();
-            dtimeFechaCompra = new DateTimePicker();
-            label2 = new Label();
-            cbProveedor = new ComboBox();
-            button2 = new Button();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
-            label5 = new Label();
+            lblBuscar = new Label();
+            txtBuscarCompra = new TextBox();
+            btnBuscar = new Button();
+            gbEncabezado = new GroupBox();
+            txtIdCompra = new TextBox();
+            lblIdCompra = new Label();
+            lblTotal = new Label();
             txtTotal = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dgvVenta).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numCantidad).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            lblTipoComprobante = new Label();
+            cboTipoComprobante = new ComboBox();
+            lblProveedor = new Label();
+            cboProveedor = new ComboBox();
+            dtpFecha = new DateTimePicker();
+            lblFecha = new Label();
+            gbDetalle = new GroupBox();
+            btnQuitarLinea = new Button();
+            btnAgregarLinea = new Button();
+            dgvDetalle = new DataGridView();
+            btnNuevo = new Button();
+            btnGuardar = new Button();
+            btnCancelar = new Button();
+            btnEliminar = new Button();
+            gbEncabezado.SuspendLayout();
+            gbDetalle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvDetalle).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -69,288 +52,249 @@
             label1.Location = new Point(340, 10);
             label1.Name = "label1";
             label1.Size = new Size(98, 25);
-            label1.TabIndex = 5;
+            label1.TabIndex = 0;
             label1.Text = "Compras";
             // 
-            // btnEliminar
+            // lblBuscar
             // 
-            btnEliminar.Location = new Point(657, 476);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(90, 27);
-            btnEliminar.TabIndex = 80;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            lblBuscar.AutoSize = true;
+            lblBuscar.Location = new Point(531, 23);
+            lblBuscar.Name = "lblBuscar";
+            lblBuscar.Size = new Size(88, 15);
+            lblBuscar.TabIndex = 1;
+            lblBuscar.Text = "Buscar Compra";
             // 
-            // btnAgregar
+            // txtBuscarCompra
             // 
-            btnAgregar.Location = new Point(657, 451);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(90, 27);
-            btnAgregar.TabIndex = 79;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
+            txtBuscarCompra.Location = new Point(472, 41);
+            txtBuscarCompra.Name = "txtBuscarCompra";
+            txtBuscarCompra.Size = new Size(147, 23);
+            txtBuscarCompra.TabIndex = 2;
             // 
-            // dgvVenta
+            // btnBuscar
             // 
-            dgvVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVenta.Location = new Point(20, 254);
-            dgvVenta.Name = "dgvVenta";
-            dgvVenta.Size = new Size(727, 151);
-            dgvVenta.TabIndex = 78;
+            btnBuscar.Location = new Point(625, 40);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 25);
+            btnBuscar.TabIndex = 3;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
-            // txbPrecio
+            // gbEncabezado
             // 
-            txbPrecio.Location = new Point(361, 480);
-            txbPrecio.Name = "txbPrecio";
-            txbPrecio.Size = new Size(62, 23);
-            txbPrecio.TabIndex = 77;
+            gbEncabezado.Controls.Add(txtIdCompra);
+            gbEncabezado.Controls.Add(lblIdCompra);
+            gbEncabezado.Controls.Add(lblTotal);
+            gbEncabezado.Controls.Add(txtTotal);
+            gbEncabezado.Controls.Add(lblTipoComprobante);
+            gbEncabezado.Controls.Add(cboTipoComprobante);
+            gbEncabezado.Controls.Add(lblProveedor);
+            gbEncabezado.Controls.Add(cboProveedor);
+            gbEncabezado.Controls.Add(dtpFecha);
+            gbEncabezado.Controls.Add(lblFecha);
+            gbEncabezado.Location = new Point(32, 70);
+            gbEncabezado.Name = "gbEncabezado";
+            gbEncabezado.Size = new Size(665, 100);
+            gbEncabezado.TabIndex = 4;
+            gbEncabezado.TabStop = false;
+            gbEncabezado.Text = "Encabezado";
             // 
-            // numCantidad
+            // txtIdCompra
             // 
-            numCantidad.Location = new Point(284, 481);
-            numCantidad.Name = "numCantidad";
-            numCantidad.Size = new Size(55, 23);
-            numCantidad.TabIndex = 76;
+            txtIdCompra.Enabled = false;
+            txtIdCompra.Location = new Point(80, 22);
+            txtIdCompra.Name = "txtIdCompra";
+            txtIdCompra.ReadOnly = true;
+            txtIdCompra.Size = new Size(80, 23);
+            txtIdCompra.TabIndex = 0;
+            txtIdCompra.Visible = false;
             // 
-            // label10
+            // lblIdCompra
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            label10.Location = new Point(22, 436);
-            label10.Name = "label10";
-            label10.Size = new Size(140, 19);
-            label10.TabIndex = 75;
-            label10.Text = "Detalle de producto";
+            lblIdCompra.AutoSize = true;
+            lblIdCompra.Location = new Point(10, 25);
+            lblIdCompra.Name = "lblIdCompra";
+            lblIdCompra.Size = new Size(64, 15);
+            lblIdCompra.TabIndex = 1;
+            lblIdCompra.Text = "ID Compra";
             // 
-            // label13
+            // lblTotal
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(284, 462);
-            label13.Name = "label13";
-            label13.Size = new Size(55, 15);
-            label13.TabIndex = 74;
-            label13.Text = "Cantidad";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(483, 462);
-            label14.Name = "label14";
-            label14.Size = new Size(52, 15);
-            label14.TabIndex = 73;
-            label14.Text = "SubTotal";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(361, 462);
-            label15.Name = "label15";
-            label15.Size = new Size(40, 15);
-            label15.TabIndex = 72;
-            label15.Text = "Precio";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(21, 463);
-            label16.Name = "label16";
-            label16.Size = new Size(56, 15);
-            label16.TabIndex = 71;
-            label16.Text = "Producto";
-            // 
-            // cbProducto
-            // 
-            cbProducto.FormattingEnabled = true;
-            cbProducto.Location = new Point(22, 481);
-            cbProducto.Name = "cbProducto";
-            cbProducto.Size = new Size(240, 23);
-            cbProducto.TabIndex = 70;
-            // 
-            // txbSubTotal
-            // 
-            txbSubTotal.Location = new Point(483, 480);
-            txbSubTotal.Name = "txbSubTotal";
-            txbSubTotal.Size = new Size(70, 23);
-            txbSubTotal.TabIndex = 69;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Times New Roman", 12F, FontStyle.Bold);
-            label9.Location = new Point(20, 62);
-            label9.Name = "label9";
-            label9.Size = new Size(135, 19);
-            label9.TabIndex = 68;
-            label9.Text = "Detalle de Compra";
-            // 
-            // cbTipoComprobante
-            // 
-            cbTipoComprobante.FormattingEnabled = true;
-            cbTipoComprobante.Items.AddRange(new object[] { "Efectivo", "Tarjeta", "Tranferencia" });
-            cbTipoComprobante.Location = new Point(317, 105);
-            cbTipoComprobante.Name = "cbTipoComprobante";
-            cbTipoComprobante.Size = new Size(121, 23);
-            cbTipoComprobante.TabIndex = 65;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(317, 87);
-            label7.Name = "label7";
-            label7.Size = new Size(104, 15);
-            label7.TabIndex = 64;
-            label7.Text = "TipoComprobante";
-            // 
-            // cbDescuento
-            // 
-            cbDescuento.FormattingEnabled = true;
-            cbDescuento.Location = new Point(20, 159);
-            cbDescuento.Name = "cbDescuento";
-            cbDescuento.Size = new Size(242, 23);
-            cbDescuento.TabIndex = 63;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(20, 141);
-            label6.Name = "label6";
-            label6.Size = new Size(63, 15);
-            label6.TabIndex = 62;
-            label6.Text = "Descuento";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(607, 11);
-            label4.Name = "label4";
-            label4.Size = new Size(47, 15);
-            label4.TabIndex = 61;
-            label4.Text = "Usuario";
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(607, 31);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(140, 23);
-            comboBox2.TabIndex = 60;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(20, 87);
-            label3.Name = "label3";
-            label3.Size = new Size(61, 15);
-            label3.TabIndex = 59;
-            label3.Text = "Proveedor";
-            // 
-            // dtimeFechaCompra
-            // 
-            dtimeFechaCompra.Location = new Point(22, 212);
-            dtimeFechaCompra.Name = "dtimeFechaCompra";
-            dtimeFechaCompra.Size = new Size(240, 23);
-            dtimeFechaCompra.TabIndex = 58;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(22, 194);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 57;
-            label2.Text = "Fecha";
-            // 
-            // cbProveedor
-            // 
-            cbProveedor.FormattingEnabled = true;
-            cbProveedor.Location = new Point(20, 105);
-            cbProveedor.Name = "cbProveedor";
-            cbProveedor.Size = new Size(242, 23);
-            cbProveedor.TabIndex = 56;
-            cbProveedor.SelectedIndexChanged += cbProveedor_SelectedIndexChanged;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(657, 159);
-            button2.Name = "button2";
-            button2.Size = new Size(90, 39);
-            button2.TabIndex = 55;
-            button2.Text = "Modificar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(657, 105);
-            button1.Name = "button1";
-            button1.Size = new Size(90, 39);
-            button1.TabIndex = 54;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(20, 534);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(727, 151);
-            dataGridView1.TabIndex = 53;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(317, 194);
-            label5.Name = "label5";
-            label5.Size = new Size(32, 15);
-            label5.TabIndex = 82;
-            label5.Text = "Total";
+            lblTotal.AutoSize = true;
+            lblTotal.Location = new Point(407, 20);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(33, 15);
+            lblTotal.TabIndex = 7;
+            lblTotal.Text = "Total";
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(317, 212);
+            txtTotal.Location = new Point(447, 17);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(70, 23);
-            txtTotal.TabIndex = 81;
+            txtTotal.ReadOnly = true;
+            txtTotal.Size = new Size(120, 23);
+            txtTotal.TabIndex = 8;
+            txtTotal.Text = "0.00";
+            txtTotal.TextAlign = HorizontalAlignment.Right;
+            // 
+            // lblTipoComprobante
+            // 
+            lblTipoComprobante.AutoSize = true;
+            lblTipoComprobante.Location = new Point(300, 65);
+            lblTipoComprobante.Name = "lblTipoComprobante";
+            lblTipoComprobante.Size = new Size(108, 15);
+            lblTipoComprobante.TabIndex = 5;
+            lblTipoComprobante.Text = "Tipo Comprobante";
+            // 
+            // cboTipoComprobante
+            // 
+            cboTipoComprobante.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboTipoComprobante.FormattingEnabled = true;
+            cboTipoComprobante.Location = new Point(420, 62);
+            cboTipoComprobante.Name = "cboTipoComprobante";
+            cboTipoComprobante.Size = new Size(150, 23);
+            cboTipoComprobante.TabIndex = 6;
+            // 
+            // lblProveedor
+            // 
+            lblProveedor.AutoSize = true;
+            lblProveedor.Location = new Point(10, 65);
+            lblProveedor.Name = "lblProveedor";
+            lblProveedor.Size = new Size(61, 15);
+            lblProveedor.TabIndex = 3;
+            lblProveedor.Text = "Proveedor";
+            // 
+            // cboProveedor
+            // 
+            cboProveedor.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboProveedor.FormattingEnabled = true;
+            cboProveedor.Location = new Point(80, 62);
+            cboProveedor.Name = "cboProveedor";
+            cboProveedor.Size = new Size(200, 23);
+            cboProveedor.TabIndex = 4;
+            // 
+            // dtpFecha
+            // 
+            dtpFecha.Format = DateTimePickerFormat.Short;
+            dtpFecha.Location = new Point(250, 22);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(120, 23);
+            dtpFecha.TabIndex = 2;
+            // 
+            // lblFecha
+            // 
+            lblFecha.AutoSize = true;
+            lblFecha.Location = new Point(200, 25);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(38, 15);
+            lblFecha.TabIndex = 1;
+            lblFecha.Text = "Fecha";
+            // 
+            // gbDetalle
+            // 
+            gbDetalle.Controls.Add(btnQuitarLinea);
+            gbDetalle.Controls.Add(btnAgregarLinea);
+            gbDetalle.Controls.Add(dgvDetalle);
+            gbDetalle.Location = new Point(32, 180);
+            gbDetalle.Name = "gbDetalle";
+            gbDetalle.Size = new Size(653, 250);
+            gbDetalle.TabIndex = 5;
+            gbDetalle.TabStop = false;
+            gbDetalle.Text = "Detalle";
+            // 
+            // btnQuitarLinea
+            // 
+            btnQuitarLinea.Location = new Point(130, 215);
+            btnQuitarLinea.Name = "btnQuitarLinea";
+            btnQuitarLinea.Size = new Size(110, 25);
+            btnQuitarLinea.TabIndex = 2;
+            btnQuitarLinea.Text = "Quitar Línea";
+            btnQuitarLinea.UseVisualStyleBackColor = true;
+            btnQuitarLinea.Click += btnQuitarLinea_Click;
+            // 
+            // btnAgregarLinea
+            // 
+            btnAgregarLinea.Location = new Point(10, 215);
+            btnAgregarLinea.Name = "btnAgregarLinea";
+            btnAgregarLinea.Size = new Size(110, 25);
+            btnAgregarLinea.TabIndex = 1;
+            btnAgregarLinea.Text = "Agregar Línea";
+            btnAgregarLinea.UseVisualStyleBackColor = true;
+            btnAgregarLinea.Click += btnAgregarLinea_Click;
+            // 
+            // dgvDetalle
+            // 
+            dgvDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDetalle.Location = new Point(10, 22);
+            dgvDetalle.Name = "dgvDetalle";
+            dgvDetalle.Size = new Size(577, 185);
+            dgvDetalle.TabIndex = 0;
+            dgvDetalle.CellEndEdit += dgvDetalle_CellEndEdit;
+            dgvDetalle.RowsRemoved += dgvDetalle_RowsRemoved;
+            // 
+            // btnNuevo
+            // 
+            btnNuevo.Location = new Point(250, 450);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(109, 34);
+            btnNuevo.TabIndex = 6;
+            btnNuevo.Text = "NUEVO";
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(370, 450);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(109, 34);
+            btnGuardar.TabIndex = 7;
+            btnGuardar.Text = "GUARDAR";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(490, 450);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(109, 34);
+            btnCancelar.TabIndex = 8;
+            btnCancelar.Text = "CANCELAR";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(610, 450);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(109, 34);
+            btnEliminar.TabIndex = 9;
+            btnEliminar.Text = "ELIMINAR";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // UserControlCompras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label5);
-            Controls.Add(txtTotal);
+            BackgroundImageLayout = ImageLayout.None;
             Controls.Add(btnEliminar);
-            Controls.Add(btnAgregar);
-            Controls.Add(dgvVenta);
-            Controls.Add(txbPrecio);
-            Controls.Add(numCantidad);
-            Controls.Add(label10);
-            Controls.Add(label13);
-            Controls.Add(label14);
-            Controls.Add(label15);
-            Controls.Add(label16);
-            Controls.Add(cbProducto);
-            Controls.Add(txbSubTotal);
-            Controls.Add(label9);
-            Controls.Add(cbTipoComprobante);
-            Controls.Add(label7);
-            Controls.Add(cbDescuento);
-            Controls.Add(label6);
-            Controls.Add(label4);
-            Controls.Add(comboBox2);
-            Controls.Add(label3);
-            Controls.Add(dtimeFechaCompra);
-            Controls.Add(label2);
-            Controls.Add(cbProveedor);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnNuevo);
+            Controls.Add(gbDetalle);
+            Controls.Add(gbEncabezado);
+            Controls.Add(btnBuscar);
+            Controls.Add(txtBuscarCompra);
+            Controls.Add(lblBuscar);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlCompras";
-            Size = new Size(767, 728);
+            Size = new Size(870, 510);
             Load += UserControlCompras_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvVenta).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numCantidad).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            gbEncabezado.ResumeLayout(false);
+            gbEncabezado.PerformLayout();
+            gbDetalle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvDetalle).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -358,33 +302,27 @@
         #endregion
 
         private Label label1;
-        private Button btnEliminar;
-        private Button btnAgregar;
-        private DataGridView dgvVenta;
-        private TextBox txbPrecio;
-        private NumericUpDown numCantidad;
-        private Label label10;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Label label16;
-        private ComboBox cbProducto;
-        private TextBox txbSubTotal;
-        private Label label9;
-        private ComboBox cbTipoComprobante;
-        private Label label7;
-        private ComboBox cbDescuento;
-        private Label label6;
-        private Label label4;
-        private ComboBox comboBox2;
-        private Label label3;
-        private DateTimePicker dtimeFechaCompra;
-        private Label label2;
-        private ComboBox cbProveedor;
-        private Button button2;
-        private Button button1;
-        private DataGridView dataGridView1;
-        private Label label5;
+        private Label lblBuscar;
+        private TextBox txtBuscarCompra;
+        private Button btnBuscar;
+        private GroupBox gbEncabezado;
+        private TextBox txtIdCompra;
+        private Label lblIdCompra;
+        private Label lblFecha;
+        private DateTimePicker dtpFecha;
+        private Label lblProveedor;
+        private ComboBox cboProveedor;
+        private Label lblTipoComprobante;
+        private ComboBox cboTipoComprobante;
+        private Label lblTotal;
         private TextBox txtTotal;
+        private GroupBox gbDetalle;
+        private Button btnAgregarLinea;
+        private Button btnQuitarLinea;
+        private DataGridView dgvDetalle;
+        private Button btnNuevo;
+        private Button btnGuardar;
+        private Button btnCancelar;
+        private Button btnEliminar;
     }
 }

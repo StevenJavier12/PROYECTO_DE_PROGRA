@@ -42,9 +42,6 @@
             btnCategorias = new Button();
             btnProveedores = new Button();
             pictureBox1 = new PictureBox();
-            panel1 = new Panel();
-            btnInicioProcera = new Button();
-            pictureBox13 = new PictureBox();
             panel2 = new Panel();
             pictureBox12 = new PictureBox();
             pictureBox11 = new PictureBox();
@@ -73,9 +70,10 @@
             pictureBox14 = new PictureBox();
             label5 = new Label();
             label4 = new Label();
+            pictureBox13 = new PictureBox();
+            btnInicioProcera = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
@@ -89,6 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnEmpleados
@@ -283,46 +283,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Silver;
-            panel1.Controls.Add(btnInicioProcera);
-            panel1.Controls.Add(pictureBox13);
-            panel1.Dock = DockStyle.Top;
-            panel1.ForeColor = SystemColors.Control;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(916, 51);
-            panel1.TabIndex = 23;
-            // 
-            // btnInicioProcera
-            // 
-            btnInicioProcera.FlatAppearance.BorderColor = SystemColors.ButtonShadow;
-            btnInicioProcera.FlatAppearance.BorderSize = 0;
-            btnInicioProcera.FlatStyle = FlatStyle.Flat;
-            btnInicioProcera.Font = new Font("Tahoma", 17F, FontStyle.Bold);
-            btnInicioProcera.ForeColor = SystemColors.ActiveCaptionText;
-            btnInicioProcera.Location = new Point(80, 11);
-            btnInicioProcera.Margin = new Padding(3, 3, 3, 2);
-            btnInicioProcera.Name = "btnInicioProcera";
-            btnInicioProcera.Size = new Size(143, 41);
-            btnInicioProcera.TabIndex = 62;
-            btnInicioProcera.Text = "PROSERA";
-            btnInicioProcera.TextAlign = ContentAlignment.MiddleLeft;
-            btnInicioProcera.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox13
-            // 
-            pictureBox13.BackColor = Color.Transparent;
-            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
-            pictureBox13.Location = new Point(6, 3);
-            pictureBox13.Margin = new Padding(3, 2, 3, 2);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(69, 47);
-            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox13.TabIndex = 63;
-            pictureBox13.TabStop = false;
             // 
             // panel2
             // 
@@ -680,14 +640,15 @@
             // 
             // panelContainer
             // 
+            panelContainer.AutoScroll = true;
             panelContainer.Controls.Add(pictureBox14);
             panelContainer.Controls.Add(label5);
             panelContainer.Controls.Add(label4);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(139, 51);
-            panelContainer.Margin = new Padding(2, 2, 2, 2);
+            panelContainer.Margin = new Padding(2);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(777, 490);
+            panelContainer.Size = new Size(760, 490);
             panelContainer.TabIndex = 35;
             // 
             // pictureBox14
@@ -726,11 +687,51 @@
             label4.Text = "Bienvenidos al sistema de PROSERA Servicios";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // pictureBox13
+            // 
+            pictureBox13.BackColor = Color.Transparent;
+            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
+            pictureBox13.Location = new Point(6, 3);
+            pictureBox13.Margin = new Padding(3, 2, 3, 2);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(69, 47);
+            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox13.TabIndex = 63;
+            pictureBox13.TabStop = false;
+            // 
+            // btnInicioProcera
+            // 
+            btnInicioProcera.FlatAppearance.BorderColor = SystemColors.ButtonShadow;
+            btnInicioProcera.FlatAppearance.BorderSize = 0;
+            btnInicioProcera.FlatStyle = FlatStyle.Flat;
+            btnInicioProcera.Font = new Font("Tahoma", 17F, FontStyle.Bold);
+            btnInicioProcera.ForeColor = SystemColors.ActiveCaptionText;
+            btnInicioProcera.Location = new Point(80, 11);
+            btnInicioProcera.Margin = new Padding(3, 3, 3, 2);
+            btnInicioProcera.Name = "btnInicioProcera";
+            btnInicioProcera.Size = new Size(143, 41);
+            btnInicioProcera.TabIndex = 62;
+            btnInicioProcera.Text = "PROSERA";
+            btnInicioProcera.TextAlign = ContentAlignment.MiddleLeft;
+            btnInicioProcera.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(btnInicioProcera);
+            panel1.Controls.Add(pictureBox13);
+            panel1.Dock = DockStyle.Top;
+            panel1.ForeColor = SystemColors.Control;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(899, 51);
+            panel1.TabIndex = 23;
+            // 
             // ControlAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(916, 541);
+            ClientSize = new Size(899, 541);
             Controls.Add(panelContainer);
             Controls.Add(panel2);
             Controls.Add(btnEmpleados);
@@ -751,8 +752,6 @@
             Name = "ControlAdmin";
             Text = "UserControlAdmin";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
@@ -768,6 +767,8 @@
             panelContainer.ResumeLayout(false);
             panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -786,7 +787,6 @@
         private Button btnCompras;
         private Button btnCategorias;
         private Button btnProveedores;
-        private Panel panel1;
         private Panel panel2;
         private Button btnEmpleadosA;
         private Label label2;
@@ -812,11 +812,12 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox2;
         private PictureBox pictureBox12;
-        private Button btnInicioProcera;
-        private PictureBox pictureBox13;
         private Panel panelContainer;
         private Label label5;
         private Label label4;
         private PictureBox pictureBox14;
+        private PictureBox pictureBox13;
+        private Button btnInicioProcera;
+        private Panel panel1;
     }
 }
