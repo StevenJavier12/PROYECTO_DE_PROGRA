@@ -118,6 +118,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(106, 23);
             txtNombre.TabIndex = 11;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // txtDescripcion
             // 
@@ -126,6 +127,7 @@
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(106, 23);
             txtDescripcion.TabIndex = 12;
+            txtDescripcion.TextChanged += txtDescripcion_TextChanged;
             // 
             // txtPrecioUnitario
             // 
@@ -134,6 +136,7 @@
             txtPrecioUnitario.Name = "txtPrecioUnitario";
             txtPrecioUnitario.Size = new Size(106, 23);
             txtPrecioUnitario.TabIndex = 13;
+            txtPrecioUnitario.TextChanged += txtPrecioUnitario_TextChanged;
             // 
             // cbMarca
             // 
@@ -153,6 +156,7 @@
             cbCategoria.Name = "cbCategoria";
             cbCategoria.Size = new Size(129, 23);
             cbCategoria.TabIndex = 15;
+            cbCategoria.SelectedIndexChanged += cbCategoria_SelectedIndexChanged;
             // 
             // cbEstadoProducto
             // 
@@ -162,6 +166,7 @@
             cbEstadoProducto.Name = "cbEstadoProducto";
             cbEstadoProducto.Size = new Size(129, 23);
             cbEstadoProducto.TabIndex = 16;
+            cbEstadoProducto.SelectedIndexChanged += cbEstadoProducto_SelectedIndexChanged;
             // 
             // label7
             // 
@@ -182,6 +187,7 @@
             btnGuardar.TabIndex = 18;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click_1;
             // 
             // btnEditar
             // 
@@ -192,6 +198,7 @@
             btnEditar.TabIndex = 19;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click_1;
             // 
             // btnEliminar
             // 
@@ -202,6 +209,7 @@
             btnEliminar.TabIndex = 20;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click_1;
             // 
             // btnLimpiar
             // 
@@ -212,6 +220,7 @@
             btnLimpiar.TabIndex = 21;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click_1;
             // 
             // dgvProducto
             // 
@@ -222,6 +231,7 @@
             dgvProducto.RowHeadersWidth = 62;
             dgvProducto.Size = new Size(457, 233);
             dgvProducto.TabIndex = 22;
+            dgvProducto.CellContentClick += dgvProducto_CellContentClick;
             // 
             // txtIdProducto
             // 
@@ -230,6 +240,7 @@
             txtIdProducto.Name = "txtIdProducto";
             txtIdProducto.Size = new Size(106, 23);
             txtIdProducto.TabIndex = 23;
+            txtIdProducto.TextChanged += txtIdProducto_TextChanged;
             // 
             // UserControlProducto
             // 

@@ -123,7 +123,11 @@ namespace PROSERA.WinFormsUI.UsersControl
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+<<<<<<< HEAD
 
+=======
+       
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             try
@@ -166,7 +170,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             txtDescripcionMovimiento.Text = string.Empty;
         }
 
-        private void dgvInventario_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
@@ -183,11 +187,57 @@ namespace PROSERA.WinFormsUI.UsersControl
             cbProducto.SelectedValue = idProducto;
         }
 
+<<<<<<< HEAD
         private void cbProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarProductos();
         }
 
         
+=======
+        
+
+       
+
+
+       
+
+        
+
+        private void cbTipoMovimiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescripcionMovimiento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStockMinimo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStock_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtimeFechaActualizacion_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtInventario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
     }
 }

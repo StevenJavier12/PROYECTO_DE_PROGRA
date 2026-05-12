@@ -232,6 +232,7 @@
             dgvInventario.RowHeadersWidth = 62;
             dgvInventario.Size = new Size(710, 198);
             dgvInventario.TabIndex = 23;
+            dgvInventario.CellContentClick += dgvInventario_CellContentClick;
             // 
             // UserControlInventario
             // 

@@ -207,5 +207,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             txtCantidad.Text = fila.Cells["cantidad"].Value.ToString();
             cbDispositivo.SelectedValue = Convert.ToInt32(fila.Cells["id_dispositivo"].Value);
         }
+
+       
     }
 }

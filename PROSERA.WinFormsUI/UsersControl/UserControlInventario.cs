@@ -29,6 +29,12 @@ namespace PROSERA.WinFormsUI.UsersControl
 
         private void UserControlInventario_Load_1(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             CargarProductos();
             CargarTiposMovimiento();
             CargarGrid();
@@ -164,7 +170,11 @@ namespace PROSERA.WinFormsUI.UsersControl
             txtDescripcionMovimiento.Text = string.Empty;
         }
 
+<<<<<<< HEAD
         private void dgvInventario_SelectionChanged(object? sender, EventArgs e)
+=======
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
         {
             if (dgvInventario.CurrentRow == null || dgvInventario.SelectedRows.Count == 0)
             {
@@ -182,5 +192,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             txtDescripcionMovimiento.Text = row.Cells["DescripcionMovimiento"].Value?.ToString() ?? "";
             cbProducto.SelectedValue = Convert.ToInt32(row.Cells["id_producto"].Value);
         }
+
+       
     }
 }

@@ -117,6 +117,7 @@
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(106, 23);
             txtStock.TabIndex = 11;
+            txtStock.TextChanged += txtStock_TextChanged;
             // 
             // txtStockMinimo
             // 
@@ -125,6 +126,7 @@
             txtStockMinimo.Name = "txtStockMinimo";
             txtStockMinimo.Size = new Size(106, 23);
             txtStockMinimo.TabIndex = 12;
+            txtStockMinimo.TextChanged += txtStockMinimo_TextChanged;
             // 
             // dtimeFechaActualizacion
             // 
@@ -133,6 +135,7 @@
             dtimeFechaActualizacion.Name = "dtimeFechaActualizacion";
             dtimeFechaActualizacion.Size = new Size(211, 23);
             dtimeFechaActualizacion.TabIndex = 13;
+            dtimeFechaActualizacion.ValueChanged += dtimeFechaActualizacion_ValueChanged;
             // 
             // label6
             // 
@@ -152,6 +155,7 @@
             cbTipoMovimiento.Name = "cbTipoMovimiento";
             cbTipoMovimiento.Size = new Size(129, 23);
             cbTipoMovimiento.TabIndex = 15;
+            cbTipoMovimiento.SelectedIndexChanged += cbTipoMovimiento_SelectedIndexChanged;
             // 
             // label7
             // 
@@ -170,6 +174,7 @@
             txtDescripcionMovimiento.Name = "txtDescripcionMovimiento";
             txtDescripcionMovimiento.Size = new Size(145, 23);
             txtDescripcionMovimiento.TabIndex = 17;
+            txtDescripcionMovimiento.TextChanged += txtDescripcionMovimiento_TextChanged;
             // 
             // txtInventario
             // 
@@ -179,6 +184,7 @@
             txtInventario.Size = new Size(106, 23);
             txtInventario.TabIndex = 18;
             txtInventario.Visible = false;
+            txtInventario.TextChanged += txtInventario_TextChanged;
             // 
             // btnGuardar
             // 
@@ -233,6 +239,7 @@
             dgvInventario.RowHeadersWidth = 62;
             dgvInventario.Size = new Size(457, 198);
             dgvInventario.TabIndex = 23;
+            dgvInventario.CellContentClick += dgvInventario_CellContentClick;
             // 
             // UserControlInventario
             // 

@@ -80,7 +80,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             dgvDetalle.DataSource = vista.ToTable();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -109,7 +109,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEditar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -139,7 +139,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -165,7 +165,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             }
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             Limpiar();
         }
@@ -183,7 +183,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             dgvDetalle.DataSource = null;
         }
 
-        private void dgvRecepcion_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvRecepcion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
@@ -198,7 +198,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             CargarDetalles(int.Parse(txtIdRecepcion.Text));
         }
 
-        private void dgvDetalle_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
@@ -208,6 +208,51 @@ namespace PROSERA.WinFormsUI.UsersControl
             txtCantidad.Text = fila.Cells["Cantidad"].Value.ToString();
             cbDispositivo.SelectedValue = Convert.ToInt32(fila.Cells["IdDispositivo"].Value);
         }
+
+       
+        
+
+        private void cbDispositivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdDetalle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtimeFecha_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtObservaciones_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdRecepcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
 

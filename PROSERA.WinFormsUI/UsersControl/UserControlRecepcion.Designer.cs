@@ -246,7 +246,11 @@
             dgvRecepcion.RowHeadersWidth = 62;
             dgvRecepcion.Size = new Size(322, 248);
             dgvRecepcion.TabIndex = 24;
+<<<<<<< HEAD
             dgvRecepcion.CellClick += dgvRecepcion_CellContentClick;
+=======
+            dgvRecepcion.CellContentClick += dgvRecepcion_CellContentClick;
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             // 
             // dgvDetalle
             // 
@@ -257,6 +261,7 @@
             dgvDetalle.RowHeadersWidth = 62;
             dgvDetalle.Size = new Size(323, 248);
             dgvDetalle.TabIndex = 25;
+            dgvDetalle.CellContentClick += dgvDetalle_CellContentClick;
             // 
             // label8
             // 

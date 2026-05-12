@@ -58,7 +58,7 @@
             cbUsuario.FormattingEnabled = true;
             cbUsuario.Location = new Point(95, 209);
             cbUsuario.Name = "cbUsuario";
-            cbUsuario.Size = new Size(121, 23);
+            cbUsuario.Size = new Size(121, 33);
             cbUsuario.TabIndex = 1;
             cbUsuario.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -66,7 +66,7 @@
             // 
             txbContraseña.Location = new Point(105, 272);
             txbContraseña.Name = "txbContraseña";
-            txbContraseña.Size = new Size(100, 23);
+            txbContraseña.Size = new Size(100, 31);
             txbContraseña.TabIndex = 2;
             // 
             // label1
@@ -74,7 +74,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(132, 189);
             label1.Name = "label1";
-            label1.Size = new Size(47, 15);
+            label1.Size = new Size(72, 25);
             label1.TabIndex = 3;
             label1.Text = "Usuario";
             // 
@@ -83,7 +83,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(137, 254);
             label2.Name = "label2";
-            label2.Size = new Size(36, 15);
+            label2.Size = new Size(54, 25);
             label2.TabIndex = 4;
             label2.Text = "Clave";
             // 
@@ -93,7 +93,7 @@
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(73, 95);
             label3.Name = "label3";
-            label3.Size = new Size(164, 25);
+            label3.Size = new Size(252, 40);
             label3.TabIndex = 5;
             label3.Text = "System PROSERA";
             // 
@@ -112,7 +112,7 @@
             // InicioDeSesion
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(312, 450);
+            ClientSize = new Size(341, 450);
             Controls.Add(pictureBox3);
             Controls.Add(label3);
             Controls.Add(label2);
