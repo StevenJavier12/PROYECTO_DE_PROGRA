@@ -18,7 +18,7 @@ namespace PROSERA.WinFormsUI.UsersControl
 
         public UserControlInventario()
         {
-            
+
 
 
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace PROSERA.WinFormsUI.UsersControl
 
         private void UserControlInventario_Load(object sender, EventArgs e)
         {
-            
+
 
 
             CargarProductos();
@@ -166,7 +166,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             txtDescripcionMovimiento.Text = string.Empty;
         }
 
-        private void dgvInventario_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
@@ -182,5 +182,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             int idProducto = Convert.ToInt32(fila.Cells["id_producto"].Value);
             cbProducto.SelectedValue = idProducto;
         }
+
+       
     }
 }

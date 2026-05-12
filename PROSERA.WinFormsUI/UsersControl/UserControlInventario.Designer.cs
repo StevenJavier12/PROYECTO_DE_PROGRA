@@ -175,6 +175,7 @@
             btnGuardar.TabIndex = 19;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEditar
             // 
@@ -184,6 +185,7 @@
             btnEditar.TabIndex = 20;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -193,6 +195,7 @@
             btnEliminar.TabIndex = 21;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnLimpiar
             // 
@@ -202,6 +205,7 @@
             btnLimpiar.TabIndex = 22;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // dgvInventario
             // 
@@ -211,6 +215,7 @@
             dgvInventario.RowHeadersWidth = 62;
             dgvInventario.Size = new Size(653, 330);
             dgvInventario.TabIndex = 23;
+            dgvInventario.CellContentClick += dgvInventario_CellContentClick;
             // 
             // UserControlInventario
             // 

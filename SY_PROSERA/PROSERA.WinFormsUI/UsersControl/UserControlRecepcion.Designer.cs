@@ -108,6 +108,7 @@
             dtimeFecha.Name = "dtimeFecha";
             dtimeFecha.Size = new Size(300, 31);
             dtimeFecha.TabIndex = 10;
+            dtimeFecha.ValueChanged += dtimeFecha_ValueChanged;
             // 
             // cbCliente
             // 
@@ -116,6 +117,7 @@
             cbCliente.Name = "cbCliente";
             cbCliente.Size = new Size(182, 33);
             cbCliente.TabIndex = 11;
+            cbCliente.SelectedIndexChanged += cbCliente_SelectedIndexChanged;
             // 
             // cbUsuario
             // 
@@ -124,6 +126,7 @@
             cbUsuario.Name = "cbUsuario";
             cbUsuario.Size = new Size(182, 33);
             cbUsuario.TabIndex = 12;
+            cbUsuario.SelectedIndexChanged += cbUsuario_SelectedIndexChanged;
             // 
             // txtObservaciones
             // 
@@ -131,6 +134,7 @@
             txtObservaciones.Name = "txtObservaciones";
             txtObservaciones.Size = new Size(150, 31);
             txtObservaciones.TabIndex = 13;
+            txtObservaciones.TextChanged += txtObservaciones_TextChanged;
             // 
             // txtIdRecepcion
             // 
@@ -139,6 +143,7 @@
             txtIdRecepcion.Size = new Size(150, 31);
             txtIdRecepcion.TabIndex = 14;
             txtIdRecepcion.Visible = false;
+            txtIdRecepcion.TextChanged += txtIdRecepcion_TextChanged;
             // 
             // label6
             // 
@@ -165,6 +170,7 @@
             cbDispositivo.Name = "cbDispositivo";
             cbDispositivo.Size = new Size(182, 33);
             cbDispositivo.TabIndex = 17;
+            cbDispositivo.SelectedIndexChanged += cbDispositivo_SelectedIndexChanged;
             // 
             // txtCantidad
             // 
@@ -172,6 +178,7 @@
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(150, 31);
             txtCantidad.TabIndex = 18;
+            txtCantidad.TextChanged += txtCantidad_TextChanged;
             // 
             // txtIdDetalle
             // 
@@ -179,6 +186,7 @@
             txtIdDetalle.Name = "txtIdDetalle";
             txtIdDetalle.Size = new Size(150, 31);
             txtIdDetalle.TabIndex = 19;
+            txtIdDetalle.TextChanged += txtIdDetalle_TextChanged;
             // 
             // btnGuardar
             // 
@@ -188,6 +196,7 @@
             btnGuardar.TabIndex = 20;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click_1;
             // 
             // btnEditar
             // 
@@ -197,6 +206,7 @@
             btnEditar.TabIndex = 21;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click_1;
             // 
             // btnEliminar
             // 
@@ -206,6 +216,7 @@
             btnEliminar.TabIndex = 22;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click_1;
             // 
             // btnLimpiar
             // 
@@ -215,6 +226,7 @@
             btnLimpiar.TabIndex = 23;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click_1;
             // 
             // dgvRecepcion
             // 
@@ -224,6 +236,7 @@
             dgvRecepcion.RowHeadersWidth = 62;
             dgvRecepcion.Size = new Size(460, 413);
             dgvRecepcion.TabIndex = 24;
+            dgvRecepcion.CellContentClick += dgvRecepcion_CellContentClick;
             // 
             // dgvDetalle
             // 
@@ -233,6 +246,7 @@
             dgvDetalle.RowHeadersWidth = 62;
             dgvDetalle.Size = new Size(461, 413);
             dgvDetalle.TabIndex = 25;
+            dgvDetalle.CellContentClick += dgvDetalle_CellContentClick;
             // 
             // label8
             // 

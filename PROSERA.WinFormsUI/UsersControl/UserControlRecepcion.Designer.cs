@@ -188,6 +188,7 @@
             btnGuardar.TabIndex = 20;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEditar
             // 
@@ -197,6 +198,7 @@
             btnEditar.TabIndex = 21;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -206,6 +208,7 @@
             btnEliminar.TabIndex = 22;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnLimpiar
             // 
@@ -215,6 +218,7 @@
             btnLimpiar.TabIndex = 23;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // dgvRecepcion
             // 
@@ -224,6 +228,7 @@
             dgvRecepcion.RowHeadersWidth = 62;
             dgvRecepcion.Size = new Size(460, 413);
             dgvRecepcion.TabIndex = 24;
+            dgvRecepcion.CellContentClick += dgvRecepcion_CellContentClick;
             // 
             // dgvDetalle
             // 
@@ -233,6 +238,7 @@
             dgvDetalle.RowHeadersWidth = 62;
             dgvDetalle.Size = new Size(461, 413);
             dgvDetalle.TabIndex = 25;
+            dgvDetalle.CellContentClick += dgvDetalle_CellContentClick;
             // 
             // label8
             // 

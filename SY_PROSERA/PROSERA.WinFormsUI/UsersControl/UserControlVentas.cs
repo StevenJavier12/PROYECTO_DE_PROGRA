@@ -16,8 +16,11 @@ namespace PROSERA.WinFormsUI.UsersControl
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       
 =======
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
         private void UserControlVentas_Load(object sender, EventArgs e)
         {
 
@@ -27,6 +30,9 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
 
         }
+<<<<<<< HEAD
 >>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
+=======
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
     }
 }

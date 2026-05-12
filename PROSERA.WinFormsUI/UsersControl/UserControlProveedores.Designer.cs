@@ -227,6 +227,7 @@
         private Label label5;
         private Label label6;
         private Button btnEliminar;
+
         private Button button1;
         private Button button2;
         private DataGridView dataGridProveedores;
