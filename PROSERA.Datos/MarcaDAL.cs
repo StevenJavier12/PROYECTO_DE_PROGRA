@@ -5,53 +5,46 @@ namespace PROSERA.Datos
 {
     public class MarcaDAL : IMarcaDAL
     {
-       
         public void Agregar(Marca marca)
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
-            {
-                string query = @"INSERT INTO Marca (NombreMarca) 
-                            VALUES (@NombreMarca)";
 
-                using SqlCommand cmd = new(query, cn);
-                cmd.Parameters.AddWithValue("@NombreMarca", marca.MarcaNombre);
+            string query = "INSERT INTO Marcas (marca) VALUES (@Marca)";
 
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            }
+            using SqlCommand cmd = new(query, cn);
+            cmd.Parameters.AddWithValue("@Marca", marca.MarcaNombre);
+
+            cmd.ExecuteNonQuery();
         }
 
-        public void Editar(Marca marca)
+        public void Editar(Marca m)
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
-            {
-                string query = @"UPDATE Marca 
-                            SET NombreMarca = @NombreMarca 
-                            WHERE IdMarca = @IdMarca";
+            cn.Open();
 
-                using SqlCommand cmd = new(query, cn);
-                cmd.Parameters.AddWithValue("@IdMarca", marca.IdMarca);
-                cmd.Parameters.AddWithValue("@NombreMarca", marca.MarcaNombre);
+            string query = @"UPDATE Marcas 
+                             SET marca = @Marca 
+                             WHERE id_marca = @IdMarca";
 
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            }
+            using SqlCommand cmd = new(query, cn);
+            cmd.Parameters.AddWithValue("@IdMarca", m.IdMarca);
+            cmd.Parameters.AddWithValue("@Marca", m.MarcaNombre);
+
+            cmd.ExecuteNonQuery();
         }
 
         public void Eliminar(int id)
         {
             using SqlConnection cn = new(ConexionDB.Cadena);
-            {
-                string query = @"DELETE FROM Marca 
-                            WHERE IdMarca = @IdMarca";
+            cn.Open();
 
-                using SqlCommand cmd = new(query, cn);
-                cmd.Parameters.AddWithValue("@IdMarca", id);
+            string query = "DELETE FROM Marcas WHERE id_marca = @IdMarca";
 
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            }
+            using SqlCommand cmd = new(query, cn);
+            cmd.Parameters.AddWithValue("@IdMarca", id);
+
+            cmd.ExecuteNonQuery();
         }
 
         public Marca ObtenerPorId(int id)
@@ -59,25 +52,22 @@ namespace PROSERA.Datos
             Marca? marca = null;
 
             using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            string query = "SELECT id_marca, marca FROM Marcas WHERE id_marca = @IdMarca";
+
+            using SqlCommand cmd = new(query, cn);
+            cmd.Parameters.AddWithValue("@IdMarca", id);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
             {
-                string query = @"SELECT IdMarca, NombreMarca 
-                            FROM Marca 
-                            WHERE IdMarca = @IdMarca";
-
-                using SqlCommand cmd = new(query, cn);
-                cmd.Parameters.AddWithValue("@IdMarca", id);
-
-                cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
+                marca = new Marca
                 {
-                    marca = new Marca
-                    {
-                        IdMarca = (int)reader["IdMarca"],
-                        MarcaNombre = (string)reader["NombreMarca"]
-                    };
-                }
+                    IdMarca = (int)reader["id_marca"],
+                    MarcaNombre = (string)reader["marca"]
+                };
             }
 
             return marca;
@@ -85,28 +75,23 @@ namespace PROSERA.Datos
 
         public List<Marca> Listar()
         {
-            List<Marca> lista = new List<Marca>();
+            List<Marca> lista = new();
 
             using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            string query = "SELECT id_marca, marca FROM Marcas";
+
+            using SqlCommand cmd = new(query, cn);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
             {
-                string query = @"SELECT IdMarca, NombreMarca 
-                            FROM Marca";
-
-                using SqlCommand cmd = new(query, cn);
-
-                cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                lista.Add(new Marca
                 {
-                    Marca marca = new Marca
-                    {
-                        IdMarca = (int)reader["IdMarca"],
-                       MarcaNombre = (string)reader["NombreMarca"]
-                    };
-
-                    lista.Add(marca);
-                }
+                    IdMarca = (int)reader["id_marca"],
+                    MarcaNombre = (string)reader["marca"]
+                });
             }
 
             return lista;
@@ -114,30 +99,27 @@ namespace PROSERA.Datos
 
         public List<Marca> BuscarMarcas(string marca)
         {
-            List<Marca> lista = new List<Marca>();
+            List<Marca> lista = new();
 
             using SqlConnection cn = new(ConexionDB.Cadena);
+            cn.Open();
+
+            string query = @"SELECT id_marca, marca 
+                             FROM Marcas 
+                             WHERE marca = @Marca";
+
+            using SqlCommand cmd = new(query, cn);
+            cmd.Parameters.AddWithValue("@Marca", marca);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
             {
-                string query = @"SELECT IdMarca, NombreMarca 
-                            FROM Marca 
-                            WHERE NombreMarca = @NombreMarca";
-
-                using SqlCommand cmd = new(query, cn);
-                cmd.Parameters.AddWithValue("@NombreMarca", marca);
-
-                cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                lista.Add(new Marca
                 {
-                    Marca marcaResultado = new Marca
-                    {
-                        IdMarca = (int)reader["IdMarca"],
-                      MarcaNombre = (string)reader["NombreMarca"]
-                    };
-
-                    lista.Add(marcaResultado);
-                }
+                    IdMarca = (int)reader["id_marca"],
+                    MarcaNombre = (string)reader["marca"]
+                });
             }
 
             return lista;

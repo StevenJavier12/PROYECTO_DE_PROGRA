@@ -59,132 +59,146 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(476, 18);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(333, 11);
             label1.Name = "label1";
-            label1.Size = new Size(163, 37);
+            label1.Size = new Size(108, 25);
             label1.TabIndex = 5;
             label1.Text = "Recepcion";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 99);
+            label2.Location = new Point(17, 59);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(57, 25);
+            label2.Size = new Size(38, 15);
             label2.TabIndex = 6;
             label2.Text = "Fecha";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(24, 144);
+            label3.Location = new Point(17, 86);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(65, 25);
+            label3.Size = new Size(44, 15);
             label3.TabIndex = 7;
             label3.Text = "Cliente";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(24, 198);
+            label4.Location = new Point(17, 119);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(72, 25);
+            label4.Size = new Size(47, 15);
             label4.TabIndex = 8;
             label4.Text = "Usuario";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(24, 244);
+            label5.Location = new Point(17, 146);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(128, 25);
+            label5.Size = new Size(84, 15);
             label5.TabIndex = 9;
             label5.Text = "Observaciones";
             // 
             // dtimeFecha
             // 
-            dtimeFecha.Location = new Point(158, 93);
+            dtimeFecha.Location = new Point(111, 56);
+            dtimeFecha.Margin = new Padding(2);
             dtimeFecha.Name = "dtimeFecha";
-            dtimeFecha.Size = new Size(300, 31);
+            dtimeFecha.Size = new Size(211, 23);
             dtimeFecha.TabIndex = 10;
             // 
             // cbCliente
             // 
             cbCliente.FormattingEnabled = true;
-            cbCliente.Location = new Point(158, 141);
+            cbCliente.Location = new Point(111, 85);
+            cbCliente.Margin = new Padding(2);
             cbCliente.Name = "cbCliente";
-            cbCliente.Size = new Size(182, 33);
+            cbCliente.Size = new Size(129, 23);
             cbCliente.TabIndex = 11;
             // 
             // cbUsuario
             // 
             cbUsuario.FormattingEnabled = true;
-            cbUsuario.Location = new Point(158, 193);
+            cbUsuario.Location = new Point(111, 116);
+            cbUsuario.Margin = new Padding(2);
             cbUsuario.Name = "cbUsuario";
-            cbUsuario.Size = new Size(182, 33);
+            cbUsuario.Size = new Size(129, 23);
             cbUsuario.TabIndex = 12;
             // 
             // txtObservaciones
             // 
-            txtObservaciones.Location = new Point(158, 238);
+            txtObservaciones.Location = new Point(111, 143);
+            txtObservaciones.Margin = new Padding(2);
             txtObservaciones.Name = "txtObservaciones";
-            txtObservaciones.Size = new Size(150, 31);
+            txtObservaciones.Size = new Size(106, 23);
             txtObservaciones.TabIndex = 13;
             // 
             // txtIdRecepcion
             // 
-            txtIdRecepcion.Location = new Point(158, 289);
+            txtIdRecepcion.Location = new Point(111, 173);
+            txtIdRecepcion.Margin = new Padding(2);
             txtIdRecepcion.Name = "txtIdRecepcion";
-            txtIdRecepcion.Size = new Size(150, 31);
+            txtIdRecepcion.Size = new Size(106, 23);
             txtIdRecepcion.TabIndex = 14;
             txtIdRecepcion.Visible = false;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(528, 147);
+            label6.Location = new Point(370, 88);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(101, 25);
+            label6.Size = new Size(65, 15);
             label6.TabIndex = 15;
             label6.Text = "Dispositivo";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(528, 204);
+            label7.Location = new Point(370, 122);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(83, 25);
+            label7.Size = new Size(55, 15);
             label7.TabIndex = 16;
             label7.Text = "Cantidad";
             // 
             // cbDispositivo
             // 
             cbDispositivo.FormattingEnabled = true;
-            cbDispositivo.Location = new Point(634, 139);
+            cbDispositivo.Location = new Point(444, 83);
+            cbDispositivo.Margin = new Padding(2);
             cbDispositivo.Name = "cbDispositivo";
-            cbDispositivo.Size = new Size(182, 33);
+            cbDispositivo.Size = new Size(129, 23);
             cbDispositivo.TabIndex = 17;
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(634, 198);
+            txtCantidad.Location = new Point(444, 119);
+            txtCantidad.Margin = new Padding(2);
             txtCantidad.Name = "txtCantidad";
-            txtCantidad.Size = new Size(150, 31);
+            txtCantidad.Size = new Size(106, 23);
             txtCantidad.TabIndex = 18;
             // 
             // txtIdDetalle
             // 
-            txtIdDetalle.Location = new Point(634, 247);
+            txtIdDetalle.Location = new Point(444, 148);
+            txtIdDetalle.Margin = new Padding(2);
             txtIdDetalle.Name = "txtIdDetalle";
-            txtIdDetalle.Size = new Size(150, 31);
+            txtIdDetalle.Size = new Size(106, 23);
             txtIdDetalle.TabIndex = 19;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(962, 117);
+            btnGuardar.Location = new Point(673, 70);
+            btnGuardar.Margin = new Padding(2);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(112, 34);
+            btnGuardar.Size = new Size(78, 20);
             btnGuardar.TabIndex = 20;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -192,9 +206,10 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(962, 173);
+            btnEditar.Location = new Point(673, 104);
+            btnEditar.Margin = new Padding(2);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(112, 34);
+            btnEditar.Size = new Size(78, 20);
             btnEditar.TabIndex = 21;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
@@ -202,9 +217,10 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(962, 232);
+            btnEliminar.Location = new Point(673, 139);
+            btnEliminar.Margin = new Padding(2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(112, 34);
+            btnEliminar.Size = new Size(78, 20);
             btnEliminar.TabIndex = 22;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -212,9 +228,10 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(962, 289);
+            btnLimpiar.Location = new Point(673, 173);
+            btnLimpiar.Margin = new Padding(2);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(112, 34);
+            btnLimpiar.Size = new Size(78, 20);
             btnLimpiar.TabIndex = 23;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
@@ -223,46 +240,53 @@
             // dgvRecepcion
             // 
             dgvRecepcion.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRecepcion.Location = new Point(24, 349);
+            dgvRecepcion.Location = new Point(17, 209);
+            dgvRecepcion.Margin = new Padding(2);
             dgvRecepcion.Name = "dgvRecepcion";
             dgvRecepcion.RowHeadersWidth = 62;
-            dgvRecepcion.Size = new Size(460, 413);
+            dgvRecepcion.Size = new Size(322, 248);
             dgvRecepcion.TabIndex = 24;
+           
+
             dgvRecepcion.CellContentClick += dgvRecepcion_CellContentClick;
+
             // 
             // dgvDetalle
             // 
             dgvDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDetalle.Location = new Point(528, 349);
+            dgvDetalle.Location = new Point(370, 209);
+            dgvDetalle.Margin = new Padding(2);
             dgvDetalle.Name = "dgvDetalle";
             dgvDetalle.RowHeadersWidth = 62;
-            dgvDetalle.Size = new Size(461, 413);
+            dgvDetalle.Size = new Size(323, 248);
             dgvDetalle.TabIndex = 25;
             dgvDetalle.CellContentClick += dgvDetalle_CellContentClick;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Sitka Banner Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(144, 46);
+            label8.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(101, 28);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(94, 29);
+            label8.Size = new Size(84, 17);
             label8.TabIndex = 26;
             label8.Text = "Recepcion";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Sitka Banner Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(782, 68);
+            label9.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(547, 41);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(68, 29);
+            label9.Size = new Size(59, 17);
             label9.TabIndex = 27;
             label9.Text = "Detalle";
             // 
             // UserControlRecepcion
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label9);
             Controls.Add(label8);
@@ -287,9 +311,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlRecepcion";
-            Size = new Size(1122, 816);
+            Size = new Size(785, 490);
+            Load += UserControlRecepcion_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvRecepcion).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvDetalle).EndInit();
             ResumeLayout(false);

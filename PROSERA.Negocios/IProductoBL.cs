@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PROSERA.Negocios
 {
-    internal interface IProductoBL
+    public interface IProductoBL
     {
         void Guardar(Producto producto);
         void Editar(Producto producto);

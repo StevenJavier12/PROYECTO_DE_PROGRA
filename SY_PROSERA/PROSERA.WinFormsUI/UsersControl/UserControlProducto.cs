@@ -1,9 +1,7 @@
 ﻿using PROSERA.Datos;
 using PROSERA.Entidades;
 using PROSERA.Negocios;
-using System;
 using System.Data;
-using System.Windows.Forms;
 
 namespace PROSERA.WinFormsUI.UsersControl
 {
@@ -184,6 +182,12 @@ namespace PROSERA.WinFormsUI.UsersControl
             cbCategoria.SelectedValue = Convert.ToInt32(fila.Cells["IdCategoria"].Value);
         }
 
+<<<<<<< HEAD
+        private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarMarcas();
+        }
+=======
         private void cbEstadoProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -228,5 +232,6 @@ namespace PROSERA.WinFormsUI.UsersControl
         }
 
        
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
     }
 }

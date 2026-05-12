@@ -13,8 +13,8 @@ namespace PROSERA.WinFormsUI.UsersControl
 {
     public partial class UserControlInventario : UserControl
     {
-        private readonly InventarioBL _inventarioBL;
-        private readonly ProductoBL _productoBL;
+        private readonly IInventarioBL _inventarioBL;
+        private readonly IProductoBL _productoBL;
 
         public UserControlInventario()
         {
@@ -27,24 +27,32 @@ namespace PROSERA.WinFormsUI.UsersControl
             _productoBL = new ProductoBL(new ProductoDAL());
         }
 
-        private void UserControlInventario_Load(object sender, EventArgs e)
+        private void UserControlInventario_Load_1(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> cf72be8a1dcab903c01ff9bc1dca1dd3e9926445
 
 
 
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
             CargarProductos();
             CargarTiposMovimiento();
             CargarGrid();
 
             txtInventario.Visible = false;
+
+
         }
 
         private void CargarProductos()
         {
-            DataTable tabla = _productoBL.ListarConCategoria();
-            cbProducto.DataSource = tabla;
-            cbProducto.DisplayMember = "Nombre";
-            cbProducto.ValueMember = "IdProducto";
+            cbProducto.DataSource = _productoBL.ListarConCategoria();
+            cbProducto.DisplayMember = "nombre";
+            cbProducto.ValueMember = "id_producto";
             cbProducto.SelectedIndex = -1;
         }
 
@@ -61,7 +69,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             dgvInventario.DataSource = _inventarioBL.Listar();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -166,23 +174,37 @@ namespace PROSERA.WinFormsUI.UsersControl
             txtDescripcionMovimiento.Text = string.Empty;
         }
 
+<<<<<<< HEAD
+        private void dgvInventario_SelectionChanged(object? sender, EventArgs e)
+=======
         private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
         {
-            if (e.RowIndex < 0) return;
+            if (dgvInventario.CurrentRow == null || dgvInventario.SelectedRows.Count == 0)
+            {
+                Limpiar();
+                return;
+            }
 
-            DataGridViewRow fila = dgvInventario.Rows[e.RowIndex];
+            DataGridViewRow row = dgvInventario.SelectedRows[0];
 
-            txtInventario.Text = fila.Cells["id_inventario"].Value.ToString();
-            txtStock.Text = fila.Cells["stock"].Value.ToString();
-            txtStockMinimo.Text = fila.Cells["stock_minimo"].Value.ToString();
-            dtimeFechaActualizacion.Value = Convert.ToDateTime(fila.Cells["fecha_actualizacion"].Value);
-            cbTipoMovimiento.SelectedItem = fila.Cells["tipo_movimiento"].Value.ToString();
-            txtDescripcionMovimiento.Text = fila.Cells["DescripcionMovimiento"].Value.ToString();
-
-            int idProducto = Convert.ToInt32(fila.Cells["id_producto"].Value);
-            cbProducto.SelectedValue = idProducto;
+            txtInventario.Text = row.Cells["id_inventario"].Value?.ToString() ?? "";
+            txtStock.Text = row.Cells["stock"].Value?.ToString() ?? "";
+            txtStockMinimo.Text = row.Cells["stock_minimo"].Value?.ToString() ?? "";
+            dtimeFechaActualizacion.Value = Convert.ToDateTime(row.Cells["fecha_actualizacion"].Value);
+            cbTipoMovimiento.SelectedItem = row.Cells["tipo_movimiento"].Value?.ToString() ?? "";
+            txtDescripcionMovimiento.Text = row.Cells["DescripcionMovimiento"].Value?.ToString() ?? "";
+            cbProducto.SelectedValue = Convert.ToInt32(row.Cells["id_producto"].Value);
         }
 
+<<<<<<< HEAD
+        private void UserControlInventario_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+=======
+>>>>>>> cf72be8a1dcab903c01ff9bc1dca1dd3e9926445
        
     }
 }

@@ -22,7 +22,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             _categoriaBL = new CategoriaProductoBL(new CategoriaProductoDAL());
         }
 
-        private void UserControlProducto_Load(object sender, EventArgs e)
+        private void UserControlProducto_Load_1(object sender, EventArgs e)
         {
             if (DesignMode) return;
             CargarMarcas();

@@ -3,7 +3,7 @@ using System.Data;
 
 namespace PROSERA.Negocios
 {
-    internal interface IUsuarioBL
+    public interface IUsuarioBL
     {
         void Guardar(Usuario usuario);
         void Editar(Usuario usuario);

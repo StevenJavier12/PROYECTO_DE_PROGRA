@@ -8,7 +8,7 @@ namespace PROSERA.Negocios
     {
         private readonly IDetalleCompraDAL _detalleDAL;
 
-        public DetalleCompraBL()
+        public DetalleCompraBL(DetalleCompra detalleCompra)
         {
             _detalleDAL = new DetalleCompraDAL();
         }
