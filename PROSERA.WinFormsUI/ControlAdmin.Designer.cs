@@ -70,9 +70,12 @@
             pictureBox14 = new PictureBox();
             label5 = new Label();
             label4 = new Label();
+<<<<<<< HEAD
             pictureBox13 = new PictureBox();
             btnInicioProcera = new Button();
             panel1 = new Panel();
+=======
+>>>>>>> cf72be8a1dcab903c01ff9bc1dca1dd3e9926445
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
@@ -284,6 +287,49 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+<<<<<<< HEAD
+=======
+            // panel1
+            // 
+            panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(btnInicioProcera);
+            panel1.Controls.Add(pictureBox13);
+            panel1.Dock = DockStyle.Top;
+            panel1.ForeColor = SystemColors.Control;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(916, 51);
+            panel1.TabIndex = 23;
+            // 
+            // btnInicioProcera
+            // 
+            btnInicioProcera.FlatAppearance.BorderColor = SystemColors.ButtonShadow;
+            btnInicioProcera.FlatAppearance.BorderSize = 0;
+            btnInicioProcera.FlatStyle = FlatStyle.Flat;
+            btnInicioProcera.Font = new Font("Tahoma", 17F, FontStyle.Bold);
+            btnInicioProcera.ForeColor = SystemColors.ActiveCaptionText;
+            btnInicioProcera.Location = new Point(80, 11);
+            btnInicioProcera.Margin = new Padding(3, 3, 3, 2);
+            btnInicioProcera.Name = "btnInicioProcera";
+            btnInicioProcera.Size = new Size(143, 41);
+            btnInicioProcera.TabIndex = 62;
+            btnInicioProcera.Text = "PROSERA";
+            btnInicioProcera.TextAlign = ContentAlignment.MiddleLeft;
+            btnInicioProcera.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.BackColor = Color.Transparent;
+            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
+            pictureBox13.Location = new Point(6, 3);
+            pictureBox13.Margin = new Padding(3, 2, 3, 2);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(69, 47);
+            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox13.TabIndex = 63;
+            pictureBox13.TabStop = false;
+            // 
+>>>>>>> cf72be8a1dcab903c01ff9bc1dca1dd3e9926445
             // panel2
             // 
             panel2.BackColor = Color.Gainsboro;
@@ -646,9 +692,15 @@
             panelContainer.Controls.Add(label4);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(139, 51);
+<<<<<<< HEAD
             panelContainer.Margin = new Padding(2);
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(760, 490);
+=======
+            panelContainer.Margin = new Padding(2, 2, 2, 2);
+            panelContainer.Name = "panelContainer";
+            panelContainer.Size = new Size(777, 490);
+>>>>>>> cf72be8a1dcab903c01ff9bc1dca1dd3e9926445
             panelContainer.TabIndex = 35;
             // 
             // pictureBox14
@@ -687,6 +739,7 @@
             label4.Text = "Bienvenidos al sistema de PROSERA Servicios";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
+<<<<<<< HEAD
             // pictureBox13
             // 
             pictureBox13.BackColor = Color.Transparent;
@@ -727,11 +780,17 @@
             panel1.Size = new Size(899, 51);
             panel1.TabIndex = 23;
             // 
+=======
+>>>>>>> cf72be8a1dcab903c01ff9bc1dca1dd3e9926445
             // ControlAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+<<<<<<< HEAD
             ClientSize = new Size(899, 541);
+=======
+            ClientSize = new Size(916, 541);
+>>>>>>> cf72be8a1dcab903c01ff9bc1dca1dd3e9926445
             Controls.Add(panelContainer);
             Controls.Add(panel2);
             Controls.Add(btnEmpleados);

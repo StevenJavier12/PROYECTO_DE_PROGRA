@@ -54,37 +54,39 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(478, 18);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(335, 11);
             label1.Name = "label1";
-            label1.Size = new Size(160, 37);
+            label1.Size = new Size(107, 25);
             label1.TabIndex = 5;
             label1.Text = "Productos";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(84, 89);
+            label2.Location = new Point(59, 53);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(78, 25);
+            label2.Size = new Size(51, 15);
             label2.TabIndex = 6;
             label2.Text = "Nombre";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(245, 89);
+            label3.Location = new Point(172, 53);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(104, 25);
+            label3.Size = new Size(69, 15);
             label3.TabIndex = 7;
             label3.Text = "Descripcion";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(447, 87);
+            label4.Location = new Point(313, 52);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(60, 25);
+            label4.Size = new Size(40, 15);
             label4.TabIndex = 8;
             label4.Text = "Precio";
             // 
@@ -92,86 +94,96 @@
             // 
             label5.AccessibleDescription = "v";
             label5.AutoSize = true;
-            label5.Location = new Point(661, 87);
+            label5.Location = new Point(463, 52);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(60, 25);
+            label5.Size = new Size(40, 15);
             label5.TabIndex = 9;
             label5.Text = "Marca";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(903, 89);
+            label6.Location = new Point(632, 53);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(88, 25);
+            label6.Size = new Size(58, 15);
             label6.TabIndex = 10;
             label6.Text = "Categoria";
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(44, 117);
+            txtNombre.Location = new Point(31, 70);
+            txtNombre.Margin = new Padding(2, 2, 2, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(150, 31);
+            txtNombre.Size = new Size(106, 23);
             txtNombre.TabIndex = 11;
             txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(224, 117);
+            txtDescripcion.Location = new Point(157, 70);
+            txtDescripcion.Margin = new Padding(2, 2, 2, 2);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(150, 31);
+            txtDescripcion.Size = new Size(106, 23);
             txtDescripcion.TabIndex = 12;
             txtDescripcion.TextChanged += txtDescripcion_TextChanged;
             // 
             // txtPrecioUnitario
             // 
-            txtPrecioUnitario.Location = new Point(403, 117);
+            txtPrecioUnitario.Location = new Point(282, 70);
+            txtPrecioUnitario.Margin = new Padding(2, 2, 2, 2);
             txtPrecioUnitario.Name = "txtPrecioUnitario";
-            txtPrecioUnitario.Size = new Size(150, 31);
+            txtPrecioUnitario.Size = new Size(106, 23);
             txtPrecioUnitario.TabIndex = 13;
             txtPrecioUnitario.TextChanged += txtPrecioUnitario_TextChanged;
             // 
             // cbMarca
             // 
             cbMarca.FormattingEnabled = true;
-            cbMarca.Location = new Point(604, 115);
+            cbMarca.Location = new Point(423, 69);
+            cbMarca.Margin = new Padding(2, 2, 2, 2);
             cbMarca.Name = "cbMarca";
-            cbMarca.Size = new Size(182, 33);
+            cbMarca.Size = new Size(129, 23);
             cbMarca.TabIndex = 14;
             cbMarca.SelectedIndexChanged += cbMarca_SelectedIndexChanged;
             // 
             // cbCategoria
             // 
             cbCategoria.FormattingEnabled = true;
-            cbCategoria.Location = new Point(847, 117);
+            cbCategoria.Location = new Point(593, 70);
+            cbCategoria.Margin = new Padding(2, 2, 2, 2);
             cbCategoria.Name = "cbCategoria";
-            cbCategoria.Size = new Size(182, 33);
+            cbCategoria.Size = new Size(129, 23);
             cbCategoria.TabIndex = 15;
             cbCategoria.SelectedIndexChanged += cbCategoria_SelectedIndexChanged;
             // 
             // cbEstadoProducto
             // 
             cbEstadoProducto.FormattingEnabled = true;
-            cbEstadoProducto.Location = new Point(44, 222);
+            cbEstadoProducto.Location = new Point(31, 133);
+            cbEstadoProducto.Margin = new Padding(2, 2, 2, 2);
             cbEstadoProducto.Name = "cbEstadoProducto";
-            cbEstadoProducto.Size = new Size(182, 33);
+            cbEstadoProducto.Size = new Size(129, 23);
             cbEstadoProducto.TabIndex = 16;
             cbEstadoProducto.SelectedIndexChanged += cbEstadoProducto_SelectedIndexChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(84, 194);
+            label7.Location = new Point(59, 116);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(66, 25);
+            label7.Size = new Size(42, 15);
             label7.TabIndex = 17;
             label7.Text = "Estado";
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(44, 306);
+            btnGuardar.Location = new Point(31, 184);
+            btnGuardar.Margin = new Padding(2, 2, 2, 2);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(112, 34);
+            btnGuardar.Size = new Size(78, 20);
             btnGuardar.TabIndex = 18;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -179,9 +191,10 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(224, 306);
+            btnEditar.Location = new Point(157, 184);
+            btnEditar.Margin = new Padding(2, 2, 2, 2);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(112, 34);
+            btnEditar.Size = new Size(78, 20);
             btnEditar.TabIndex = 19;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
@@ -189,9 +202,10 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(394, 306);
+            btnEliminar.Location = new Point(276, 184);
+            btnEliminar.Margin = new Padding(2, 2, 2, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(112, 34);
+            btnEliminar.Size = new Size(78, 20);
             btnEliminar.TabIndex = 20;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -199,9 +213,10 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(585, 306);
+            btnLimpiar.Location = new Point(410, 184);
+            btnLimpiar.Margin = new Padding(2, 2, 2, 2);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(112, 34);
+            btnLimpiar.Size = new Size(78, 20);
             btnLimpiar.TabIndex = 21;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
@@ -210,24 +225,26 @@
             // dgvProducto
             // 
             dgvProducto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProducto.Location = new Point(44, 361);
+            dgvProducto.Location = new Point(31, 217);
+            dgvProducto.Margin = new Padding(2, 2, 2, 2);
             dgvProducto.Name = "dgvProducto";
             dgvProducto.RowHeadersWidth = 62;
-            dgvProducto.Size = new Size(653, 389);
+            dgvProducto.Size = new Size(457, 233);
             dgvProducto.TabIndex = 22;
             dgvProducto.CellContentClick += dgvProducto_CellContentClick;
             // 
             // txtIdProducto
             // 
-            txtIdProducto.Location = new Point(836, 292);
+            txtIdProducto.Location = new Point(585, 175);
+            txtIdProducto.Margin = new Padding(2, 2, 2, 2);
             txtIdProducto.Name = "txtIdProducto";
-            txtIdProducto.Size = new Size(150, 31);
+            txtIdProducto.Size = new Size(106, 23);
             txtIdProducto.TabIndex = 23;
             txtIdProducto.TextChanged += txtIdProducto_TextChanged;
             // 
             // UserControlProducto
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(txtIdProducto);
             Controls.Add(dgvProducto);
@@ -248,9 +265,9 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UserControlProducto";
-            Size = new Size(1122, 816);
+            Size = new Size(785, 490);
             ((System.ComponentModel.ISupportInitialize)dgvProducto).EndInit();
             ResumeLayout(false);
             PerformLayout();

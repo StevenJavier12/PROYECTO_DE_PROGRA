@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PROSERA.Negocios
 {
-    internal class DetalleVentaBL : IDetalleVentaBL
+    public class DetalleVentaBL : IDetalleVentaBL
     {
         private readonly DetalleVentaDAL _detalleVentaDAL;
 

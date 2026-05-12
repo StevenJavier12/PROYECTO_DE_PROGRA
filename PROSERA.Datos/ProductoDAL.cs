@@ -104,7 +104,7 @@ namespace PROSERA.Datos
             const string SQL = @"SELECT p.id_producto, p.nombre, p.descripcion, p.precio_unitario, p.id_marca, p.estado_producto, c.nombre AS categoria
                             FROM Productos p
                             INNER JOIN Categoria_Productos c ON p.id_categoria = c.id_categoria";
-            
+
             using SqlDataAdapter da = new(SQL, cn);
             da.Fill(table);
             return table;

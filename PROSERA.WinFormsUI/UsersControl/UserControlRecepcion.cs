@@ -9,11 +9,11 @@ namespace PROSERA.WinFormsUI.UsersControl
 {
     public partial class UserControlRecepcion : UserControl
     {
-        private readonly RecepcionDispositivoBL _recepcionBL;
-        private readonly DetalleRecepcionBL _detalleBL;
-        private readonly ClienteBL _clienteBL;
-        private readonly UsuarioBL _usuarioBL;
-        private readonly DispositivoElectronicoBL _dispositivoBL;
+        private readonly IRecepcionDispositivoBL _recepcionBL;
+        private readonly IDetalleRecepcionBL _detalleBL;
+        private readonly IClienteBL _clienteBL;
+        private readonly IUsuarioBL _usuarioBL;
+        private readonly IDispositivoElectronicoBL _dispositivoBL;
 
         public UserControlRecepcion()
         {
@@ -26,10 +26,9 @@ namespace PROSERA.WinFormsUI.UsersControl
             _dispositivoBL = new DispositivoElectronicoBL(new DispositivoElectronicoDAL());
         }
 
-        private void UserControlRecepcion_Load(object sender, EventArgs e)
+        private void UserControlRecepcion_Load_1(object sender, EventArgs e)
         {
             if (DesignMode) return;
-
 
             CargarClientes();
             CargarUsuarios();
@@ -44,8 +43,8 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
             DataTable tabla = _clienteBL.Listar();
             cbCliente.DataSource = tabla;
-            cbCliente.DisplayMember = "Nombre";
-            cbCliente.ValueMember = "IdCliente";
+            cbCliente.DisplayMember = "nombre";
+            cbCliente.ValueMember = "id_cliente";
             cbCliente.SelectedIndex = -1;
         }
 
@@ -53,8 +52,8 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
             DataTable tabla = _usuarioBL.Listar();
             cbUsuario.DataSource = tabla;
-            cbUsuario.DisplayMember = "Username";
-            cbUsuario.ValueMember = "IdUsuario";
+            cbUsuario.DisplayMember = "username";
+            cbUsuario.ValueMember = "id_usuario";
             cbUsuario.SelectedIndex = -1;
         }
 
@@ -76,7 +75,7 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
             DataTable todos = _detalleBL.Listar();
             DataView vista = new DataView(todos);
-            vista.RowFilter = $"IdRecepcion = {idRecepcion}";
+            vista.RowFilter = $"id_recepcion = {idRecepcion}";
             dgvDetalle.DataSource = vista.ToTable();
         }
 
@@ -183,31 +182,32 @@ namespace PROSERA.WinFormsUI.UsersControl
             dgvDetalle.DataSource = null;
         }
 
-        private void dgvRecepcion_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvRecepcion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
             DataGridViewRow fila = dgvRecepcion.Rows[e.RowIndex];
 
-            txtIdRecepcion.Text = fila.Cells["IdRecepcion"].Value.ToString();
-            dtimeFecha.Value = Convert.ToDateTime(fila.Cells["Fecha"].Value);
-            txtObservaciones.Text = fila.Cells["Observaciones"].Value.ToString();
-            cbCliente.SelectedValue = Convert.ToInt32(fila.Cells["IdCliente"].Value);
-            cbUsuario.SelectedValue = Convert.ToInt32(fila.Cells["IdUsuario"].Value);
+            txtIdRecepcion.Text = fila.Cells["id_recepcion"].Value.ToString();
+            dtimeFecha.Value = Convert.ToDateTime(fila.Cells["fecha"].Value);
+            txtObservaciones.Text = fila.Cells["observaciones"].Value.ToString();
+            cbCliente.SelectedValue = Convert.ToInt32(fila.Cells["id_cliente"].Value);
+            cbUsuario.SelectedValue = Convert.ToInt32(fila.Cells["id_usuario"].Value);
 
             CargarDetalles(int.Parse(txtIdRecepcion.Text));
         }
 
-        private void dgvDetalle_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
             DataGridViewRow fila = dgvDetalle.Rows[e.RowIndex];
 
-            txtIdDetalle.Text = fila.Cells["IdDetalle"].Value.ToString();
-            txtCantidad.Text = fila.Cells["Cantidad"].Value.ToString();
-            cbDispositivo.SelectedValue = Convert.ToInt32(fila.Cells["IdDispositivo"].Value);
+            txtIdDetalle.Text = fila.Cells["id_detalle"].Value.ToString();
+            txtCantidad.Text = fila.Cells["cantidad"].Value.ToString();
+            cbDispositivo.SelectedValue = Convert.ToInt32(fila.Cells["id_dispositivo"].Value);
         }
+
+       
     }
 }
-
