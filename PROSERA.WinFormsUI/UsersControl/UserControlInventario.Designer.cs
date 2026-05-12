@@ -243,6 +243,7 @@
             Margin = new Padding(4);
             Name = "UserControlInventario";
             Size = new Size(1122, 816);
+            Load += UserControlInventario_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvInventario).EndInit();
             ResumeLayout(false);
             PerformLayout();

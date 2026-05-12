@@ -27,7 +27,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             _productoBL = new ProductoBL(new ProductoDAL());
         }
 
-        private void UserControlInventario_Load(object sender, EventArgs e)
+        private void UserControlInventario_Load_1(object sender, EventArgs e)
         {
 
 
@@ -183,6 +183,6 @@ namespace PROSERA.WinFormsUI.UsersControl
             cbProducto.SelectedValue = idProducto;
         }
 
-       
+      
     }
 }
