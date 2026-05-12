@@ -10,11 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
-<<<<<<< HEAD
     <PackageReference Include="Microsoft.SqlServer.Server" Version="1.0.0" />
-=======
-    <PackageReference Include="ReaLTaiizor" Version="3.8.1.8" />
->>>>>>> 43dac2da930d08c073c804c36cafc123dabb5b6a
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.5" />
   </ItemGroup>
 
