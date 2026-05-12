@@ -22,7 +22,7 @@ namespace PROSERA.WinFormsUI.UsersControl
             _categoriaBL = new CategoriaProductoBL(new CategoriaProductoDAL());
         }
 
-        private void UserControlProducto_Load(object sender, EventArgs e)
+        private void UserControlProducto_Load_1(object sender, EventArgs e)
         {
             if (DesignMode) return;
             CargarMarcas();
@@ -31,7 +31,8 @@ namespace PROSERA.WinFormsUI.UsersControl
             CargarGrid();
 
             txtIdProducto.Visible = false;
-        }
+
+        }  
 
         private void CargarMarcas()
         {
@@ -99,15 +100,19 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtIdProducto.Text))
+                if (dgvProducto.CurrentRow == null)
                 {
-                    MessageBox.Show("Seleccione un producto del grid para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Seleccione un producto.");
                     return;
                 }
 
+                int id = Convert.ToInt32(
+                    dgvProducto.CurrentRow.Cells["id_producto"].Value
+                );
+
                 Producto producto = new Producto
                 {
-                    IdProducto = int.Parse(txtIdProducto.Text),
+                    IdProducto = id,
                     Nombre = txtNombre.Text.Trim(),
                     Descripcion = txtDescripcion.Text.Trim(),
                     PrecioUnitario = decimal.Parse(txtPrecioUnitario.Text.Trim()),
@@ -117,13 +122,15 @@ namespace PROSERA.WinFormsUI.UsersControl
                 };
 
                 _productoBL.Editar(producto);
-                MessageBox.Show("Producto actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show("Producto actualizado correctamente.");
+
                 Limpiar();
                 CargarGrid();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -131,25 +138,36 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtIdProducto.Text))
+                if (dgvProducto.CurrentRow == null)
                 {
-                    MessageBox.Show("Seleccione un producto del grid para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Seleccione un producto.");
                     return;
                 }
 
-                DialogResult respuesta = MessageBox.Show("¿Está seguro de eliminar este producto?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                int id = Convert.ToInt32(
+                    dgvProducto.CurrentRow.Cells["id_producto"].Value
+                );
+
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Está seguro de eliminar este producto?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
                 if (respuesta == DialogResult.Yes)
                 {
-                    _productoBL.Eliminar(int.Parse(txtIdProducto.Text));
-                    MessageBox.Show("Producto eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _productoBL.Eliminar(id);
+
+                    MessageBox.Show("Producto eliminado correctamente.");
+
                     Limpiar();
                     CargarGrid();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -184,6 +202,6 @@ namespace PROSERA.WinFormsUI.UsersControl
             cbCategoria.SelectedValue = Convert.ToInt32(fila.Cells["IdCategoria"].Value);
         }
 
-        
+       
     }
 }

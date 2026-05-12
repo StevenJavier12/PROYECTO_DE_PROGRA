@@ -1,4 +1,6 @@
-﻿using PROSERA.WinFormsUI.UsersControl;
+﻿using PROSERA.Datos;
+using PROSERA.Negocios;
+using PROSERA.WinFormsUI.UsersControl;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,14 +20,16 @@ namespace PROSERA.WinFormsUI
 
         public void addUserControl(UserControl userControl)
         {
-            userControl.Dock = DockStyle.Fill;
             panelContainer.Controls.Clear();
+            userControl.Dock = DockStyle.None;
+            userControl.Location = new Point(0, 0);
+            panelContainer.AutoScroll = true;
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            UserControlVentas uc = new UserControlVentas();
+            UserControlVentas uc = new UserControlVentas(new DetalleVentaBL(new DetalleVentaDAL()));
             addUserControl(uc);
         }
 

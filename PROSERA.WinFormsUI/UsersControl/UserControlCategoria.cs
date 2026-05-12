@@ -24,6 +24,12 @@ namespace PROSERA.WinFormsUI.UsersControl
             CargarListado();
         }
 
+
+
+
+
+
+
         private void ConfigurarDataGridView()
         {
             dgvCategorias.AutoGenerateColumns = true;
@@ -63,6 +69,7 @@ namespace PROSERA.WinFormsUI.UsersControl
 
             DataGridViewRow row = dgvCategorias.SelectedRows[0];
             _idCategoriaActual = Convert.ToInt32(row.Cells["id_categoria"].Value);
+
             txtNombre.Text = row.Cells["nombre"].Value?.ToString() ?? "";
             txtDescripcion.Text = row.Cells["descripcion"].Value?.ToString() ?? "";
         }
@@ -87,6 +94,11 @@ namespace PROSERA.WinFormsUI.UsersControl
 
             return categoria;
         }
+
+
+
+
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {

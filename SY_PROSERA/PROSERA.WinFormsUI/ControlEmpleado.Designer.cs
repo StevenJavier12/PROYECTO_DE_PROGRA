@@ -75,9 +75,8 @@
             panel1.Dock = DockStyle.Top;
             panel1.ForeColor = SystemColors.Control;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1330, 85);
+            panel1.Size = new Size(931, 51);
             panel1.TabIndex = 5;
             // 
             // btnInicioProcera
@@ -87,10 +86,10 @@
             btnInicioProcera.FlatStyle = FlatStyle.Flat;
             btnInicioProcera.Font = new Font("Tahoma", 17F, FontStyle.Bold);
             btnInicioProcera.ForeColor = SystemColors.ActiveCaptionText;
-            btnInicioProcera.Location = new Point(121, 17);
-            btnInicioProcera.Margin = new Padding(4, 5, 4, 3);
+            btnInicioProcera.Location = new Point(85, 10);
+            btnInicioProcera.Margin = new Padding(3, 3, 3, 2);
             btnInicioProcera.Name = "btnInicioProcera";
-            btnInicioProcera.Size = new Size(204, 68);
+            btnInicioProcera.Size = new Size(143, 41);
             btnInicioProcera.TabIndex = 56;
             btnInicioProcera.Text = "PROSERA";
             btnInicioProcera.TextAlign = ContentAlignment.MiddleLeft;
@@ -101,10 +100,10 @@
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(14, 3);
-            pictureBox3.Margin = new Padding(4, 3, 4, 3);
+            pictureBox3.Location = new Point(10, 2);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(99, 77);
+            pictureBox3.Size = new Size(69, 46);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 56;
             pictureBox3.TabStop = false;
@@ -129,20 +128,19 @@
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(pictureBox2);
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 85);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(0, 51);
             panel2.Name = "panel2";
-            panel2.Size = new Size(197, 817);
+            panel2.Size = new Size(138, 490);
             panel2.TabIndex = 6;
             // 
             // pictureBox7
             // 
             pictureBox7.BackColor = Color.Transparent;
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(17, 253);
-            pictureBox7.Margin = new Padding(4, 3, 4, 3);
+            pictureBox7.Location = new Point(12, 152);
+            pictureBox7.Margin = new Padding(3, 2, 3, 2);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(31, 42);
+            pictureBox7.Size = new Size(22, 25);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 55;
             pictureBox7.TabStop = false;
@@ -151,10 +149,10 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(14, 97);
-            pictureBox1.Margin = new Padding(4, 3, 4, 3);
+            pictureBox1.Location = new Point(10, 58);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(33, 40);
+            pictureBox1.Size = new Size(23, 24);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 46;
             pictureBox1.TabStop = false;
@@ -164,10 +162,9 @@
             label2.AutoSize = true;
             label2.Dock = DockStyle.Bottom;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(0, 792);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(0, 475);
             label2.Name = "label2";
-            label2.Size = new Size(92, 25);
+            label2.Size = new Size(60, 15);
             label2.TabIndex = 17;
             label2.Text = "Empleado";
             // 
@@ -175,10 +172,10 @@
             // 
             pictureBox12.BackColor = Color.Transparent;
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(0, 153);
-            pictureBox12.Margin = new Padding(4, 3, 4, 3);
+            pictureBox12.Location = new Point(0, 92);
+            pictureBox12.Margin = new Padding(3, 2, 3, 2);
             pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(63, 33);
+            pictureBox12.Size = new Size(44, 20);
             pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox12.TabIndex = 47;
             pictureBox12.TabStop = false;
@@ -187,10 +184,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold | FontStyle.Underline);
-            label1.Location = new Point(14, 13);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(10, 8);
             label1.Name = "label1";
-            label1.Size = new Size(112, 30);
+            label1.Size = new Size(76, 20);
             label1.TabIndex = 4;
             label1.Text = "Controles";
             // 
@@ -200,10 +196,10 @@
             btnRecepcion.FlatStyle = FlatStyle.Flat;
             btnRecepcion.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnRecepcion.ForeColor = SystemColors.ActiveCaptionText;
-            btnRecepcion.Location = new Point(60, 303);
-            btnRecepcion.Margin = new Padding(4, 5, 4, 3);
+            btnRecepcion.Location = new Point(42, 182);
+            btnRecepcion.Margin = new Padding(3, 3, 3, 2);
             btnRecepcion.Name = "btnRecepcion";
-            btnRecepcion.Size = new Size(204, 40);
+            btnRecepcion.Size = new Size(143, 24);
             btnRecepcion.TabIndex = 15;
             btnRecepcion.Text = "Recepcion";
             btnRecepcion.TextAlign = ContentAlignment.MiddleLeft;
@@ -216,10 +212,10 @@
             btnDispositivos.FlatStyle = FlatStyle.Flat;
             btnDispositivos.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnDispositivos.ForeColor = SystemColors.ActiveCaptionText;
-            btnDispositivos.Location = new Point(60, 355);
-            btnDispositivos.Margin = new Padding(4, 5, 4, 3);
+            btnDispositivos.Location = new Point(42, 213);
+            btnDispositivos.Margin = new Padding(3, 3, 3, 2);
             btnDispositivos.Name = "btnDispositivos";
-            btnDispositivos.Size = new Size(204, 40);
+            btnDispositivos.Size = new Size(143, 24);
             btnDispositivos.TabIndex = 16;
             btnDispositivos.Text = "Dispositivos";
             btnDispositivos.TextAlign = ContentAlignment.MiddleLeft;
@@ -230,10 +226,10 @@
             // 
             pictureBox9.BackColor = Color.Transparent;
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(16, 357);
-            pictureBox9.Margin = new Padding(4, 3, 4, 3);
+            pictureBox9.Location = new Point(11, 214);
+            pictureBox9.Margin = new Padding(3, 2, 3, 2);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(34, 30);
+            pictureBox9.Size = new Size(24, 18);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox9.TabIndex = 54;
             pictureBox9.TabStop = false;
@@ -245,10 +241,10 @@
             btnVentas.FlatStyle = FlatStyle.Flat;
             btnVentas.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnVentas.ForeColor = SystemColors.ActiveCaptionText;
-            btnVentas.Location = new Point(59, 50);
-            btnVentas.Margin = new Padding(4, 5, 4, 3);
+            btnVentas.Location = new Point(41, 30);
+            btnVentas.Margin = new Padding(3, 3, 3, 2);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(204, 40);
+            btnVentas.Size = new Size(143, 24);
             btnVentas.TabIndex = 9;
             btnVentas.Text = "Ventas";
             btnVentas.TextAlign = ContentAlignment.MiddleLeft;
@@ -259,10 +255,10 @@
             // 
             pictureBox8.BackColor = Color.Transparent;
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(16, 300);
-            pictureBox8.Margin = new Padding(4, 3, 4, 3);
+            pictureBox8.Location = new Point(11, 180);
+            pictureBox8.Margin = new Padding(3, 2, 3, 2);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(34, 42);
+            pictureBox8.Size = new Size(24, 25);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 53;
             pictureBox8.TabStop = false;
@@ -273,10 +269,10 @@
             btnInventario.FlatStyle = FlatStyle.Flat;
             btnInventario.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnInventario.ForeColor = SystemColors.ActiveCaptionText;
-            btnInventario.Location = new Point(60, 253);
-            btnInventario.Margin = new Padding(4, 5, 4, 3);
+            btnInventario.Location = new Point(42, 152);
+            btnInventario.Margin = new Padding(3, 3, 3, 2);
             btnInventario.Name = "btnInventario";
-            btnInventario.Size = new Size(204, 40);
+            btnInventario.Size = new Size(143, 24);
             btnInventario.TabIndex = 2;
             btnInventario.Text = "Inventario";
             btnInventario.TextAlign = ContentAlignment.MiddleLeft;
@@ -289,10 +285,10 @@
             btnClientes.FlatStyle = FlatStyle.Flat;
             btnClientes.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnClientes.ForeColor = SystemColors.ActiveCaptionText;
-            btnClientes.Location = new Point(59, 102);
-            btnClientes.Margin = new Padding(4, 5, 4, 3);
+            btnClientes.Location = new Point(41, 61);
+            btnClientes.Margin = new Padding(3, 3, 3, 2);
             btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(204, 40);
+            btnClientes.Size = new Size(143, 24);
             btnClientes.TabIndex = 10;
             btnClientes.Text = "Clientes";
             btnClientes.TextAlign = ContentAlignment.MiddleLeft;
@@ -305,10 +301,10 @@
             btnCompras.FlatStyle = FlatStyle.Flat;
             btnCompras.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnCompras.ForeColor = SystemColors.ActiveCaptionText;
-            btnCompras.Location = new Point(59, 153);
-            btnCompras.Margin = new Padding(4, 5, 4, 3);
+            btnCompras.Location = new Point(41, 92);
+            btnCompras.Margin = new Padding(3, 3, 3, 2);
             btnCompras.Name = "btnCompras";
-            btnCompras.Size = new Size(204, 40);
+            btnCompras.Size = new Size(143, 24);
             btnCompras.TabIndex = 12;
             btnCompras.Text = "Compras";
             btnCompras.TextAlign = ContentAlignment.MiddleLeft;
@@ -321,10 +317,10 @@
             btnProveedores.FlatStyle = FlatStyle.Flat;
             btnProveedores.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnProveedores.ForeColor = SystemColors.ActiveCaptionText;
-            btnProveedores.Location = new Point(60, 203);
-            btnProveedores.Margin = new Padding(4, 5, 4, 3);
+            btnProveedores.Location = new Point(42, 122);
+            btnProveedores.Margin = new Padding(3, 3, 3, 2);
             btnProveedores.Name = "btnProveedores";
-            btnProveedores.Size = new Size(204, 40);
+            btnProveedores.Size = new Size(143, 24);
             btnProveedores.TabIndex = 13;
             btnProveedores.Text = "Proveedores";
             btnProveedores.TextAlign = ContentAlignment.MiddleLeft;
@@ -335,10 +331,10 @@
             // 
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(11, 205);
-            pictureBox4.Margin = new Padding(4, 3, 4, 3);
+            pictureBox4.Location = new Point(8, 123);
+            pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(40, 32);
+            pictureBox4.Size = new Size(28, 19);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 49;
             pictureBox4.TabStop = false;
@@ -347,10 +343,10 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = Properties.Resources.Compra;
-            pictureBox2.Location = new Point(19, 47);
-            pictureBox2.Margin = new Padding(4, 3, 4, 3);
+            pictureBox2.Location = new Point(13, 28);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(26, 42);
+            pictureBox2.Size = new Size(18, 25);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 48;
             pictureBox2.TabStop = false;
@@ -362,10 +358,9 @@
             panelContainer.Controls.Add(label4);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.ForeColor = SystemColors.ActiveCaptionText;
-            panelContainer.Location = new Point(197, 85);
-            panelContainer.Margin = new Padding(4, 5, 4, 5);
+            panelContainer.Location = new Point(138, 51);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(1133, 817);
+            panelContainer.Size = new Size(793, 490);
             panelContainer.TabIndex = 7;
             panelContainer.Paint += panelContainer_Paint;
             // 
@@ -374,10 +369,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Tahoma", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ActiveCaptionText;
-            label5.Location = new Point(211, 443);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(148, 266);
             label5.Name = "label5";
-            label5.Size = new Size(674, 33);
+            label5.Size = new Size(444, 22);
             label5.TabIndex = 58;
             label5.Text = "Soluciones para el agro, herramientas para el progreso.";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -386,10 +380,10 @@
             // 
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(423, 137);
-            pictureBox5.Margin = new Padding(4, 3, 4, 3);
+            pictureBox5.Location = new Point(296, 82);
+            pictureBox5.Margin = new Padding(3, 2, 3, 2);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(281, 287);
+            pictureBox5.Size = new Size(197, 172);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 57;
             pictureBox5.TabStop = false;
@@ -399,24 +393,22 @@
             label4.AutoSize = true;
             label4.Font = new Font("Tahoma", 17F, FontStyle.Bold);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(137, 47);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(96, 28);
             label4.Name = "label4";
-            label4.Size = new Size(796, 41);
+            label4.Size = new Size(544, 28);
             label4.TabIndex = 57;
             label4.Text = "Bienvenidos al sistema de PROSERA Servicios";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ControlEmpleado
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1330, 902);
+            ClientSize = new Size(931, 541);
             Controls.Add(panelContainer);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(4, 5, 4, 5);
             Name = "ControlEmpleado";
             Text = "Form2";
             panel1.ResumeLayout(false);

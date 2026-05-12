@@ -103,24 +103,26 @@ CREATE TABLE Factura_Ventas (
             using SqlConnection cn = new(ConexionDB.Cadena);
             cn.Open();
 
-            const string SQL = @"SELECT
-                                    id_factura,
-                                    fecha,
-                                    id_cliente,
-                                    id_usuario,
-                                    total,
-                                    descuento,
-                                    metodo_pago,
-                                    estado_factura
-                                 FROM Factura_Ventas";
+            const string SQL = @"
+                SELECT
+                    fv.id_factura,
+                    fv.fecha,
+                    fv.id_cliente,                                              
+                    fv.id_usuario,                                              
+                    ISNULL(c.nombre + ' ' + c.apellido, 'Consumidor Final') AS cliente,
+                    u.username      AS usuario,
+                    fv.total,
+                    fv.descuento,
+                    fv.metodo_pago,
+                    fv.estado_factura
+                FROM Factura_Ventas fv
+                LEFT JOIN Clientes  c ON fv.id_cliente = c.id_cliente
+                INNER JOIN Usuarios u ON fv.id_usuario = u.id_usuario";
 
             using SqlDataAdapter da = new(SQL, cn);
-
             da.Fill(table);
 
             return table;
-
-
         }
 
         public DataTable ListarPorCliente(int idCliente)

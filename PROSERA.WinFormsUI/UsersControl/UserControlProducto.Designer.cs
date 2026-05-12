@@ -244,6 +244,7 @@
             Margin = new Padding(4);
             Name = "UserControlProducto";
             Size = new Size(1122, 816);
+            Load += UserControlProducto_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvProducto).EndInit();
             ResumeLayout(false);
             PerformLayout();

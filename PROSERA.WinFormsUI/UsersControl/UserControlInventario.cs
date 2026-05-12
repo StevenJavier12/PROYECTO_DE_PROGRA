@@ -13,8 +13,8 @@ namespace PROSERA.WinFormsUI.UsersControl
 {
     public partial class UserControlInventario : UserControl
     {
-        private readonly InventarioBL _inventarioBL;
-        private readonly ProductoBL _productoBL;
+        private readonly IInventarioBL _inventarioBL;
+        private readonly IProductoBL _productoBL;
 
         public UserControlInventario()
         {
@@ -37,14 +37,17 @@ namespace PROSERA.WinFormsUI.UsersControl
             CargarGrid();
 
             txtInventario.Visible = false;
+
+
+
+
         }
 
         private void CargarProductos()
         {
-            DataTable tabla = _productoBL.ListarConCategoria();
-            cbProducto.DataSource = tabla;
-            cbProducto.DisplayMember = "Nombre";
-            cbProducto.ValueMember = "IdProducto";
+            cbProducto.DataSource = _productoBL.ListarConCategoria();
+            cbProducto.DisplayMember = "nombre";
+            cbProducto.ValueMember = "id_producto";
             cbProducto.SelectedIndex = -1;
         }
 
@@ -128,25 +131,38 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtInventario.Text))
+                if (dgvInventario.CurrentRow == null)
                 {
-                    MessageBox.Show("Seleccione un registro del grid para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Seleccione una fila.");
                     return;
                 }
 
-                DialogResult respuesta = MessageBox.Show("¿Está seguro de eliminar este registro?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                int id = Convert.ToInt32(
+                    dgvInventario.CurrentRow.Cells["id_inventario"].Value
+                );
+
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Está seguro de eliminar este registro?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
                 if (respuesta == DialogResult.Yes)
                 {
-                    _inventarioBL.Eliminar(int.Parse(txtInventario.Text));
-                    MessageBox.Show("Registro eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
+                    _inventarioBL.Eliminar(id);
+
+                    MessageBox.Show(
+                        "Registro eliminado correctamente."
+                    );
+
                     CargarGrid();
+                    Limpiar();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -168,21 +184,25 @@ namespace PROSERA.WinFormsUI.UsersControl
 
         private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+          
 
-            DataGridViewRow fila = dgvInventario.Rows[e.RowIndex];
+            if (dgvInventario.CurrentRow == null || dgvInventario.SelectedRows.Count == 0)
+            {
+                Limpiar();
+                return;
+            }
 
-            txtInventario.Text = fila.Cells["id_inventario"].Value.ToString();
-            txtStock.Text = fila.Cells["stock"].Value.ToString();
-            txtStockMinimo.Text = fila.Cells["stock_minimo"].Value.ToString();
-            dtimeFechaActualizacion.Value = Convert.ToDateTime(fila.Cells["fecha_actualizacion"].Value);
-            cbTipoMovimiento.SelectedItem = fila.Cells["tipo_movimiento"].Value.ToString();
-            txtDescripcionMovimiento.Text = fila.Cells["DescripcionMovimiento"].Value.ToString();
+            DataGridViewRow row = dgvInventario.SelectedRows[0];
 
-            int idProducto = Convert.ToInt32(fila.Cells["id_producto"].Value);
-            cbProducto.SelectedValue = idProducto;
+            txtInventario.Text = row.Cells["id_inventario"].Value?.ToString() ?? "";
+            txtStock.Text = row.Cells["stock"].Value?.ToString() ?? "";
+            txtStockMinimo.Text = row.Cells["stock_minimo"].Value?.ToString() ?? "";
+            dtimeFechaActualizacion.Value = Convert.ToDateTime(row.Cells["fecha_actualizacion"].Value);
+            cbTipoMovimiento.SelectedItem = row.Cells["tipo_movimiento"].Value?.ToString() ?? "";
+            txtDescripcionMovimiento.Text = row.Cells["DescripcionMovimiento"].Value?.ToString() ?? "";
+            cbProducto.SelectedValue = Convert.ToInt32(row.Cells["id_producto"].Value);
         }
 
-      
+
     }
 }

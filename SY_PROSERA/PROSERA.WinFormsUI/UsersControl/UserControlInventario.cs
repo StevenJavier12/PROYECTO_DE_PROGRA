@@ -123,7 +123,11 @@ namespace PROSERA.WinFormsUI.UsersControl
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+<<<<<<< HEAD
+
+=======
        
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             try
@@ -183,6 +187,14 @@ namespace PROSERA.WinFormsUI.UsersControl
             cbProducto.SelectedValue = idProducto;
         }
 
+<<<<<<< HEAD
+        private void cbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarProductos();
+        }
+
+        
+=======
         
 
        
@@ -226,5 +238,6 @@ namespace PROSERA.WinFormsUI.UsersControl
         {
 
         }
+>>>>>>> 8fab699fa5c3adbb4463fca748e4e82fe2d2b6cb
     }
 }
