@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace PROSERA.WinFormsUI.UsersControl
+{
+    public partial class UserControlVentas : UserControl
+    {
+        public UserControlVentas()
+        {
+            InitializeComponent();
+        }
+
+        private void UserControlVentas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

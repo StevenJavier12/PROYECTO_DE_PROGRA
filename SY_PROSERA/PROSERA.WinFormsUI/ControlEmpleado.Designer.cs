@@ -159,6 +159,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Dock = DockStyle.Bottom;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(65, 624);
             label2.Name = "label2";
@@ -349,12 +350,14 @@
             panelContainer.Controls.Add(label5);
             panelContainer.Controls.Add(pictureBox5);
             panelContainer.Controls.Add(label4);
+            panelContainer.Dock = DockStyle.Fill;
             panelContainer.ForeColor = SystemColors.ActiveCaptionText;
             panelContainer.Location = new Point(149, 68);
             panelContainer.Margin = new Padding(3, 4, 3, 4);
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(897, 653);
             panelContainer.TabIndex = 7;
+            panelContainer.Paint += panelContainer_Paint;
             // 
             // label5
             // 
@@ -443,8 +446,8 @@
         private PictureBox pictureBox3;
         private Label label4;
         private PictureBox pictureBox5;
-        private Label label5;
         private Button btnInicioProcera;
+        private Label label5;
 
         public FormBorderStyle FormBorderStyle { get; private set; }
     }

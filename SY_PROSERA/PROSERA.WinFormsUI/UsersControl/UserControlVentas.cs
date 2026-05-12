@@ -15,6 +15,18 @@ namespace PROSERA.WinFormsUI.UsersControl
             InitializeComponent();
         }
 
+<<<<<<< HEAD
       
+=======
+        private void UserControlVentas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> 6ce581e90b98e4e95615467f4721850797dbd84d
     }
 }

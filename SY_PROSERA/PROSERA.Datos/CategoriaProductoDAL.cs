@@ -8,14 +8,7 @@ namespace PROSERA.Datos
     {
 
 
-        /*
-         CREATE TABLE Categoria_Productos (
-            id_categoria INT PRIMARY KEY IDENTITY (1,1),
-            nombre VARCHAR(100) NOT NULL,
-            descripcion VARCHAR(200) NOT NULL
-         );
-         */
-
+       
         public void Guardar(CategoriaProducto categoria)
         {
             using SqlConnection cn = new(ConexionDB.Cadena);

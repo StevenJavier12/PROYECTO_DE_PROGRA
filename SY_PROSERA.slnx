@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="PROSERA.Datos/PROSERA.Datos.csproj" />
+  <Project Path="PROSERA.Entidades/PROSERA.Entidades.csproj" />
+  <Project Path="PROSERA.Negocios/PROSERA.Negocios.csproj" />
+  <Project Path="PROSERA.Servicios/PROSERA.Servicios.csproj" />
+  <Project Path="PROSERA.WinFormsUI/PROSERA.WinFormsUI.csproj" />
+</Solution>
